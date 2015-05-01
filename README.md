@@ -1,2 +1,2 @@
 # Cognitive-Robotics-Project
-University project @PoliMi
+University project for the cognitive robotics course @PoliMi
