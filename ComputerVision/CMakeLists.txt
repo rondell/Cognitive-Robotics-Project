@@ -11,6 +11,8 @@ include_directories( ${OpenCV_INCLUDE_DIRS} ${INCLUDE_DIR})
 
 set(SOURCE_FILES 
 	main.cpp
+	${LIB_DIR}/Camera.cpp
+	${INCLUDE_DIR}/Camera.h
 )
 
 add_executable( Cognitive-Robotics-Project ${SOURCE_FILES})

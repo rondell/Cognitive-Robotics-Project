@@ -11,16 +11,18 @@
             <in>CMakeCXXCompilerId.cpp</in>
           </df>
         </df>
-        <df name="CMakeTmp">
-        </df>
         <df name="Cognitive-Robotics-Project.dir">
+          <df name="lib">
+          </df>
         </df>
         <in>feature_tests.c</in>
         <in>feature_tests.cxx</in>
       </df>
       <df name="include">
+        <in>Camera.h</in>
       </df>
       <df name="lib">
+        <in>Camera.cpp</in>
       </df>
       <in>main.cpp</in>
     </df>

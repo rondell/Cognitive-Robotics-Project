@@ -114,6 +114,30 @@ Cognitive-Robotics-Project/fast:
 	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/build
 .PHONY : Cognitive-Robotics-Project/fast
 
+lib/Camera.o: lib/Camera.cpp.o
+.PHONY : lib/Camera.o
+
+# target to build an object file
+lib/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o
+.PHONY : lib/Camera.cpp.o
+
+lib/Camera.i: lib/Camera.cpp.i
+.PHONY : lib/Camera.i
+
+# target to preprocess a source file
+lib/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.i
+.PHONY : lib/Camera.cpp.i
+
+lib/Camera.s: lib/Camera.cpp.s
+.PHONY : lib/Camera.s
+
+# target to generate assembly for a file
+lib/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.s
+.PHONY : lib/Camera.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -147,6 +171,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Cognitive-Robotics-Project"
+	@echo "... lib/Camera.o"
+	@echo "... lib/Camera.i"
+	@echo "... lib/Camera.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

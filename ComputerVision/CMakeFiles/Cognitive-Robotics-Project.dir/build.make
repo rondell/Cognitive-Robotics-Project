@@ -72,14 +72,39 @@ CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o.provides: CMakeFiles/Cognit
 
 CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o.provides.build: CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o
 
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o: CMakeFiles/Cognitive-Robotics-Project.dir/flags.make
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o: lib/Camera.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o -c /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/Camera.cpp
+
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/Camera.cpp > CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.i
+
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/Camera.cpp -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.s
+
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.requires:
+.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.requires
+
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.provides: CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.provides.build
+.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.provides
+
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.provides.build: CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o
+
 # Object files for target Cognitive-Robotics-Project
 Cognitive__Robotics__Project_OBJECTS = \
-"CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o"
+"CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o" \
+"CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o"
 
 # External object files for target Cognitive-Robotics-Project
 Cognitive__Robotics__Project_EXTERNAL_OBJECTS =
 
 Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o
+Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o
 Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/build.make
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_videostab.3.0.0.dylib
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_ts.a
@@ -108,6 +133,7 @@ CMakeFiles/Cognitive-Robotics-Project.dir/build: Cognitive-Robotics-Project
 .PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/build
 
 CMakeFiles/Cognitive-Robotics-Project.dir/requires: CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o.requires
+CMakeFiles/Cognitive-Robotics-Project.dir/requires: CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.requires
 .PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/requires
 
 CMakeFiles/Cognitive-Robotics-Project.dir/clean:

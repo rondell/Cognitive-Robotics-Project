@@ -44,6 +44,14 @@
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>Cognitive-Robotics-Project</executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>lib</pElem>
+            </incDir>
+            <incFile>
+              <pElem>include</pElem>
+            </incFile>
+          </ccTool>
         </makeTool>
       </makefileType>
       <item path="CMakeFiles/3.2.1/CompilerIdC/CMakeCCompilerId.c"
