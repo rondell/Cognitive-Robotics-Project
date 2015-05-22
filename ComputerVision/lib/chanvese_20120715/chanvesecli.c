@@ -105,19 +105,27 @@ static int ParseParam(programparams *Param, int argc, const char *argv[]);
 static int PhiRescale(image *Phi);
 
 
-int WriteBinary(image Phi, const char *File)
+int WriteBinary(image *Phi, const char *File)
 {
     unsigned char *Temp = NULL;
-    const int NumPixels = Phi.Width*Phi.Height;
+    const int NumPixels = Phi->Width*Phi->Height;
     int i, Success;
     
-    if(!(Temp = (unsigned char *)malloc(Phi.Width*Phi.Height)))
+    if(!(Temp = (unsigned char *)malloc(Phi->Width*Phi->Height)))
         return 0;
     
     for(i = 0; i < NumPixels; i++)
-        Temp[i] = (Phi.Data[i] >= 0) ? 255 : 0;
+        if (Phi->Data[i] >= 0) 
+            {
+                 Temp[i] = 255;
+                 Phi->Data[i]=Phi->Data[i]*0.01;
+                 
+            }else{
+                Temp[i]=0;
+                Phi->Data[i]=Phi->Data[i]*0.01;
+            }
     
-    Success = WriteImage(Temp, Phi.Width, Phi.Height, File, 
+    Success = WriteImage(Temp, Phi->Width, Phi->Height, File, 
         IMAGEIO_U8 | IMAGEIO_GRAYSCALE, 0);
     
     free(Temp);
@@ -252,9 +260,12 @@ int main(int argc, char *argv[])
         }
         /*aggiunto il numero di iterazioni per convenienza, si dovrà togliere la volta che arrivi già il quadrato*/
         ChanVeseInitPhi(Param.Phi.Data, Param.Phi.Width, Param.Phi.Height,cont);
+    }else{
+        
+         ChanVeseInitPhi(Param.Phi.Data,Param.Phi.Width,Param.Phi.Height,cont);
+        
     }
     
-    ChanVeseInitPhi(Param.Phi.Data,Param.Phi.Width,Param.Phi.Height,cont);
     
     
     
@@ -283,7 +294,7 @@ int main(int argc, char *argv[])
         printf("c1        : (%.4f, %.4f, %.4f)\nc2        : (%.4f, %.4f, %.4f)\n\n",
             c1[0], c1[1], c1[2], c2[0], c2[1], c2[2]);
     
-    if(Param.OutputFile2 && !WriteBinary(Param.Phi, Param.OutputFile2))
+    if(Param.OutputFile2 && !WriteBinary(&Param.Phi, Param.OutputFile2))
         goto Catch;
     //MODIFIED BY GARO:input
    

@@ -158,7 +158,7 @@ int ChanVese(num *Phi, const num *f,
     
     
     if (cont==1) MaxIter=300;
-    else MaxIter = 200;
+    else MaxIter = 2000;
     
     if(NumChannels > 1)
     {
@@ -255,7 +255,7 @@ int ChanVese(num *Phi, const num *f,
         PhiDiffNorm = sqrt(PhiDiffNorm/NumEl);        
         RegionAverages(c1, c2, Phi, f, Width, Height, NumChannels);
         
-        if(Iter >= 2 && PhiDiffNorm <= PhiTol)
+        if(Iter >= 500 && PhiDiffNorm <= PhiTol)
             break;
         
         if(PlotFun)
@@ -289,6 +289,7 @@ void ChanVeseInitPhi(num *Phi, int Width, int Height,int it)
     int i, j;
     
     
+    
     /*prima iterazione: non ho nessun dato*/
     if (it == 1)
     {
@@ -297,20 +298,24 @@ void ChanVeseInitPhi(num *Phi, int Width, int Height,int it)
             *(Phi++) = (num)(sin(i*M_PI/5.0)*sin(j*M_PI/5.0));
     }
     /*seconda iterazione in poi : ho un forma da seguire*/
-    else
+    else if(0)
     {
     for(j = 0; j < Height; j++)
         for(i = 0; i < Width; i++)
                 {
                 Phi=Phi++;
                 
+                if (*Phi==0)
+                *Phi=-1;
+                else if (*Phi==255)
+                *Phi=1;
                 
                 
-                
-                *Phi=-(fabsf((*Phi))/((*Phi)+1e-3));
                  
                 }
     }
+    
+    
     
     
     
