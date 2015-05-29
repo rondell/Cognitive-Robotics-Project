@@ -157,8 +157,8 @@ int ChanVese(num *Phi, const num *f,
     PhiDiffNorm = (PhiTol > 0) ? PhiTol*1000 : 1000;
     
     
-    if (cont==1) MaxIter=300;
-    else MaxIter = 2000;
+    if (cont==1) MaxIter=40;
+    else MaxIter = 5;
     
     if(NumChannels > 1)
     {
@@ -179,7 +179,7 @@ int ChanVese(num *Phi, const num *f,
                 Width, Height, NumChannels, Opt->PlotParam))
             goto Done;
     
-    
+    printf("Hei Hei Hei this is the Height : %d",Height);
     
     for(Iter = 1; Iter <= MaxIter; Iter++)
     {
@@ -291,30 +291,14 @@ void ChanVeseInitPhi(num *Phi, int Width, int Height,int it)
     
     
     /*prima iterazione: non ho nessun dato*/
-    if (it == 1)
-    {
+    
+    
     for(j = 0; j < Height; j++)
         for(i = 0; i < Width; i++)
             *(Phi++) = (num)(sin(i*M_PI/5.0)*sin(j*M_PI/5.0));
-    }
+   
     /*seconda iterazione in poi : ho un forma da seguire*/
-    else if(0)
-    {
-    for(j = 0; j < Height; j++)
-        for(i = 0; i < Width; i++)
-                {
-                Phi=Phi++;
-                
-                if (*Phi==0)
-                *Phi=-1;
-                else if (*Phi==255)
-                *Phi=1;
-                
-                
-                 
-                }
-    }
-    
+  
     
     
     

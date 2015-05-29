@@ -115,14 +115,15 @@ int WriteBinary(image *Phi, const char *File)
         return 0;
     
     for(i = 0; i < NumPixels; i++)
-        if (Phi->Data[i] >= 0) 
+        if (Phi->Data[i] > 0 || Phi->Data[i] < -1e-3 )
             {
                  Temp[i] = 255;
-                 Phi->Data[i]=Phi->Data[i]*0.01;
+                 Phi->Data[i]=Phi->Data[i]*0.0001;
                  
-            }else{
+            }else 
+                {
                 Temp[i]=0;
-                Phi->Data[i]=Phi->Data[i]*0.01;
+                Phi->Data[i]=Phi->Data[i]*0.0001;
             }
     
     Success = WriteImage(Temp, Phi->Width, Phi->Height, File, 
@@ -160,6 +161,9 @@ int WriteAnimation(plotparam *PlotParam, int Width, int Height,
   
     /* Optimize animation */
     FrameDifference(PlotIndFrames, Width, Height, PlotParam->NumFrames, 255);
+    
+    snprintf(OutputFile,50,"anim_%d.gif",vid_frame);
+    
     
     /* Write the output animation */
     if(!GifWrite(PlotIndFrames, Width, Height, PlotParam->NumFrames,
@@ -232,7 +236,11 @@ int main(int argc, char *argv[])
     }
     
     PlotParam.Image = f.Data;
-    PlotParam.IterPerFrame = Param.IterPerFrame;
+    
+    
+    /* modificato Param.IterPerFrame con 1*/
+    
+    PlotParam.IterPerFrame = 1;
     PlotParam.NumFrames = 0;
     
     ChanVeseSetPlotFun(Param.Opt, PlotFun, (void *)&PlotParam);
@@ -260,12 +268,7 @@ int main(int argc, char *argv[])
         }
         /*aggiunto il numero di iterazioni per convenienza, si dovrà togliere la volta che arrivi già il quadrato*/
         ChanVeseInitPhi(Param.Phi.Data, Param.Phi.Width, Param.Phi.Height,cont);
-    }else{
-        
-         ChanVeseInitPhi(Param.Phi.Data,Param.Phi.Width,Param.Phi.Height,cont);
-        
     }
-    
     
     
     
@@ -293,6 +296,9 @@ int main(int argc, char *argv[])
     else if(f.NumChannels == 3)
         printf("c1        : (%.4f, %.4f, %.4f)\nc2        : (%.4f, %.4f, %.4f)\n\n",
             c1[0], c1[1], c1[2], c2[0], c2[1], c2[2]);
+    
+    
+    snprintf(Param.OutputFile2,50,"Out_%d.jpg",cont);
     
     if(Param.OutputFile2 && !WriteBinary(&Param.Phi, Param.OutputFile2))
         goto Catch;

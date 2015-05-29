@@ -23,7 +23,7 @@
 #include <string.h>
 #include "cliio.h"
 #include "chanvese.h"
-#include "gifwrite.h"
+
 #include "rgb2ind.h"
 
 #define ROUNDCLAMP(x)   ((x < 0) ? 0 : \
@@ -105,86 +105,49 @@ static int ParseParam(programparams *Param, int argc, const char *argv[]);
 static int PhiRescale(image *Phi);
 
 
-int WriteBinary(image Phi, const char *File)
+int WriteBinary(image Phi, num *Temp)
 {
-    unsigned char *Temp = NULL;
+    
     const int NumPixels = Phi.Width*Phi.Height;
     int i, Success;
     
-    if(!(Temp = (unsigned char *)malloc(Phi.Width*Phi.Height)))
+    if(!(Temp = (num *)malloc(Phi.Width*Phi.Height)))
         return 0;
     
     for(i = 0; i < NumPixels; i++)
-        Temp[i] = (Phi.Data[i] >= 0) ? 255 : 0;
+         if (Phi->Data[i] > 0 || Phi->Data[i] < -1e-3 )
+            {
+                 Temp[i] = 255;
+                 Phi->Data[i]=Phi->Data[i]*0.0001;
+                 
+            }else 
+                {
+                Temp[i]=0;
+                Phi->Data[i]=Phi->Data[i]*0.0001;
+            }
     
-    Success = WriteImage(Temp, Phi.Width, Phi.Height, File, 
-        IMAGEIO_U8 | IMAGEIO_GRAYSCALE, 0);
-    
-    free(Temp);
-    return Success;
-}
-
-//MODIFIED BY GARO:input int vid_frame added
-int WriteAnimation(plotparam *PlotParam, int Width, int Height,
-    const char *OutputFile)
-{
-    const int NumPixels = Width*Height;
-    unsigned char *PlotInd = NULL;
-    unsigned char *Palette = NULL;
-    unsigned char **PlotIndFrames = NULL;    
-    int Frame, Success = 0;
+  
     
     
-    
-    if(!(PlotInd = (unsigned char *)malloc(Width*Height*PlotParam->NumFrames))
-        || !(Palette = (unsigned char *)calloc(3*256, 1))
-        || !(PlotIndFrames = (unsigned char **)
-            malloc(sizeof(unsigned char *)*PlotParam->NumFrames)))
-        goto Catch;
-    
-    for(Frame = 0; Frame < PlotParam->NumFrames; Frame++)
-        PlotIndFrames[Frame] = PlotInd + NumPixels*Frame;
-    
-    /* Quantize colors for GIF */
-    if(!Rgb2Ind(PlotInd, Palette, 255, PlotParam->Plot, 
-        Width*Height*PlotParam->NumFrames))
-        goto Catch;
-    
-    /* Optimize animation */
-    FrameDifference(PlotIndFrames, Width, Height, PlotParam->NumFrames, 255);
-    
-    /* Write the output animation */
-    if(!GifWrite(PlotIndFrames, Width, Height, PlotParam->NumFrames,
-        Palette, 256, 255, PlotParam->Delays, OutputFile))
-    {
-        fprintf(stderr, "Error writing \"%s\".\n", OutputFile);
-        goto Catch;
-    }
-    else
-        printf("Output written to \"%s\".\n", OutputFile);    
-    
-    Success = 1;
-Catch:
-    if(PlotIndFrames)
-        free(PlotIndFrames);
-    if(Palette)
-        free(Palette);
-    if(PlotInd)
-        free(PlotInd);
-    return Success;
+    return 1;
 }
 
 
-static int SetParam(programparams *Param)
+
+static int SetParam(programparams *Param, num *Contour, image *input)
 {
-	
+	/*useless*/
 	Param->InputFile = NULL;
     Param->OutputFile = NULL;
     Param->OutputFile2 = NULL;
     Param->JpegQuality = 85;
-    Param->Phi = NullImage;
+     Param->IterPerFrame = 10;
+    /*finish useless*/
+    Param->Phi.Data=Contour;
+    Param->Phi.Width=input->Width;
+    Param->Phi.Height=input->Height;
     Param->Opt = NULL;
-    Param->IterPerFrame = 10;
+   
 	
 	 if(!(Param->Opt = ChanVeseNewOpt()))
     {
@@ -204,14 +167,14 @@ static int SetParam(programparams *Param)
 /*Try to make a light main that take a stream of images as input and 
 send a set of image as output*/
 
-int main (int argc,char *argv[])
+int Active_Contour (num *Contour, image *ImageInput,num *OutPut)/* Dopo chiederà in ingresso : num *Phi , num *InputImage , num *Output, int Width , int Height(last two are inside the Image output)*/
 {
 	
    
-    printf("prova");
+    
     
 	programparams Param;
-	image f = NullImage;
+	image f = ImageInput;
 	num c1,c2;/*only grayscale images*/
 	int Status=1;
 	FILE *fInputImg=fopen("test_image.txt","r");
@@ -219,12 +182,12 @@ int main (int argc,char *argv[])
     int tmp=0;
 	char Tmp_in_f[50];
 	/*set the Param*/  	
-	if (!SetParam(&Param))
+	if (!SetParam(&Param, Contour, f))
 		goto Catch;
 	
    
     
-	while( (fgets(Tmp_in_f,50,fInputImg)))
+	while( (fgets(Tmp_in_f,50,fInputImg)))/*sarà esterno*/
     {
         
      	Param.InputFile=Tmp_in_f;
@@ -237,7 +200,7 @@ int main (int argc,char *argv[])
 	 	Param.InputFile[tmp]='\0';
           
 		/* Read the input image */
-    	if(!ReadImageObj(&f, Param.InputFile))
+    	if(!ReadImageObj(&f, Param.InputFile))  /*f dovrà essere data, height e width */
         	goto Catch;
 
 		 
@@ -250,17 +213,7 @@ int main (int argc,char *argv[])
         goto Catch;
    		 } 
 	 
-	 	if(!Param.Phi.Data)
-   		{
-        	if(!AllocImageObj(&Param.Phi, f.Width, f.Height, 1))
-        	{
-            fprintf(stderr, "Out of memory.");
-            goto Catch;
-      	  	}
-			ChanVeseInitPhi(Param.Phi.Data, Param.Phi.Width, Param.Phi.Height);
-    	 }
-         
-         
+
          
 		 
 		  /* Perform the segmentation */
@@ -272,9 +225,9 @@ int main (int argc,char *argv[])
     	}
 		
 		
-		Param.OutputFile2="Out.jpg";
 		
-		if(Param.OutputFile2 && !WriteBinary(Param.Phi, Param.OutputFile2))
+		
+		if( !WriteBinary(Param.Phi, OutPut))
         goto Catch;
 	 
 	}
@@ -288,122 +241,6 @@ Catch:
      return Status;
 	
 	
-}
-
-/* Plot callback function */
-static int PlotFun(int State, int Iter, ATTRIBUTE_UNUSED num Delta,
-    ATTRIBUTE_UNUSED const num *c1, ATTRIBUTE_UNUSED const num *c2, 
-    const num *Phi, int Width, int Height, 
-    ATTRIBUTE_UNUSED int NumChannels, void *ParamPtr)
-{
-    const int NumPixels = Width*Height;
-    plotparam *PlotParam = (plotparam *)ParamPtr;
-    unsigned char *Plot, *Temp = NULL;    
-    int *Delays = NULL;
-    num Red, Green, Blue, Alpha;
-    long i;
-    int x, y, Edge, NumFrames = PlotParam->NumFrames, Success = 0;
-    int il, ir, iu, id;
-    
-    switch(State)
-    {
-    case 0:
-        /* We print to stderr so that messages are displayed on the console
-           immediately, during the TvRestore computation.  If we use stdout,
-           messages might be buffered and not displayed until after TvRestore
-           completes, which would defeat the point of having this real-time 
-           plot callback. */
-        if(NumChannels == 1)
-            fprintf(stderr, "   Iteration %4d     Delta %7.4f     c1 = %6.4f     c2 = %6.4f\r", 
-                Iter, Delta, *c1, *c2);
-        else
-            fprintf(stderr, "   Iteration %4d     Delta %7.4f\r", Iter, Delta);
-        break;
-    case 1: /* Converged successfully */
-        fprintf(stderr, "Converged in %d iterations.                                            \n", 
-            Iter);
-        break;
-    case 2: /* Maximum iterations exceeded */
-        fprintf(stderr, "Maximum number of iterations exceeded.                                 \n");
-        break;
-    }
-    
-    if(State == 0 && (Iter % PlotParam->IterPerFrame) > 0)
-        return 1;
-    
-    if(!(Plot = (unsigned char *)realloc(PlotParam->Plot, 
-        3*Width*Height*(PlotParam->NumFrames + 1)))
-        || !(Delays = (int *)realloc(PlotParam->Delays, 
-        sizeof(int)*(PlotParam->NumFrames + 1)))
-        || !(Temp = (unsigned char *)malloc(Width*Height)))
-    {
-        fprintf(stderr, "Out of memory.\n");
-        goto Catch;
-    }
-    
-    PlotParam->Plot = Plot;
-    PlotParam->Delays = Delays;
-    Plot += 3*NumPixels*PlotParam->NumFrames;
-    
-    for(y = 0, i = 0; y < Height; y++)
-        for(x = 0; x < Width; x++, i++)
-        {
-            if(Phi[i] >= 0 &&    
-                ((x > 0          && Phi[i - 1] < 0)
-                    || (x + 1 < Width  && Phi[i + 1] < 0)
-                    || (y > 0          && Phi[i - Width] < 0)
-                    || (y + 1 < Height && Phi[i + Width] < 0)))
-                Edge = 1;       /* Inside the curve, on the edge */
-            else
-                Edge = 0;                
-            
-            Temp[i] = Edge;
-        }
-        
-    for(y = 0, i = 0; y < Height; y++)
-    {
-        iu = (y == 0) ? 0 : -Width;
-        id = (y == Height - 1) ? 0 : Width;
-            
-        for(x = 0; x < Width; x++, i++)
-        {
-            il = (x == 0) ? 0 : -1;
-            ir = (x == Width - 1) ? 0 : 1;
-            
-            Red = PlotParam->Image[i];
-            Green = PlotParam->Image[i + NumPixels];
-            Blue = PlotParam->Image[i + 2*NumPixels];
-            
-            Red = 0.95f*Red;
-            Green = 0.95f*Green;
-            Blue = 0.95f*Blue;
-            
-            i = x + Width*y;
-            Alpha = (4*Temp[i]
-                + Temp[i + ir] + Temp[i + il] 
-                + Temp[i + id] + Temp[i + iu])/4.0f;
-                
-            if(Alpha > 1)
-                Alpha = 1;
-            
-            Red = (1 - Alpha)*Red;
-            Green = (1 - Alpha)*Green;
-            Blue = (1 - Alpha)*Blue + Alpha;
-            
-            Plot[3*i + 0] = ROUNDCLAMP(Red);
-            Plot[3*i + 1] = ROUNDCLAMP(Green);
-            Plot[3*i + 2] = ROUNDCLAMP(Blue);
-        }
-    }
-    
-    PlotParam->Delays[NumFrames] = (State == 0) ? 12 : 120;
-    PlotParam->NumFrames++;
-    
-    Success = 1;
-Catch:
-    if(Temp)
-        free(Temp);
-    return Success;
 }
 
 
