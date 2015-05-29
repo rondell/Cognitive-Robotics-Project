@@ -21,8 +21,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "cliio.h"
-#include "chanvese.h"
+#include "chanvese/cliio.h"
+#include "chanvese/chanvese.h"
 
 
 
@@ -60,7 +60,7 @@ typedef struct
 /** @brief Plotting parameters struct */
 typedef struct
 {
-    const num *Image;
+    const float *Image;
     unsigned char *Plot;
     int *Delays;
     int IterPerFrame;
@@ -76,25 +76,25 @@ static int ParseParam(programparams *Param, int argc, const char *argv[]);
 static int PhiRescale(image *Phi);
 
 
-int WriteBinary(image Phi, num *Temp)
+int WriteBinary(image Phi, float *Temp)
 {
     
     const int NumPixels = Phi.Width*Phi.Height;
     int i, Success;
     
-    if(!(Temp = (num *)malloc(Phi.Width*Phi.Height)))
+    if(!(Temp = (float *)malloc(Phi.Width*Phi.Height)))
         return 0;
     
     for(i = 0; i < NumPixels; i++)
-         if (Phi->Data[i] > 0 || Phi->Data[i] < -1e-3 )
+         if (Phi.Data[i] > 0 || Phi.Data[i] < -1e-3 )
             {
                  Temp[i] = 255;
-                 Phi->Data[i]=Phi->Data[i]*0.0001;
+                 Phi.Data[i]=Phi.Data[i]*0.0001;
                  
             }else 
                 {
                 Temp[i]=0;
-                Phi->Data[i]=Phi->Data[i]*0.0001;
+                Phi.Data[i]=Phi.Data[i]*0.0001;
             }
     
   
@@ -105,7 +105,7 @@ int WriteBinary(image Phi, num *Temp)
 
 
 
-static int SetParam(programparams *Param, num *Contour, image *input)
+static int SetParam(programparams *Param, float *Contour, image *input)
 {
 	/*useless*/
 	Param->InputFile = NULL;
@@ -138,28 +138,28 @@ static int SetParam(programparams *Param, num *Contour, image *input)
 /*Try to make a light main that take a stream of images as input and 
 send a set of image as output*/
 
-int Active_Contour (num *Contour, image *ImageInput,num *OutPut)/* Dopo chiederà in ingresso : num *Phi , num *InputImage , num *Output, int Width , int Height, int Num channel(last three are inside the Image output)*/
+int Active_Contour (float *Contour, image ImageInput,float *OutPut)/* Dopo chiederà in ingresso : num *Phi , num *InputImage , num *Output, int Width , int Height, int Num channel(last three are inside the Image output)*/
 {
-	
+    printf("%d\n", ImageInput.Width);
+    printf("%d", ImageInput.Height);
+    return 0;
    
     
     
 	programparams Param;
 	image f = ImageInput;
-	num c1,c2;/*only grayscale images*/
+	float c1,c2;/*only grayscale images*/
 	int Status=1;
-	FILE *fInputImg=fopen("test_image.txt","r");
 	int cont = 0;
     int tmp=0;
 	char Tmp_in_f[50];
 	/*set the Param*/  	
-	if (!SetParam(&Param, Contour, f))
+	if (!SetParam(&Param, Contour, &f))
 		goto Catch;
 	
    
     
-	while( (fgets(Tmp_in_f,50,fInputImg)))/*sarà esterno*/
-    {
+
         
      	Param.InputFile=Tmp_in_f;
 		cont++;
@@ -169,10 +169,7 @@ int Active_Contour (num *Contour, image *ImageInput,num *OutPut)/* Dopo chieder�
         tmp=strlen(Param.InputFile)-1;
         
 	 	Param.InputFile[tmp]='\0';
-          
-		/* Read the input image */
-    	if(!ReadImageObj(&f, Param.InputFile))  /*f dovrà essere data, height e width */
-        	goto Catch;
+       
 
 		 
 		if(Param.Phi.Data && 
@@ -201,9 +198,7 @@ int Active_Contour (num *Contour, image *ImageInput,num *OutPut)/* Dopo chieder�
 		if( !WriteBinary(Param.Phi, OutPut))
         goto Catch;
 	 
-	}
 	
-	fclose(fInputImg);
 	Status = 0;
 Catch:
 	 FreeImageObj(Param.Phi);
@@ -218,7 +213,7 @@ Catch:
 static int ParseParam(programparams *Param, int argc, const char *argv[])
 {
     const char *Option, *Value;
-    num NumValue;
+    float NumValue;
     char TokenBuf[256];
     int k, kread, Skip;
     
@@ -236,12 +231,6 @@ static int ParseParam(programparams *Param, int argc, const char *argv[])
         fprintf(stderr, "Out of memory.\n");
         return 0;
     }
-        
-    if(argc >1)
-    {
-        PrintHelpMessage();
-        return 0;
-    }
 
     return 1;
 }
@@ -252,7 +241,7 @@ static int ParseParam(programparams *Param, int argc, const char *argv[])
 static int PhiRescale(image *Phi)
 {    
     const long NumEl = ((long)Phi->Width) * ((long)Phi->Height);
-    num *Data = Phi->Data;
+    float *Data = Phi->Data;
     long n;
 
     for(n = 0; n < NumEl; n++)

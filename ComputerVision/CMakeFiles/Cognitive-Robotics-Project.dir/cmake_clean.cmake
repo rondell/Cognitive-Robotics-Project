@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o"
   "CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o"
+  "CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o"
+  "CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o"
+  "CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o"
   "Cognitive-Robotics-Project.pdb"
   "Cognitive-Robotics-Project"
 )

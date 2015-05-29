@@ -13,15 +13,45 @@
         </df>
         <df name="Cognitive-Robotics-Project.dir">
           <df name="lib">
+            <df name="chanvese">
+            </df>
           </df>
         </df>
         <in>feature_tests.c</in>
         <in>feature_tests.cxx</in>
       </df>
       <df name="include">
+        <df name="chanvese">
+          <in>chanvese.h</in>
+          <in>chanvesecli.h</in>
+          <in>cliio.h</in>
+        </df>
         <in>Camera.h</in>
       </df>
       <df name="lib">
+        <df name="chanvese">
+          <in>chanvese.cpp</in>
+          <in>chanvesecli.cpp</in>
+          <in>cliio.cpp</in>
+        </df>
+        <df name="chanvese_20120715">
+          <in>basic.c</in>
+          <in>basic.h</in>
+          <in>chanvese.c</in>
+          <in>chanvese.h</in>
+          <in>chanvesecli.c</in>
+          <in>chanvesecli_new.c</in>
+          <in>cliio.c</in>
+          <in>cliio.h</in>
+          <in>gifwrite.c</in>
+          <in>gifwrite.h</in>
+          <in>imageio.c</in>
+          <in>imageio.h</in>
+          <in>light_main.c</in>
+          <in>num.h</in>
+          <in>rgb2ind.c</in>
+          <in>rgb2ind.h</in>
+        </df>
         <in>Camera.cpp</in>
       </df>
       <in>main.cpp</in>

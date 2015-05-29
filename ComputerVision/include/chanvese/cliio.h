@@ -6,20 +6,11 @@
 #ifndef _CLIIO_H_
 #define _CLIIO_H_
 
-#include "num.h"
-
-
-#ifdef NUM_SINGLE
-#define IMAGEIO_NUM           (IMAGEIO_SINGLE)
-#else
-#define IMAGEIO_NUM           (IMAGEIO_DOUBLE)
-#endif
-
 /** @brief struct representing an image */
 typedef struct
 {
     /** @brief Float image data */
-    num *Data;
+    float *Data;
     /** @brief Image width */
     int Width;
     /** @brief Image height */
@@ -33,7 +24,7 @@ typedef struct
 void FreeImageObj(image f);/*mi serve*/
 
 
-int IsGrayscale(num *Data, int Width, int Height);/*mi serve*/
+int IsGrayscale(float *Data, int Width, int Height);/*mi serve*/
 
 
 extern const image NullImage;

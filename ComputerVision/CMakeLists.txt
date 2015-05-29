@@ -13,6 +13,12 @@ set(SOURCE_FILES
 	main.cpp
 	${LIB_DIR}/Camera.cpp
 	${INCLUDE_DIR}/Camera.h
+	${LIB_DIR}/chanvese/chanvese.cpp
+	${INCLUDE_DIR}/chanvese/chanvese.h
+	${LIB_DIR}/chanvese/chanvesecli.cpp
+	${INCLUDE_DIR}/chanvese/chanvesecli.h
+	${LIB_DIR}/chanvese/cliio.cpp
+	${INCLUDE_DIR}/chanvese/cliio.h
 )
 
 add_executable( Cognitive-Robotics-Project ${SOURCE_FILES})

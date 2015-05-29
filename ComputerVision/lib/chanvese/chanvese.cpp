@@ -21,12 +21,12 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "chanvese.h"
+#include "chanvese/chanvese.h"
 
 #define Malloc(s)    malloc(s)
 #define Free(p)      free(p)
 
-#define DIVIDE_EPS       ((num)1e-16)
+#define DIVIDE_EPS       ((float)1e-16)
 
 #ifndef M_PI
 /** @brief The constant pi */
@@ -37,30 +37,30 @@
 /** @brief Options handling for ChanVese */
 struct chanvesestruct
 {
-    num Tol;
+    float Tol;
     int MaxIter;
-    num Mu;
-    num Nu;
-    num Lambda1;
-    num Lambda2;
-    num dt;
-    int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
+    float Mu;
+    float Nu;
+    float Lambda1;
+    float Lambda2;
+    float dt;
+    int (*PlotFun)(int, int, float, const float*, const float*, const float*, 
         int, int, int, void*);
     void *PlotParam;
 };
 
 #ifdef __GNUC__
-int ChanVeseSimplePlot(int State, int Iter, num Delta,
-    const num *c1, const num *c2,
-    __attribute__((unused)) const num *Phi,                          
+int ChanVeseSimplePlot(int State, int Iter, float Delta,
+    const float *c1, const float *c2,
+    __attribute__((unused)) const float *Phi,                          
     __attribute__((unused)) int Width, 
     __attribute__((unused)) int Height, 
     int NumChannels,
     __attribute__((unused)) void *Param);
 #else
-int ChanVeseSimplePlot(int State, int Iter, num Delta,
-    const num *c1, const num *c2,
-    const num *Phi,                          
+int ChanVeseSimplePlot(int State, int Iter, float Delta,
+    const float *c1, const float *c2,
+    const float *Phi,                          
     int Width, 
     int Height, 
     int NumChannels,
@@ -69,7 +69,7 @@ int ChanVeseSimplePlot(int State, int Iter, num Delta,
 
 /** @brief Default options struct */
 static struct chanvesestruct DefaultChanVeseOpt =
-        {(num)1e-3, 500, (num)0.25, 0, 1, 1, (num)0.5, 
+        {(float)1e-3, 500, (float)0.25, 0, 1, 1, (float)0.5, 
         ChanVeseSimplePlot, NULL};
         
 
@@ -124,19 +124,19 @@ static struct chanvesestruct DefaultChanVeseOpt =
  * change between successive iterations is less than Tol.  Set Tol=0 to force
  * the routine to run exactly MaxIter iterations.
  */
-int ChanVese(num *Phi, const num *f, 
+int ChanVese(float *Phi, const float *f, 
     int Width, int Height, int NumChannels, const chanveseopt *Opt,int cont)
 {
-    int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
+    int (*PlotFun)(int, int, float, const float*, const float*, const float*, 
         int, int, int, void*);
     const long NumPixels = ((long)Width) * ((long)Height);
     const long NumEl = NumPixels * NumChannels;
-    const num *fPtr, *fPtr2;
+    const float *fPtr, *fPtr2;
     double PhiDiffNorm, PhiDiff;
-    num *PhiPtr, *c1 = 0, *c2 = 0;
-    num c1Scalar, c2Scalar, Mu, Nu, Lambda1, Lambda2, dt;
-    num PhiLast, Delta, PhiX, PhiY, IDivU, IDivD, IDivL, IDivR;
-    num Temp1, Temp2, Dist1, Dist2, PhiTol;
+    float *PhiPtr, *c1 = 0, *c2 = 0;
+    float c1Scalar, c2Scalar, Mu, Nu, Lambda1, Lambda2, dt;
+    float PhiLast, Delta, PhiX, PhiY, IDivU, IDivD, IDivL, IDivR;
+    float Temp1, Temp2, Dist1, Dist2, PhiTol;
     int Iter, i, j, Channel, MaxIter, Success = 2;
     int iu, id, il, ir;
     
@@ -162,8 +162,8 @@ int ChanVese(num *Phi, const num *f,
     
     if(NumChannels > 1)
     {
-        if(!(c1 = Malloc(sizeof(num)*NumChannels)) 
-            || !(c2 = Malloc(sizeof(num)*NumChannels)))
+        if(!(c1 = (float*)Malloc(sizeof(float)*NumChannels)) 
+            || !(c2 = (float*)Malloc(sizeof(float)*NumChannels)))
             return 0;
     }
     else
@@ -203,21 +203,21 @@ int ChanVese(num *Phi, const num *f,
                 
                 PhiY = (PhiPtr[id] - PhiPtr[iu])/2;
                 
-                IDivR = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                IDivR = (float)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
                 
                 PhiX = PhiPtr[0] - PhiPtr[il];
                 
-                IDivL = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                IDivL = (float)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
                 
                 PhiX = (PhiPtr[ir] - PhiPtr[il])/2;
                 
                 PhiY =  PhiPtr[id] - PhiPtr[0];
                 
-                IDivD = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                IDivD = (float)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
                 
                 PhiY = PhiPtr[0] - PhiPtr[iu];
                 
-                IDivU = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                IDivU = (float)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
                 
                 if(NumChannels == 1)
                 {
@@ -284,7 +284,7 @@ Done:
 
 
 /** @brief Default initialization for Phi */
-void ChanVeseInitPhi(num *Phi, int Width, int Height,int it)
+void ChanVeseInitPhi(float *Phi, int Width, int Height,int it)
 {
     int i, j;
     
@@ -295,7 +295,7 @@ void ChanVeseInitPhi(num *Phi, int Width, int Height,int it)
     
     for(j = 0; j < Height; j++)
         for(i = 0; i < Width; i++)
-            *(Phi++) = (num)(sin(i*M_PI/5.0)*sin(j*M_PI/5.0));
+            *(Phi++) = (float)(sin(i*M_PI/5.0)*sin(j*M_PI/5.0));
    
     /*seconda iterazione in poi : ho un forma da seguire*/
   
@@ -307,11 +307,11 @@ void ChanVeseInitPhi(num *Phi, int Width, int Height,int it)
 
 
 /** @brief Compute averages inside and outside of the segmentation contour */
-void RegionAverages(num *c1, num *c2, const num *Phi, const num *f,
+void RegionAverages(float *c1, float *c2, const float *Phi, const float *f,
     int Width, int Height, int NumChannels)
 {
     const long NumPixels = ((long)Width) * ((long)Height);
-    num Sum1 = 0, Sum2 = 0;
+    float Sum1 = 0, Sum2 = 0;
     long n;
     long Count1 = 0, Count2 = 0;
     int Channel;
@@ -341,17 +341,17 @@ void RegionAverages(num *c1, num *c2, const num *Phi, const num *f,
    to avoid warnings.  TvRestoreSimplePlot is a plotting callback function
    for TvRestore, so the unused arguments are indeed required. */
 #ifdef __GNUC__
-int ChanVeseSimplePlot(int State, int Iter, num Delta,
-    const num *c1, const num *c2,
-    __attribute__((unused)) const num *Phi,                          
+int ChanVeseSimplePlot(int State, int Iter, float Delta,
+    const float *c1, const float *c2,
+    __attribute__((unused)) const float *Phi,                          
     __attribute__((unused)) int Width, 
     __attribute__((unused)) int Height, 
     int NumChannels,
     __attribute__((unused)) void *Param)
 #else
-int ChanVeseSimplePlot(int State, int Iter, num Delta,
-    const num *c1, const num *c2,
-    const num *Phi,                          
+int ChanVeseSimplePlot(int State, int Iter, float Delta,
+    const float *c1, const float *c2,
+    const float *Phi,                          
     int Width, 
     int Height, 
     int NumChannels,
@@ -415,7 +415,7 @@ void ChanVeseFreeOpt(chanveseopt *Opt)
 
 
 /** @brief Specify mu, the edge length penalty */
-void ChanVeseSetMu(chanveseopt *Opt, num Mu)
+void ChanVeseSetMu(chanveseopt *Opt, float Mu)
 {
     if(Opt)
         Opt->Mu = Mu;
@@ -423,7 +423,7 @@ void ChanVeseSetMu(chanveseopt *Opt, num Mu)
 
 
 /** @brief Specify nu, the area penalty (may be positive or negative) */
-void ChanVeseSetNu(chanveseopt *Opt, num Nu)
+void ChanVeseSetNu(chanveseopt *Opt, float Nu)
 {
     if(Opt)
         Opt->Nu = Nu;
@@ -431,7 +431,7 @@ void ChanVeseSetNu(chanveseopt *Opt, num Nu)
 
 
 /** @brief Specify lambda1, the fit weight inside the curve */
-void ChanVeseSetLambda1(chanveseopt *Opt, num Lambda1)
+void ChanVeseSetLambda1(chanveseopt *Opt, float Lambda1)
 {
     if(Opt)
         Opt->Lambda1 = Lambda1;
@@ -439,7 +439,7 @@ void ChanVeseSetLambda1(chanveseopt *Opt, num Lambda1)
 
 
 /** @brief Specify lambda2, the fit weight outside the curve */
-void ChanVeseSetLambda2(chanveseopt *Opt, num Lambda2)
+void ChanVeseSetLambda2(chanveseopt *Opt, float Lambda2)
 {
     if(Opt)
         Opt->Lambda2 = Lambda2;
@@ -447,7 +447,7 @@ void ChanVeseSetLambda2(chanveseopt *Opt, num Lambda2)
 
 
 /** @brief Specify the convergence tolerance */
-void ChanVeseSetTol(chanveseopt *Opt, num Tol)
+void ChanVeseSetTol(chanveseopt *Opt, float Tol)
 {
     if(Opt)
         Opt->Tol = Tol;
@@ -455,7 +455,7 @@ void ChanVeseSetTol(chanveseopt *Opt, num Tol)
 
 
 /** @brief Specify the timestep */
-void ChanVeseSetDt(chanveseopt *Opt, num dt)
+void ChanVeseSetDt(chanveseopt *Opt, float dt)
 {
     if(Opt)
         Opt->dt = dt;
@@ -510,7 +510,7 @@ void ChanVeseSetMaxIter(chanveseopt *Opt, int MaxIter)
  * used to pass additional information to PlotFun if needed.
  */
 void ChanVeseSetPlotFun(chanveseopt *Opt, 
-    int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
+    int (*PlotFun)(int, int, float, const float*, const float*, const float*, 
         int, int, int, void*), void *PlotParam)
 {
     if(Opt)

@@ -138,6 +138,78 @@ lib/Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.s
 .PHONY : lib/Camera.cpp.s
 
+lib/chanvese/chanvese.o: lib/chanvese/chanvese.cpp.o
+.PHONY : lib/chanvese/chanvese.o
+
+# target to build an object file
+lib/chanvese/chanvese.cpp.o:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o
+.PHONY : lib/chanvese/chanvese.cpp.o
+
+lib/chanvese/chanvese.i: lib/chanvese/chanvese.cpp.i
+.PHONY : lib/chanvese/chanvese.i
+
+# target to preprocess a source file
+lib/chanvese/chanvese.cpp.i:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.i
+.PHONY : lib/chanvese/chanvese.cpp.i
+
+lib/chanvese/chanvese.s: lib/chanvese/chanvese.cpp.s
+.PHONY : lib/chanvese/chanvese.s
+
+# target to generate assembly for a file
+lib/chanvese/chanvese.cpp.s:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.s
+.PHONY : lib/chanvese/chanvese.cpp.s
+
+lib/chanvese/chanvesecli.o: lib/chanvese/chanvesecli.cpp.o
+.PHONY : lib/chanvese/chanvesecli.o
+
+# target to build an object file
+lib/chanvese/chanvesecli.cpp.o:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o
+.PHONY : lib/chanvese/chanvesecli.cpp.o
+
+lib/chanvese/chanvesecli.i: lib/chanvese/chanvesecli.cpp.i
+.PHONY : lib/chanvese/chanvesecli.i
+
+# target to preprocess a source file
+lib/chanvese/chanvesecli.cpp.i:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.i
+.PHONY : lib/chanvese/chanvesecli.cpp.i
+
+lib/chanvese/chanvesecli.s: lib/chanvese/chanvesecli.cpp.s
+.PHONY : lib/chanvese/chanvesecli.s
+
+# target to generate assembly for a file
+lib/chanvese/chanvesecli.cpp.s:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.s
+.PHONY : lib/chanvese/chanvesecli.cpp.s
+
+lib/chanvese/cliio.o: lib/chanvese/cliio.cpp.o
+.PHONY : lib/chanvese/cliio.o
+
+# target to build an object file
+lib/chanvese/cliio.cpp.o:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o
+.PHONY : lib/chanvese/cliio.cpp.o
+
+lib/chanvese/cliio.i: lib/chanvese/cliio.cpp.i
+.PHONY : lib/chanvese/cliio.i
+
+# target to preprocess a source file
+lib/chanvese/cliio.cpp.i:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.i
+.PHONY : lib/chanvese/cliio.cpp.i
+
+lib/chanvese/cliio.s: lib/chanvese/cliio.cpp.s
+.PHONY : lib/chanvese/cliio.s
+
+# target to generate assembly for a file
+lib/chanvese/cliio.cpp.s:
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.s
+.PHONY : lib/chanvese/cliio.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -174,6 +246,15 @@ help:
 	@echo "... lib/Camera.o"
 	@echo "... lib/Camera.i"
 	@echo "... lib/Camera.s"
+	@echo "... lib/chanvese/chanvese.o"
+	@echo "... lib/chanvese/chanvese.i"
+	@echo "... lib/chanvese/chanvese.s"
+	@echo "... lib/chanvese/chanvesecli.o"
+	@echo "... lib/chanvese/chanvesecli.i"
+	@echo "... lib/chanvese/chanvesecli.s"
+	@echo "... lib/chanvese/cliio.o"
+	@echo "... lib/chanvese/cliio.i"
+	@echo "... lib/chanvese/cliio.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -28,6 +28,18 @@ CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o
  /usr/local/include/opencv2/imgproc/imgproc.hpp
  /usr/local/include/opencv2/videoio.hpp
  include/Camera.h
+ include/chanvese/chanvesecli.h
+ include/chanvese/cliio.h
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o
+ /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/chanvese.cpp
+ include/chanvese/chanvese.h
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o
+ /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/chanvesecli.cpp
+ include/chanvese/chanvese.h
+ include/chanvese/cliio.h
+CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o
+ /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/cliio.cpp
+ include/chanvese/cliio.h
 CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o
  /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/main.cpp
  /usr/local/include/opencv2/calib3d.hpp
@@ -69,3 +81,5 @@ CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o
  /usr/local/include/opencv2/video/tracking.hpp
  /usr/local/include/opencv2/videoio.hpp
  include/Camera.h
+ include/chanvese/chanvesecli.h
+ include/chanvese/cliio.h

@@ -47,9 +47,11 @@
           <ccTool>
             <incDir>
               <pElem>lib</pElem>
+              <pElem>lib/chanvese</pElem>
             </incDir>
             <incFile>
               <pElem>include</pElem>
+              <pElem>include/chanvese</pElem>
             </incFile>
           </ccTool>
         </makeTool>

@@ -6,30 +6,29 @@
 #ifndef _CHANVESE_H_
 #define _CHANVESE_H_
 
-#include "num.h"
 
 typedef struct chanvesestruct chanveseopt;
 
 chanveseopt *ChanVeseNewOpt();
 void ChanVeseFreeOpt(chanveseopt *Opt);
-void ChanVeseSetMu(chanveseopt *Opt, num Mu);
-void ChanVeseSetNu(chanveseopt *Opt, num Nu);
-void ChanVeseSetLambda1(chanveseopt *Opt, num Lambda1);
-void ChanVeseSetLambda2(chanveseopt *Opt, num Lambda2);
-void ChanVeseSetTol(chanveseopt *Opt, num Tol);
-void ChanVeseSetDt(chanveseopt *Opt, num dt);
+void ChanVeseSetMu(chanveseopt *Opt, float Mu);
+void ChanVeseSetNu(chanveseopt *Opt, float Nu);
+void ChanVeseSetLambda1(chanveseopt *Opt, float Lambda1);
+void ChanVeseSetLambda2(chanveseopt *Opt, float Lambda2);
+void ChanVeseSetTol(chanveseopt *Opt, float Tol);
+void ChanVeseSetDt(chanveseopt *Opt, float dt);
 void ChanVeseSetMaxIter(chanveseopt *Opt, int MaxIter);
 void ChanVeseSetPlotFun(chanveseopt *Opt, 
-    int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
+    int (*PlotFun)(int, int, float, const float*, const float*, const float*, 
         int, int, int, void*), void *PlotParam);
 void ChanVesePrintOpt(const chanveseopt *Opt);
 
-int ChanVese(num *Phi, const num *f, 
+int ChanVese(float *Phi, const float *f, 
     int Width, int Height, int NumChannels, const chanveseopt *Opt,int cont);
 
-void ChanVeseInitPhi(num *Phi, int Width, int Height, int it);
+void ChanVeseInitPhi(float *Phi, int Width, int Height, int it);
 
-void RegionAverages(num *c1, num *c2, const num *Phi, const num *f,
+void RegionAverages(float *c1, float *c2, const float *Phi, const float *f,
     int Width, int Height, int NumChannels);
 
 #endif /* _CHANVESE_H_ */

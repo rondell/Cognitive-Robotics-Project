@@ -23,8 +23,9 @@ void Camera::crop(void) {
     bool done = false;
     int x = 279, y = 190, dim = 100;
     Rect box(x, y, dim, dim);
-    
-    while(!done) {
+
+
+    //while(!done) {
         // Read from camera
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
@@ -35,7 +36,8 @@ void Camera::crop(void) {
         // Crop the image
         Mat  croppedImage = frame(box);
         imshow("Cropped", croppedImage);
-          
+        
+
 	// Convert to grayscale
 	Mat croppedGray;
 	cvtColor(croppedImage, croppedGray, COLOR_RGB2GRAY);
@@ -43,8 +45,26 @@ void Camera::crop(void) {
         // Convert to FP (between 0 and 1)
 	Mat croppedFp;
         croppedGray.convertTo(croppedFp, CV_32FC1, 1.0/255.5);
+
+        // AT (ROW, COL)
+        cout << "1st row of matrix" << endl;
+        for(int i=0; i<10; i++)
+            cout << croppedFp.at<float>(0,i) << " " ;
+        cout << endl;
         
         // Reshape in 1D
-        Mat croppedArray = croppedFp.reshape(0,1);        
-        }
+        Mat croppedArray = croppedFp.reshape(1,0); 
+        
+        cout << "1st element of array" << endl;
+        for(int i=0; i<10; i++)
+            cout << croppedArray.at<float>(i,0) << " " ;
+        cout << endl;
+        
+        image frame;
+        frame.Data = &croppedArray.at<float>(0,0);
+        frame.Width = dim;
+        frame.Height = dim;
+        frame.NumChannels = 1;
+        
+        //   }
 }
