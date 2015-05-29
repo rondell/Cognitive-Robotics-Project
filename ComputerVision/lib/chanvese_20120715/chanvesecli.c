@@ -237,7 +237,7 @@ int main(int argc, char *argv[])
     
     PlotParam.Image = f.Data;
     
-    
+    printf("Wi Wi Wi this is the Width : %d",f.Width);
     /* modificato Param.IterPerFrame con 1*/
     
     PlotParam.IterPerFrame = 1;

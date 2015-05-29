@@ -24,7 +24,7 @@
 #include "cliio.h"
 #include "chanvese.h"
 
-#include "rgb2ind.h"
+
 
 #define ROUNDCLAMP(x)   ((x < 0) ? 0 : \
     ((x > 1) ? 255 : (uint8_t)floor(255.0*(x) + 0.5)))
@@ -68,39 +68,10 @@ typedef struct
 } plotparam;
 
 
-static void PrintHelpMessage()
-{
-    puts("chanvese, P. Getreuer 2011-2012\n"
-    "Chan-Vese segmentation IPOL demo\n\n"
-    "Usage: chanvese [param:value ...] input animation final \n\n"
-    "where \"input\" and \"final\" are " 
-    READIMAGE_FORMATS_SUPPORTED " files\n"
-    "and \"animation\" is a GIF file.\n");
-    puts("Parameters\n");
-    puts("   mu:<number>           length penalty (default 0.25)");
-    puts("   nu:<number>           area penalty (default 0.0)");
-    puts("   lambda1:<number>      fit weight inside the cuve (default 1.0)");
-    puts("   lambda2:<number>      fit weight outside the curve (default 1.0)");
-    puts("   phi0:<file>           read initial level set from an image or text file");
-    puts("   tol:<number>          convergence tolerance (default 1e-3)");
-    puts("   maxiter:<number>      maximum number of iterations (default 500)");
-    puts("   dt:<number>           time step (default 0.5)\n");
-    puts("   iterperframe:<number> iterations per frame (default 10)\n");
-#ifdef LIBJPEG_SUPPORT
-    puts("   jpegquality:<number>  Quality for saving JPEG images (0 to 100)\n");
-#endif
-    puts("Example:\n"    
-#ifdef LIBPNG_SUPPORT
-    "   chanvese tol:1e-5 mu:0.5 input.png animation.gif final.png\n");
-#else    
-    "   chanvese tol:1e-5 mu:0.5 input.bmp animation.gif final.bmp\n");    
-#endif    
-}
 
 
-static int PlotFun(int State, int Iter, num Delta,
-    const num *c1, const num *c2, const num *Phi,
-    int Width, int Height, int NumChannels, void *ParamPtr);
+
+
 static int ParseParam(programparams *Param, int argc, const char *argv[]);
 static int PhiRescale(image *Phi);
 
@@ -167,7 +138,7 @@ static int SetParam(programparams *Param, num *Contour, image *input)
 /*Try to make a light main that take a stream of images as input and 
 send a set of image as output*/
 
-int Active_Contour (num *Contour, image *ImageInput,num *OutPut)/* Dopo chiederà in ingresso : num *Phi , num *InputImage , num *Output, int Width , int Height(last two are inside the Image output)*/
+int Active_Contour (num *Contour, image *ImageInput,num *OutPut)/* Dopo chiederà in ingresso : num *Phi , num *InputImage , num *Output, int Width , int Height, int Num channel(last three are inside the Image output)*/
 {
 	
    
@@ -199,7 +170,9 @@ int Active_Contour (num *Contour, image *ImageInput,num *OutPut)/* Dopo chieder�
         
 	 	Param.InputFile[tmp]='\0';
           
-		
+		/* Read the input image */
+    	if(!ReadImageObj(&f, Param.InputFile))  /*f dovrà essere data, height e width */
+        	goto Catch;
 
 		 
 		if(Param.Phi.Data && 
