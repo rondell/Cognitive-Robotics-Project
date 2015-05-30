@@ -72,114 +72,39 @@ CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o.provides: CMakeFiles/Cognit
 
 CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o.provides.build: CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o
 
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o: CMakeFiles/Cognitive-Robotics-Project.dir/flags.make
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o: lib/Camera.cpp
+CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o: CMakeFiles/Cognitive-Robotics-Project.dir/flags.make
+CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o: src/Camera.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o -c /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o -c /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/src/Camera.cpp
 
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/Camera.cpp > CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.i
+CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/src/Camera.cpp > CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.i
 
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/Camera.cpp -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.s
+CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/src/Camera.cpp -o CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.s
 
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.requires:
-.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.requires
+CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o.requires:
+.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o.requires
 
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.provides: CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.provides.build
-.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.provides
+CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o.provides: CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o.provides.build
+.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o.provides
 
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.provides.build: CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o: CMakeFiles/Cognitive-Robotics-Project.dir/flags.make
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o: lib/chanvese/chanvese.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o -c /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/chanvese.cpp
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/chanvese.cpp > CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.i
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/chanvese.cpp -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.s
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o.requires:
-.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o.requires
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o.provides: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o.provides.build
-.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o.provides
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o.provides.build: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o: CMakeFiles/Cognitive-Robotics-Project.dir/flags.make
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o: lib/chanvese/chanvesecli.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o -c /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/chanvesecli.cpp
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/chanvesecli.cpp > CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.i
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/chanvesecli.cpp -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.s
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o.requires:
-.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o.requires
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o.provides: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o.provides.build
-.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o.provides
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o.provides.build: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o: CMakeFiles/Cognitive-Robotics-Project.dir/flags.make
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o: lib/chanvese/cliio.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o -c /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/cliio.cpp
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/cliio.cpp > CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.i
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese/cliio.cpp -o CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.s
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o.requires:
-.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o.requires
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o.provides: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o.provides.build
-.PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o.provides
-
-CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o.provides.build: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o
+CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o.provides.build: CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o
 
 # Object files for target Cognitive-Robotics-Project
 Cognitive__Robotics__Project_OBJECTS = \
 "CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o" \
-"CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o" \
-"CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o" \
-"CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o" \
-"CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o"
+"CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o"
 
 # External object files for target Cognitive-Robotics-Project
 Cognitive__Robotics__Project_EXTERNAL_OBJECTS =
 
 Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o
-Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o
-Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o
-Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o
-Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o
+Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o
 Cognitive-Robotics-Project: CMakeFiles/Cognitive-Robotics-Project.dir/build.make
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_videostab.3.0.0.dylib
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_ts.a
@@ -189,6 +114,7 @@ Cognitive-Robotics-Project: /usr/local/lib/libopencv_shape.3.0.0.dylib
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_photo.3.0.0.dylib
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_objdetect.3.0.0.dylib
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_calib3d.3.0.0.dylib
+Cognitive-Robotics-Project: libChanvese.a
 Cognitive-Robotics-Project: /usr/local/share/OpenCV/3rdparty/lib/libippicv.a
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_features2d.3.0.0.dylib
 Cognitive-Robotics-Project: /usr/local/lib/libopencv_ml.3.0.0.dylib
@@ -208,10 +134,7 @@ CMakeFiles/Cognitive-Robotics-Project.dir/build: Cognitive-Robotics-Project
 .PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/build
 
 CMakeFiles/Cognitive-Robotics-Project.dir/requires: CMakeFiles/Cognitive-Robotics-Project.dir/main.cpp.o.requires
-CMakeFiles/Cognitive-Robotics-Project.dir/requires: CMakeFiles/Cognitive-Robotics-Project.dir/lib/Camera.cpp.o.requires
-CMakeFiles/Cognitive-Robotics-Project.dir/requires: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvese.cpp.o.requires
-CMakeFiles/Cognitive-Robotics-Project.dir/requires: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/chanvesecli.cpp.o.requires
-CMakeFiles/Cognitive-Robotics-Project.dir/requires: CMakeFiles/Cognitive-Robotics-Project.dir/lib/chanvese/cliio.cpp.o.requires
+CMakeFiles/Cognitive-Robotics-Project.dir/requires: CMakeFiles/Cognitive-Robotics-Project.dir/src/Camera.cpp.o.requires
 .PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/requires
 
 CMakeFiles/Cognitive-Robotics-Project.dir/clean:

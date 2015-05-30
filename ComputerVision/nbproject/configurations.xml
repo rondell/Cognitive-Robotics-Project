@@ -14,6 +14,12 @@
         <in>feature_tests.c</in>
         <in>feature_tests.cxx</in>
       </df>
+      <df name="libs">
+        <df name="chanvese">
+          <in>contour.c</in>
+          <in>contour.h</in>
+        </df>
+      </df>
       <in>main.cpp</in>
     </df>
     <logicalFolder name="ExternalFiles"
@@ -44,14 +50,24 @@
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>Cognitive-Robotics-Project</executablePath>
-          <ccTool>
+          <cTool>
             <incDir>
-              <pElem>lib</pElem>
-              <pElem>lib/chanvese</pElem>
+              <pElem>libs/chanvese</pElem>
+              <pElem>src</pElem>
             </incDir>
             <incFile>
               <pElem>include</pElem>
-              <pElem>include/chanvese</pElem>
+              <pElem>libs/chanvese</pElem>
+            </incFile>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>libs/chanvese</pElem>
+              <pElem>src</pElem>
+            </incDir>
+            <incFile>
+              <pElem>include</pElem>
+              <pElem>libs/chanvese</pElem>
             </incFile>
           </ccTool>
         </makeTool>
@@ -69,6 +85,32 @@
       <item path="CMakeFiles/feature_tests.c" ex="false" tool="0" flavor2="2">
       </item>
       <item path="CMakeFiles/feature_tests.cxx" ex="false" tool="1" flavor2="4">
+      </item>
+      <folder path="0">
+        <cTool>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>libs</pElem>
+          </incDir>
+          <incFile>
+            <pElem>include</pElem>
+            <pElem>libs</pElem>
+          </incFile>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>libs</pElem>
+          </incDir>
+          <incFile>
+            <pElem>include</pElem>
+            <pElem>libs</pElem>
+          </incFile>
+        </ccTool>
+      </folder>
+      <item path="libs/chanvese/contour.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="libs/chanvese/contour.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="4">
       </item>

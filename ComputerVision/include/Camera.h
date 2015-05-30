@@ -8,8 +8,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
-#include "chanvese/cliio.h"
-#include "chanvese/chanvesecli.h"
+#include "chanvese/contour.h"
 
 using namespace cv;
 using namespace std;

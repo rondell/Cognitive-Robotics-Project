@@ -53,13 +53,48 @@ CMAKE_SOURCE_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/Compu
 CMAKE_BINARY_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision
 
 #=============================================================================
+# Target rules for target CMakeFiles/Chanvese.dir
+
+# All Build rule for target.
+CMakeFiles/Chanvese.dir/all:
+	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/depend
+	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles  1 2 3 4
+	@echo "Built target Chanvese"
+.PHONY : CMakeFiles/Chanvese.dir/all
+
+# Include target in all.
+all: CMakeFiles/Chanvese.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Chanvese.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Chanvese.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 0
+.PHONY : CMakeFiles/Chanvese.dir/rule
+
+# Convenience name for target.
+Chanvese: CMakeFiles/Chanvese.dir/rule
+.PHONY : Chanvese
+
+# clean rule for target.
+CMakeFiles/Chanvese.dir/clean:
+	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/clean
+.PHONY : CMakeFiles/Chanvese.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Chanvese.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/Cognitive-Robotics-Project.dir
 
 # All Build rule for target.
-CMakeFiles/Cognitive-Robotics-Project.dir/all:
+CMakeFiles/Cognitive-Robotics-Project.dir/all: CMakeFiles/Chanvese.dir/all
 	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/depend
 	$(MAKE) -f CMakeFiles/Cognitive-Robotics-Project.dir/build.make CMakeFiles/Cognitive-Robotics-Project.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles  1 2 3 4 5
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles  5 6
 	@echo "Built target Cognitive-Robotics-Project"
 .PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/all
 
@@ -69,7 +104,7 @@ all: CMakeFiles/Cognitive-Robotics-Project.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Cognitive-Robotics-Project.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Cognitive-Robotics-Project.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 0
 .PHONY : CMakeFiles/Cognitive-Robotics-Project.dir/rule
