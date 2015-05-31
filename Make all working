@@ -1,0 +1,4 @@
+1. Add the workspace to ROS_PACKAGE_PATH permanently (http://answers.ros.org/question/11459/adding-more-than-one-path-to-ros_package_path/)
+2. Reboot the machine
+3. Create file libPvAPI.conf in /etc/ld.so.conf.d 
+4. run the command sudo ldconfig
