@@ -24,9 +24,16 @@ void Camera::crop(void) {
     bool done = false;
     int x = 279, y = 190, dim = 100;
     Rect box(x, y, dim, dim);
+         
+    float* contour = new float[dim*dim]();
+    float* output = new float[dim*dim]();
+
+    // INIT EXTERNAL CONTOUR 
+    for(int i=0; i<dim*dim; i++)
+        contour[i] = 1;
 
 
-    //while(!done) {
+    while(!done) {
         // Read from camera
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
@@ -47,35 +54,22 @@ void Camera::crop(void) {
 	Mat croppedFp;
         croppedGray.convertTo(croppedFp, CV_32FC1, 1.0/255.5);
         
-        // AT (ROW, COL)
-        cout << "[CAMERA.CPP] First row of matrix" << endl;
-        for(int i=0; i<10; i++)
-            cout << croppedFp.at<float>(0,i) << " " ;
-        cout << endl<< endl;
-        
         // FROM MAT TO ARRAY
         vector<float> array;
         array.assign((float*)croppedFp.datastart, (float*)croppedFp.dataend);
-          
-        cout << "[CAMERA.CPP] First elements of array" << endl;
-        for(int i=0; i<10; i++)
-            cout << array[i] << " " ;
-        cout << endl<< endl;    
         
         // FROM ARRAY TO IMAGE STRUCT
         image frame = {&array[0], dim, dim, 1};
         
-        // VERIFY FIRST ELEMENTS OF IMAGE
-        cout << "[CAMERA.CPP] First elements of image struct" << endl;
-        for(int i=0; i<10; i++)
-            cout << frame.Data[i] << " ";
-        cout << endl<< endl; 
-        
+        // ACTIVE CONTOUR
+        ActiveContour(contour,&frame,output);
+
         //FROM ARRAY TO MAT 
-        Mat M=Mat(dim,dim,CV_32FC1); 
-        memcpy(M.data,frame.Data,dim*dim*sizeof(float));  
-        cout <<  M <<  endl; 
-         
-        ActiveContour(NULL,&frame,NULL);
-        //   }
+        Mat C=Mat(dim,dim,CV_32FC1); 
+        memcpy(C.data,contour,dim*dim*sizeof(float)); 
+        imshow("Contour", C);
+        Mat O=Mat(dim,dim,CV_32FC1); 
+        memcpy(O.data,contour,dim*dim*sizeof(float)); 
+        imshow("Output", O);
+    }
 }

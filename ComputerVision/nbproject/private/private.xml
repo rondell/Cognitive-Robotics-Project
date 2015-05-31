@@ -11,7 +11,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c</file>
-            <file>file:/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/cliio.h</file>
+            <file>file:/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/cliio.c</file>
+            <file>file:/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c</file>
+            <file>file:/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvesecli.c</file>
             <file>file:/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/src/Camera.cpp</file>
             <file>file:/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.h</file>
         </group>
