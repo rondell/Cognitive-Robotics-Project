@@ -1,0 +1,6 @@
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/clean_test_results.dir
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/doxygen.dir
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/gtest/CMakeFiles/gtest.dir
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/gtest/CMakeFiles/gtest_main.dir
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/run_tests.dir
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/tests.dir

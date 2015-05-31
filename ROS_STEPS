@@ -1,0 +1,11 @@
+1. Create catkin_ws
+2. Add catkin_ws to $ROS_PACKAGE_PATH (see ros_path_startup.sh)
+3. [TODO] Create a script that add my catkin_ws to $ROS_PACKAGE_PATH on startup
+4. Download and install prosilica_camera (https://github.com/ros-drivers/prosilica_driver) and prosilica_gige_sdk (https://github.com/ros-drivers/prosilica_gige_sdk) on catkin_ws/src
+5. Download AVT GigE SDK (http://www.alliedvision.com/fileadmin/content/software/software/PvAPI/PvAPI_1.28_Linux.tgz) rename it in AVT_GigE_SDK and install in catkin_ws/src/prosilica_gige_sdk
+6. Download and install g++-4.6 (sudo apt-get install g++-4.6)
+7. From catkin_ws/src/prosilica_gige_sdk/AVT_GigE_SDK/examples/ListCameras make sample and make install (don't work without g++-4.6)
+8. Create file libPvAPI.conf in /etc/ld.so.conf.d 
+9. run command sudo ldconfig
+10. run rosrun prosilica_gige_sdk ListCameras 
+11. enjoy no camera detected ;)
