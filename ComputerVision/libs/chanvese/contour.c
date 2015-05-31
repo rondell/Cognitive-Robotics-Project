@@ -4,10 +4,20 @@
 #include "chanvese/chanvese.h"
 #include "chanvese/chanvesecli.h"
 
-int ActiveContour (float *Contour, image ImageInput,float *OutPut)
+int ActiveContour (float *Contour, image *ImageInput,float *OutPut)
 {    
+
+
 	programparams Param;
-	image f = ImageInput;
+	image f = *ImageInput;
+        
+        fprintf(stdout, "[CONTOUR.C] First elements of image struct\n");
+        for(int i=0; i<10; i++)
+            fprintf(stdout, "%f ", f.Data[i]);
+        
+        fprintf(stdout, "\nwidth = %d height = %d channels = %d\n\n", f.Width, f.Height, f.NumChannels);
+        
+        
 	float c1,c2;/*only grayscale images*/
 	int Status=1;
 	int cont = 0;

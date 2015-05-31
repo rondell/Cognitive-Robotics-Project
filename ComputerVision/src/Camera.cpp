@@ -46,23 +46,36 @@ void Camera::crop(void) {
         // Convert to FP (between 0 and 1)
 	Mat croppedFp;
         croppedGray.convertTo(croppedFp, CV_32FC1, 1.0/255.5);
-        /*
+        
         // AT (ROW, COL)
-        cout << "1st row of matrix" << endl;
+        cout << "[CAMERA.CPP] First row of matrix" << endl;
         for(int i=0; i<10; i++)
             cout << croppedFp.at<float>(0,i) << " " ;
-        cout << endl;*/
+        cout << endl<< endl;
         
-        // Reshape in 1D
-        Mat croppedArray = croppedFp.reshape(1,0); 
-         /*
-        cout << "1st element of array" << endl;
+        // FROM MAT TO ARRAY
+        vector<float> array;
+        array.assign((float*)croppedFp.datastart, (float*)croppedFp.dataend);
+          
+        cout << "[CAMERA.CPP] First elements of array" << endl;
         for(int i=0; i<10; i++)
-            cout << croppedArray.at<float>(i,0) << " " ;
-        cout << endl;*/
+            cout << array[i] << " " ;
+        cout << endl<< endl;    
         
-        image frame = {NULL, dim, dim, 1};
+        // FROM ARRAY TO IMAGE STRUCT
+        image frame = {&array[0], dim, dim, 1};
         
-        ActiveContour(NULL,frame,NULL);
+        // VERIFY FIRST ELEMENTS OF IMAGE
+        cout << "[CAMERA.CPP] First elements of image struct" << endl;
+        for(int i=0; i<10; i++)
+            cout << frame.Data[i] << " ";
+        cout << endl<< endl; 
+        
+        //FROM ARRAY TO MAT 
+        Mat M=Mat(dim,dim,CV_32FC1); 
+        memcpy(M.data,frame.Data,dim*dim*sizeof(float));  
+        cout <<  M <<  endl; 
+         
+        ActiveContour(NULL,&frame,NULL);
         //   }
 }

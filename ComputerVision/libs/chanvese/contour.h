@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-int ActiveContour (float *Contour, image ImageInput,float *OutPut);
+int ActiveContour (float *Contour, image *ImageInput,float *OutPut);
 
 #ifdef	__cplusplus
 }
