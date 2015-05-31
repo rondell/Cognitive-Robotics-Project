@@ -22,15 +22,27 @@ Camera::Camera(int device, int width, int height) {
 void Camera::crop(void) {
         
     bool done = false;
-    int x = 279, y = 190, dim = 100;
+    int x = 279, y = 190, dim = 200;
     Rect box(x, y, dim, dim);
-         
-    float* contour = new float[dim*dim]();
-    float* output = new float[dim*dim]();
+    int dim_img=this->width*this->height;
+    
+    
+    float* contour = new float[dim_img]();
+    float* output = new float[dim_img]();
 
     // INIT EXTERNAL CONTOUR 
-    for(int i=0; i<dim*dim; i++)
-        contour[i] = 1;
+    int tmp_init=0;
+    for(int i=0; i<this->width; i++)
+    {
+        for(int j=0; j<this->height;j++)
+        {
+        if ((i>=x || i<=x+dim) && (j>=y || j<=y+dim))
+        contour[tmp_init] = -1;
+        else
+        contour[tmp_init] = 1;
+        tmp_init++;
+        }
+    }
 
 
     while(!done) {
@@ -39,11 +51,12 @@ void Camera::crop(void) {
             cout << "[ERROR] frame not read" << endl;
             return;
         }
-        imshow("Webcam", frame);
+//        imshow("Webcam", frame);
 
         // Crop the image
-        Mat  croppedImage = frame(box);
-        imshow("Cropped", croppedImage);
+        
+        Mat  croppedImage = frame;
+//        imshow("Cropped", croppedImage);
         
 
 	// Convert to grayscale
@@ -59,17 +72,19 @@ void Camera::crop(void) {
         array.assign((float*)croppedFp.datastart, (float*)croppedFp.dataend);
         
         // FROM ARRAY TO IMAGE STRUCT
-        image frame = {&array[0], dim, dim, 1};
+        image frame = {&array[0], this->width, this->height, 1};
         
         // ACTIVE CONTOUR
         ActiveContour(contour,&frame,output);
+        
+        
 
         //FROM ARRAY TO MAT 
-        Mat C=Mat(dim,dim,CV_32FC1); 
-        memcpy(C.data,contour,dim*dim*sizeof(float)); 
-        imshow("Contour", C);
-        Mat O=Mat(dim,dim,CV_32FC1); 
-        memcpy(O.data,contour,dim*dim*sizeof(float)); 
+//        Mat C=Mat(dim,dim,CV_32FC1); 
+//        memcpy(C.data,contour,dim_img*sizeof(float)); 
+//        imshow("Contour", C);
+        Mat O=Mat(this->height,this->width,CV_32FC1); 
+        memcpy(O.data,output,dim_img*sizeof(float)); 
         imshow("Output", O);
     }
 }

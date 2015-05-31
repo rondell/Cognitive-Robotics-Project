@@ -12,25 +12,15 @@
           </df>
         </df>
         <df name="Chanvese.dir">
-          <df name="lib">
-          </df>
           <df name="libs">
             <df name="chanvese">
             </df>
           </df>
-          <df name="src">
-            <df name="chanvese">
-            </df>
-          </df>
+        </df>
+        <df name="CMakeTmp">
         </df>
         <df name="Cognitive-Robotics-Project.dir">
-          <df name="lib">
-            <df name="chanvese">
-            </df>
-          </df>
           <df name="src">
-            <df name="chanvese">
-            </df>
           </df>
         </df>
         <in>feature_tests.c</in>
@@ -38,6 +28,10 @@
       </df>
       <df name="include">
         <in>Camera.h</in>
+      </df>
+      <df name="lib">
+        <df name="chanvese_20120715">
+        </df>
       </df>
       <df name="libs">
         <df name="chanvese">

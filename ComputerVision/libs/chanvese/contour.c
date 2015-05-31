@@ -10,9 +10,9 @@ int ActiveContour (float *Contour, image *ImageInput,float *OutPut)
 	image f = *ImageInput;        
 	float c1,c2;/*only grayscale images*/
 	int Status=1;
-	int cont = 0;
+	int cont = 2;
     int tmp=0;
-	char Tmp_in_f[50];
+	
 	/*set the Param*/  	
 	if (!SetParam(&Param, Contour, &f))
 		goto Catch;
@@ -21,17 +21,9 @@ int ActiveContour (float *Contour, image *ImageInput,float *OutPut)
     
 
         
-     	Param.InputFile=Tmp_in_f;
-		cont++;
-        
-        
+     	
 		
-        tmp=strlen(Param.InputFile)-1;
-        
-	 	Param.InputFile[tmp]='\0';
-       
 
-		 
 		if(Param.Phi.Data && 
         (f.Width != Param.Phi.Width || f.Height != Param.Phi.Height))
    	 	{
@@ -58,9 +50,10 @@ int ActiveContour (float *Contour, image *ImageInput,float *OutPut)
 		if( !WriteBinary(Param.Phi, OutPut))
         goto Catch;
 	 
-	
+                return 1;
 	Status = 0;
 Catch:
+     printf("fine??"); 
     FreeImageObj(Param.Phi);
     FreeImageObj(f);
     ChanVeseFreeOpt(Param.Opt);

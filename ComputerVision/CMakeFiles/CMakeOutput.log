@@ -1,4 +1,4 @@
-The system is: Darwin - 14.3.0 - x86_64
+The system is: Darwin - 13.4.0 - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
 Build flags: 
@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is AppleClang, found in "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/3.2.1/CompilerIdC/a.out"
+The C compiler identification is AppleClang, found in "/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/3.2.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
@@ -23,101 +23,101 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is AppleClang, found in "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/3.2.1/CompilerIdCXX/a.out"
+The CXX compiler identification is AppleClang, found in "/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/3.2.1/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2693331942/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2693331942.dir/build.make CMakeFiles/cmTryCompileExec2693331942.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building C object CMakeFiles/cmTryCompileExec2693331942.dir/testCCompiler.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -o CMakeFiles/cmTryCompileExec2693331942.dir/testCCompiler.c.o   -c "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/testCCompiler.c"
-Linking C executable cmTryCompileExec2693331942
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2693331942.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2693331942.dir/testCCompiler.c.o  -o cmTryCompileExec2693331942  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2728481055/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2728481055.dir/build.make CMakeFiles/cmTryCompileExec2728481055.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2728481055.dir/testCCompiler.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2728481055.dir/testCCompiler.c.o   -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec2728481055
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2728481055.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2728481055.dir/testCCompiler.c.o  -o cmTryCompileExec2728481055  
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec3983383236/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3983383236.dir/build.make CMakeFiles/cmTryCompileExec3983383236.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building C object CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -o CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec3983383236
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3983383236.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3983383236   
-Apple LLVM version 6.0 (clang-600.0.56) (based on LLVM 3.5svn)
-Target: x86_64-apple-darwin14.3.0
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2647843128/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2647843128.dir/build.make CMakeFiles/cmTryCompileExec2647843128.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec2647843128
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2647843128.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2647843128   
+Apple LLVM version 6.0 (clang-600.0.57) (based on LLVM 3.5svn)
+Target: x86_64-apple-darwin13.4.0
 Thread model: posix
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.10.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -o cmTryCompileExec3983383236 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.9.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -o cmTryCompileExec2647843128 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a
 @(#)PROGRAM:ld  PROJECT:ld64-241.9
 configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7m armv7em
 Library search paths:
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib
 Framework search paths:
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec3983383236/fast"]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3983383236.dir/build.make CMakeFiles/cmTryCompileExec3983383236.dir/build]
-  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -o CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec3983383236]
-  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3983383236.dir/link.txt --verbose=1]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3983383236   ]
-  ignore line: [Apple LLVM version 6.0 (clang-600.0.56) (based on LLVM 3.5svn)]
-  ignore line: [Target: x86_64-apple-darwin14.3.0]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec2647843128/fast"]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2647843128.dir/build.make CMakeFiles/cmTryCompileExec2647843128.dir/build]
+  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec2647843128]
+  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2647843128.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2647843128   ]
+  ignore line: [Apple LLVM version 6.0 (clang-600.0.57) (based on LLVM 3.5svn)]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
   ignore line: [Thread model: posix]
-  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.10.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -o cmTryCompileExec3983383236 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.9.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -o cmTryCompileExec2647843128 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
     arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
     arg [-demangle] ==> ignore
     arg [-dynamic] ==> ignore
     arg [-arch] ==> ignore
     arg [x86_64] ==> ignore
     arg [-macosx_version_min] ==> ignore
-    arg [10.10.0] ==> ignore
+    arg [10.9.0] ==> ignore
     arg [-syslibroot] ==> ignore
-    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec3983383236] ==> ignore
+    arg [cmTryCompileExec2647843128] ==> ignore
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTryCompileExec3983383236.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec2647843128.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lSystem] ==> lib [System]
     arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
-  Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib]
-  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/]
+  Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/]
   remove lib [System]
   collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
-  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib]
-  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks]
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks]
   implicit libs: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
-  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib]
-  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks]
+  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks]
 
 
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2062809749/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2062809749.dir/build.make CMakeFiles/cmTryCompileExec2062809749.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building C object CMakeFiles/cmTryCompileExec2062809749.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -std=c11 -o CMakeFiles/cmTryCompileExec2062809749.dir/feature_tests.c.o   -c "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/feature_tests.c"
-Linking C executable cmTryCompileExec2062809749
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2062809749.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2062809749.dir/feature_tests.c.o  -o cmTryCompileExec2062809749  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1319199919/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1319199919.dir/build.make CMakeFiles/cmTryCompileExec1319199919.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1319199919.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -std=c11 -o CMakeFiles/cmTryCompileExec1319199919.dir/feature_tests.c.o   -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec1319199919
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1319199919.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec1319199919.dir/feature_tests.c.o  -o cmTryCompileExec1319199919  
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -127,16 +127,16 @@ Linking C executable cmTryCompileExec2062809749
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1369495709/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1369495709.dir/build.make CMakeFiles/cmTryCompileExec1369495709.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building C object CMakeFiles/cmTryCompileExec1369495709.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -std=c99 -o CMakeFiles/cmTryCompileExec1369495709.dir/feature_tests.c.o   -c "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/feature_tests.c"
-Linking C executable cmTryCompileExec1369495709
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1369495709.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec1369495709.dir/feature_tests.c.o  -o cmTryCompileExec1369495709  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2496161134/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2496161134.dir/build.make CMakeFiles/cmTryCompileExec2496161134.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2496161134.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -std=c99 -o CMakeFiles/cmTryCompileExec2496161134.dir/feature_tests.c.o   -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec2496161134
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2496161134.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2496161134.dir/feature_tests.c.o  -o cmTryCompileExec2496161134  
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -146,16 +146,16 @@ Linking C executable cmTryCompileExec1369495709
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2882685803/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2882685803.dir/build.make CMakeFiles/cmTryCompileExec2882685803.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building C object CMakeFiles/cmTryCompileExec2882685803.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -std=c90 -o CMakeFiles/cmTryCompileExec2882685803.dir/feature_tests.c.o   -c "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/feature_tests.c"
-Linking C executable cmTryCompileExec2882685803
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2882685803.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2882685803.dir/feature_tests.c.o  -o cmTryCompileExec2882685803  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2342966878/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2342966878.dir/build.make CMakeFiles/cmTryCompileExec2342966878.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2342966878.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -std=c90 -o CMakeFiles/cmTryCompileExec2342966878.dir/feature_tests.c.o   -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec2342966878
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2342966878.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2342966878.dir/feature_tests.c.o  -o cmTryCompileExec2342966878  
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -163,99 +163,99 @@ Linking C executable cmTryCompileExec2882685803
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec3724019960/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3724019960.dir/build.make CMakeFiles/cmTryCompileExec3724019960.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building CXX object CMakeFiles/cmTryCompileExec3724019960.dir/testCXXCompiler.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -o CMakeFiles/cmTryCompileExec3724019960.dir/testCXXCompiler.cxx.o -c "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
-Linking CXX executable cmTryCompileExec3724019960
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3724019960.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec3724019960.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec3724019960  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3901065789/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3901065789.dir/build.make CMakeFiles/cmTryCompileExec3901065789.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3901065789.dir/testCXXCompiler.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3901065789.dir/testCXXCompiler.cxx.o -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec3901065789
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3901065789.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec3901065789.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec3901065789  
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2616739895/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2616739895.dir/build.make CMakeFiles/cmTryCompileExec2616739895.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building CXX object CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -o CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec2616739895
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2616739895.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2616739895   
-Apple LLVM version 6.0 (clang-600.0.56) (based on LLVM 3.5svn)
-Target: x86_64-apple-darwin14.3.0
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1540788293/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1540788293.dir/build.make CMakeFiles/cmTryCompileExec1540788293.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec1540788293
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1540788293.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1540788293   
+Apple LLVM version 6.0 (clang-600.0.57) (based on LLVM 3.5svn)
+Target: x86_64-apple-darwin13.4.0
 Thread model: posix
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.10.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -o cmTryCompileExec2616739895 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.9.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -o cmTryCompileExec1540788293 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a
 @(#)PROGRAM:ld  PROJECT:ld64-241.9
 configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7m armv7em
 Library search paths:
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib
 Framework search paths:
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec2616739895/fast"]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2616739895.dir/build.make CMakeFiles/cmTryCompileExec2616739895.dir/build]
-  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -o CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec2616739895]
-  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2616739895.dir/link.txt --verbose=1]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2616739895   ]
-  ignore line: [Apple LLVM version 6.0 (clang-600.0.56) (based on LLVM 3.5svn)]
-  ignore line: [Target: x86_64-apple-darwin14.3.0]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec1540788293/fast"]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1540788293.dir/build.make CMakeFiles/cmTryCompileExec1540788293.dir/build]
+  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec1540788293]
+  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1540788293.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1540788293   ]
+  ignore line: [Apple LLVM version 6.0 (clang-600.0.57) (based on LLVM 3.5svn)]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
   ignore line: [Thread model: posix]
-  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.10.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -o cmTryCompileExec2616739895 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.9.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -o cmTryCompileExec1540788293 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
     arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
     arg [-demangle] ==> ignore
     arg [-dynamic] ==> ignore
     arg [-arch] ==> ignore
     arg [x86_64] ==> ignore
     arg [-macosx_version_min] ==> ignore
-    arg [10.10.0] ==> ignore
+    arg [10.9.0] ==> ignore
     arg [-syslibroot] ==> ignore
-    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec2616739895] ==> ignore
+    arg [cmTryCompileExec1540788293] ==> ignore
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTryCompileExec2616739895.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec1540788293.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lc++] ==> lib [c++]
     arg [-lSystem] ==> lib [System]
     arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
-  Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib]
-  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/]
+  Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/]
   remove lib [System]
   collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
-  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib]
-  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks]
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks]
   implicit libs: [c++;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
-  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib]
-  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks]
+  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks]
 
 
 
 
 Detecting CXX [-std=c++1y] compiler features compiled with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1127776329/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1127776329.dir/build.make CMakeFiles/cmTryCompileExec1127776329.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building CXX object CMakeFiles/cmTryCompileExec1127776329.dir/feature_tests.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -std=c++1y -o CMakeFiles/cmTryCompileExec1127776329.dir/feature_tests.cxx.o -c "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTryCompileExec1127776329
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1127776329.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec1127776329.dir/feature_tests.cxx.o  -o cmTryCompileExec1127776329  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2718121483/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2718121483.dir/build.make CMakeFiles/cmTryCompileExec2718121483.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2718121483.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -std=c++1y -o CMakeFiles/cmTryCompileExec2718121483.dir/feature_tests.cxx.o -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec2718121483
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2718121483.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2718121483.dir/feature_tests.cxx.o  -o cmTryCompileExec2718121483  
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -318,16 +318,16 @@ Linking CXX executable cmTryCompileExec1127776329
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec4142210696/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec4142210696.dir/build.make CMakeFiles/cmTryCompileExec4142210696.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building CXX object CMakeFiles/cmTryCompileExec4142210696.dir/feature_tests.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -std=c++11 -o CMakeFiles/cmTryCompileExec4142210696.dir/feature_tests.cxx.o -c "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTryCompileExec4142210696
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4142210696.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec4142210696.dir/feature_tests.cxx.o  -o cmTryCompileExec4142210696  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2346561607/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2346561607.dir/build.make CMakeFiles/cmTryCompileExec2346561607.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2346561607.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -std=c++11 -o CMakeFiles/cmTryCompileExec2346561607.dir/feature_tests.cxx.o -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec2346561607
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2346561607.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2346561607.dir/feature_tests.cxx.o  -o cmTryCompileExec2346561607  
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -390,16 +390,16 @@ Linking CXX executable cmTryCompileExec4142210696
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp
+Change Dir: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1972465959/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1972465959.dir/build.make CMakeFiles/cmTryCompileExec1972465959.dir/build
-/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building CXX object CMakeFiles/cmTryCompileExec1972465959.dir/feature_tests.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk   -std=c++98 -o CMakeFiles/cmTryCompileExec1972465959.dir/feature_tests.cxx.o -c "/Users/emanuelededonatis/Google Drive/Polimi/IMG/Project/Source/ImageAnalysis/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTryCompileExec1972465959
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1972465959.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec1972465959.dir/feature_tests.cxx.o  -o cmTryCompileExec1972465959  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2959302408/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2959302408.dir/build.make CMakeFiles/cmTryCompileExec2959302408.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2959302408.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -std=c++98 -o CMakeFiles/cmTryCompileExec2959302408.dir/feature_tests.cxx.o -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec2959302408
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2959302408.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2959302408.dir/feature_tests.cxx.o  -o cmTryCompileExec2959302408  
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

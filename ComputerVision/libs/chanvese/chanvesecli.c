@@ -43,8 +43,8 @@ int WriteBinary(image Phi, float *Temp)
     const int NumPixels = Phi.Width*Phi.Height;
     int i, Success;
     
-    if(!(Temp = (float *)malloc(Phi.Width*Phi.Height)))
-        return 0;
+    /*if(!(Temp = (float *)malloc(Phi.Width*Phi.Height)))
+        return 0;*/
     
     for(i = 0; i < NumPixels; i++)
          if (Phi.Data[i] > 0 || Phi.Data[i] < -1e-3 )

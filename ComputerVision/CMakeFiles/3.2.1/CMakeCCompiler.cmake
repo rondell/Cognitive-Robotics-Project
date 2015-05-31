@@ -1,7 +1,7 @@
 set(CMAKE_C_COMPILER "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "AppleClang")
-set(CMAKE_C_COMPILER_VERSION "6.0.0.6000056")
+set(CMAKE_C_COMPILER_VERSION "6.0.0.6000057")
 set(CMAKE_C_COMPILE_FEATURES "c_function_prototypes;c_restrict;c_variadic_macros;c_static_assert")
 set(CMAKE_C90_COMPILE_FEATURES "c_function_prototypes")
 set(CMAKE_C99_COMPILE_FEATURES "c_restrict;c_variadic_macros")
@@ -56,8 +56,8 @@ endif()
 
 
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.0/lib/darwin/libclang_rt.osx.a")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib")
-set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib")
+set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks")
 
 
 

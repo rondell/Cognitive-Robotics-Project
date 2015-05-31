@@ -42,10 +42,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision
+CMAKE_SOURCE_DIR = /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision
+CMAKE_BINARY_DIR = /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/Compu
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/Applications/CMake.app/Contents/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CMake.app/Contents/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

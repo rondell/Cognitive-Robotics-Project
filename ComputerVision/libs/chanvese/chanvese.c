@@ -127,8 +127,7 @@ static struct chanvesestruct DefaultChanVeseOpt =
 int ChanVese(float *Phi, const float *f, 
     int Width, int Height, int NumChannels, const chanveseopt *Opt,int cont)
 {
-    int (*PlotFun)(int, int, float, const float*, const float*, const float*, 
-        int, int, int, void*);
+    
     const long NumPixels = ((long)Width) * ((long)Height);
     const long NumEl = NumPixels * NumChannels;
     const float *fPtr, *fPtr2;
@@ -157,8 +156,7 @@ int ChanVese(float *Phi, const float *f,
     PhiDiffNorm = (PhiTol > 0) ? PhiTol*1000 : 1000;
     
     
-    if (cont==1) MaxIter=40;
-    else MaxIter = 5;
+    MaxIter = 1;
     
     if(NumChannels > 1)
     {
@@ -174,12 +172,9 @@ int ChanVese(float *Phi, const float *f,
     
     RegionAverages(c1, c2, Phi, f, Width, Height, NumChannels);
     
-    if(PlotFun)
-        if(!PlotFun(0, 0, PhiDiffNorm, c1, c2, Phi,
-                Width, Height, NumChannels, Opt->PlotParam))
-            goto Done;
     
-    printf("Hei Hei Hei this is the Height : %d",Height);
+    
+   
     
     for(Iter = 1; Iter <= MaxIter; Iter++)
     {
@@ -258,21 +253,17 @@ int ChanVese(float *Phi, const float *f,
         if(Iter >= 500 && PhiDiffNorm <= PhiTol)
             break;
         
-        if(PlotFun)
-            if(!PlotFun(0, Iter, PhiDiffNorm, c1, c2, Phi,
-                    Width, Height, NumChannels, Opt->PlotParam))
-               goto Done;
+       
     }
 
     Success = (Iter <= MaxIter) ? 1:2;
 
-    if(PlotFun)
-        PlotFun(Success, (Iter <= MaxIter) ? Iter:MaxIter, 
-            PhiDiffNorm, c1, c2, Phi, 
-            Width, Height, NumChannels, Opt->PlotParam);
+   
         
-    
-Done:        
+    return 1;
+Done:   
+            
+       
     if(NumChannels > 1)
     {
         Free(c2);
