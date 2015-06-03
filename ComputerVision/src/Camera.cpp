@@ -58,7 +58,7 @@ void Camera::crop(float *contour, float *output) {
         
         // Convert to FP (between 0 and 1)
 	Mat croppedFp;
-        croppedGray.convertTo(croppedFp, CV_32FC1, 0.0/1.0);
+        croppedGray.convertTo(croppedFp, CV_32FC1, 1/255.0);
         
         // FROM MAT TO ARRAY
         vector<float> array;
@@ -96,13 +96,19 @@ void Camera::init_active_con(float *contour,float *output)
     cout<<"initialization ..."<<endl;
     //read the test image
     test_image=imread("./train/test_image.jpg",1);
+    imshow("imread", test_image);
     //convert to grayscale
     cvtColor(test_image, test_image, COLOR_RGB2GRAY);
+    imshow("gray", test_image);
+
     //use value between 0 and 1
-    test_image.convertTo(test_image, CV_32FC1, 0.0/1.0);
+    test_image.convertTo(test_image, CV_32FC1, 1/255.0);
+    imshow("fp", test_image);
+    
     //convert the image into an array
     vector<float> test_array;
     test_array.assign((float*)test_image.datastart, (float*)test_image.dataend);
+
     //make the struct image
     image test_img = {&test_array[0], this->width, this->height, 1};
     
