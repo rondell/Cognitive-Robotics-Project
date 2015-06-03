@@ -7,8 +7,20 @@
 #define _CHANVESE_H_
 
 typedef float num;
-
-typedef struct chanvesestruct chanveseopt;
+/** @brief Options handling for ChanVese */
+typedef struct chanvesestruct
+{
+    num Tol;
+    int MaxIter;
+    num Mu;
+    num Nu;
+    num Lambda1;
+    num Lambda2;
+    num dt;
+    int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
+        int, int, int, void*);
+    void *PlotParam;
+}chanveseopt;
 
 /** @brief struct representing an image */
 typedef struct

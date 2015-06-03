@@ -113,7 +113,7 @@ void Camera::init_active_con(float *contour,float *output)
     //make the struct image
     
     InitContour(contour, width, height);
-    for (it = 0 ; it<3; it++)
+    for (it = 0 ; it<25; it++)
     {
         
           ActiveContour(&test_array[0], output, contour, width, height);
@@ -148,7 +148,7 @@ void Camera::init_active_con(float *contour,float *output)
 
     //make the struct image
     
-    for (it = 0 ; it<5; it++)
+    for (it = 0 ; it<25; it++)
     {
    
           ActiveContour(&test_array2[0], output, contour, width, height);
@@ -166,27 +166,29 @@ void Camera::init_active_con(float *contour,float *output)
     while (waitKey(10) == -1);
     
     while(1) {
-    capture.read(frame);
-    // Convert to grayscale
+        if (capture.read(frame) == NULL) {
+            cout << "[ERROR] frame not read" << endl;
+            return;
+        }  
+        
+        //imshow("frame", frame);// Convert to grayscale
 	Mat gray;
 	cvtColor(frame, gray, COLOR_RGB2GRAY);
         
         // Convert to FP (between 0 and 1)
 	Mat imgFp;
         gray.convertTo(imgFp, CV_32FC1, 1/255.0);
-        imshow("imgFp", imgFp);
         
         // FROM MAT TO ARRAY
-        vector<float> array;
-        array.assign((float*)imgFp.datastart, (float*)imgFp.dataend);
-        
-    for (it = 0 ; it<3; it++)
-    {
-    
-          ActiveContour(&array[0], output, contour, width, height);  
+        vector<float> array3;
+        array3.assign((float*)imgFp.datastart, (float*)imgFp.dataend);
+
+
+
+        ActiveContour(&array3[0], output, contour, width, height);  
+                
+        Mat Out3=Mat(this->height,this->width,CV_32FC1); 
+        memcpy(Out3.data,output,this->width*this->height*sizeof(float));  
+        imshow("Output3", Out3);
     }
-    
-          Mat Out=Mat(this->height,this->width,CV_32FC1); 
-          memcpy(Out.data,output,this->width*this->height*sizeof(float));  
-          imshow("Output", Out); }
 }

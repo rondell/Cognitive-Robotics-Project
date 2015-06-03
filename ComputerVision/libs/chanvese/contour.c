@@ -6,8 +6,10 @@ int ActiveContour (float *src, float *dst, float *contour , int width, int heigh
 {        
     num c1[3], c2[3];
     
+    chanveseopt* opt = ChanVeseNewOpt();
+    opt->MaxIter = 1;
     /* Perform the segmentation */
-    if(!ChanVese(contour, src, width, height, 1, ChanVeseNewOpt()))
+    if(!ChanVese(contour, src, width, height, 1, opt))
     {
         fprintf(stderr, "Error in ChanVese.");
         return 0;
@@ -16,10 +18,10 @@ int ActiveContour (float *src, float *dst, float *contour , int width, int heigh
     /* Compute the final region averages */
     RegionAverages(c1, c2, contour, src, width, height, 1);
     
-    printf("\nRegion averages\n");
+    //printf("\nRegion averages\n");
     
     for(int i=0; i<width*height; i++) {
-        contour[i] *= 0.0001;
+        contour[i] *= 0.01;
         dst[i] = (contour[i] >= 0) ? 255 : 0;
     }
     return 1;

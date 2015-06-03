@@ -34,20 +34,7 @@
 #endif
 
 
-/** @brief Options handling for ChanVese */
-struct chanvesestruct
-{
-    num Tol;
-    int MaxIter;
-    num Mu;
-    num Nu;
-    num Lambda1;
-    num Lambda2;
-    num dt;
-    int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
-        int, int, int, void*);
-    void *PlotParam;
-};
+
 
 #ifdef __GNUC__
 int ChanVeseSimplePlot(int State, int Iter, num Delta,
@@ -69,7 +56,7 @@ int ChanVeseSimplePlot(int State, int Iter, num Delta,
 
 /** @brief Default options struct */
 static struct chanvesestruct DefaultChanVeseOpt =
-        {(num)1e-3, 100, (num)0.25, 0, 1, 1, (num)0.5, 
+        {(num)1e-3, 500, (num)0.25, 0, 1, 1, (num)0.5, 
         ChanVeseSimplePlot, NULL};
         
 
@@ -328,7 +315,7 @@ int ChanVeseSimplePlot(int State, int Iter, num Delta,
     int NumChannels,
     void *Param)
 #endif
-{
+{ /*
     switch(State)
     {
     case 0: /* ChanVese is running */
@@ -336,21 +323,21 @@ int ChanVeseSimplePlot(int State, int Iter, num Delta,
            immediately, during the ChanVese computation.  If we use stdout,
            messages might be buffered and not displayed until after ChanVese
            completes, which would defeat the point of having this real-time 
-           plot callback. */
+           plot callback. */ /*
         if(NumChannels == 1)
             fprintf(stderr, "   Iteration %4d     Delta %7.4f     c1 = %6.4f     c2 = %6.4f\r", 
                 Iter, Delta, *c1, *c2);
         else
             fprintf(stderr, "   Iteration %4d     Delta %7.4f\r", Iter, Delta);
         break;
-    case 1: /* Converged successfully */
+    case 1: /* Converged successfully */ /*
         fprintf(stderr, "Converged in %d iterations.                                            \n", 
             Iter);
         break;
-    case 2: /* Maximum iterations exceeded */
+    case 2: /* Maximum iterations exceeded */ /*
         fprintf(stderr, "Maximum number of iterations exceeded.                                 \n");
         break;
-    }
+    }*/
     return 1;
 }
 
