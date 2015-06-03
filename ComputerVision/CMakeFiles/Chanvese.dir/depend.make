@@ -3,21 +3,7 @@
 
 CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o: libs/chanvese/chanvese.c
 CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o: libs/chanvese/chanvese.h
-CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o: libs/chanvese/chanvesecli.h
-CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o: libs/chanvese/cliio.h
-
-CMakeFiles/Chanvese.dir/libs/chanvese/chanvesecli.c.o: libs/chanvese/chanvesecli.c
-CMakeFiles/Chanvese.dir/libs/chanvese/chanvesecli.c.o: libs/chanvese/chanvese.h
-CMakeFiles/Chanvese.dir/libs/chanvese/chanvesecli.c.o: libs/chanvese/chanvesecli.h
-CMakeFiles/Chanvese.dir/libs/chanvese/chanvesecli.c.o: libs/chanvese/cliio.h
-
-CMakeFiles/Chanvese.dir/libs/chanvese/cliio.c.o: libs/chanvese/cliio.c
-CMakeFiles/Chanvese.dir/libs/chanvese/cliio.c.o: libs/chanvese/chanvese.h
-CMakeFiles/Chanvese.dir/libs/chanvese/cliio.c.o: libs/chanvese/chanvesecli.h
-CMakeFiles/Chanvese.dir/libs/chanvese/cliio.c.o: libs/chanvese/cliio.h
 
 CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o: libs/chanvese/contour.c
 CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o: libs/chanvese/chanvese.h
-CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o: libs/chanvese/chanvesecli.h
-CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o: libs/chanvese/cliio.h
 

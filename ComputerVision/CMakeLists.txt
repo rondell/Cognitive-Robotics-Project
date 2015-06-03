@@ -22,10 +22,6 @@ add_executable( Cognitive-Robotics-Project ${SOURCE_FILES})
 add_library (Chanvese 
 	${LIB_DIR}/chanvese/chanvese.c
 	${LIB_DIR}/chanvese/chanvese.h
-	${LIB_DIR}/chanvese/chanvesecli.c
-	${LIB_DIR}/chanvese/chanvesecli.h
-	${LIB_DIR}/chanvese/cliio.c
-	${LIB_DIR}/chanvese/cliio.h
 	${LIB_DIR}/chanvese/contour.c
 	${LIB_DIR}/chanvese/contour.h)
 

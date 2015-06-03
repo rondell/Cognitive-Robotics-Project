@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c
 math.h
 -
 stdlib.h
@@ -15,62 +15,18 @@ stdio.h
 -
 string.h
 -
-chanvese/cliio.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/cliio.h
-chanvese/chanvese.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvese.h
-chanvese/chanvesecli.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvesecli.h
+chanvese.h
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.h
 
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvesecli.c
-math.h
--
-stdlib.h
--
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.h
+
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c
 stdio.h
 -
 string.h
 -
-chanvese/cliio.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/cliio.h
 chanvese/chanvese.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvese.h
-chanvese/chanvesecli.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvesecli.h
-
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/cliio.c
-ctype.h
--
-math.h
--
-stdio.h
--
-stdlib.h
--
-string.h
--
-chanvese/cliio.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/cliio.h
-chanvese/chanvese.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvese.h
-chanvese/chanvesecli.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvesecli.h
-
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c
-stdio.h
--
-string.h
--
-chanvese/cliio.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/cliio.h
-chanvese/chanvese.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvese.h
-chanvese/chanvesecli.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvesecli.h
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvese.h
 
 libs/chanvese/chanvese.h
-
-libs/chanvese/chanvesecli.h
-
-libs/chanvese/cliio.h
 

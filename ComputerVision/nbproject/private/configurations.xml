@@ -17,8 +17,6 @@
             </df>
           </df>
         </df>
-        <df name="CMakeTmp">
-        </df>
         <df name="Cognitive-Robotics-Project.dir">
           <df name="src">
           </df>
@@ -37,10 +35,6 @@
         <df name="chanvese">
           <in>chanvese.c</in>
           <in>chanvese.h</in>
-          <in>chanvesecli.c</in>
-          <in>chanvesecli.h</in>
-          <in>cliio.c</in>
-          <in>cliio.h</in>
           <in>contour.c</in>
           <in>contour.h</in>
         </df>

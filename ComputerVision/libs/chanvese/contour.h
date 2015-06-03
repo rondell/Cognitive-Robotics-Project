@@ -2,13 +2,13 @@
 #ifndef CONTOUR_H
 #define	CONTOUR_H
 
-#include "chanvese/cliio.h"
-
 #ifdef	__cplusplus
 extern "C" {
 #endif
 
-int ActiveContour (float *Contour, image *ImageInput,float *OutPut, int init);
+int ActiveContour (float *src, float *dst, float *contour , int width, int height);
+
+void InitContour(float *contour, int Width, int Height);
 
 #ifdef	__cplusplus
 }

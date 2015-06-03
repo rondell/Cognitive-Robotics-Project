@@ -42,10 +42,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision
+CMAKE_SOURCE_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision
+CMAKE_BINARY_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/Applications/CMake.app/Contents/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CMake.app/Contents/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,54 +150,6 @@ libs/chanvese/chanvese.s: libs/chanvese/chanvese.c.s
 libs/chanvese/chanvese.c.s:
 	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.s
 .PHONY : libs/chanvese/chanvese.c.s
-
-libs/chanvese/chanvesecli.o: libs/chanvese/chanvesecli.c.o
-.PHONY : libs/chanvese/chanvesecli.o
-
-# target to build an object file
-libs/chanvese/chanvesecli.c.o:
-	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/libs/chanvese/chanvesecli.c.o
-.PHONY : libs/chanvese/chanvesecli.c.o
-
-libs/chanvese/chanvesecli.i: libs/chanvese/chanvesecli.c.i
-.PHONY : libs/chanvese/chanvesecli.i
-
-# target to preprocess a source file
-libs/chanvese/chanvesecli.c.i:
-	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/libs/chanvese/chanvesecli.c.i
-.PHONY : libs/chanvese/chanvesecli.c.i
-
-libs/chanvese/chanvesecli.s: libs/chanvese/chanvesecli.c.s
-.PHONY : libs/chanvese/chanvesecli.s
-
-# target to generate assembly for a file
-libs/chanvese/chanvesecli.c.s:
-	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/libs/chanvese/chanvesecli.c.s
-.PHONY : libs/chanvese/chanvesecli.c.s
-
-libs/chanvese/cliio.o: libs/chanvese/cliio.c.o
-.PHONY : libs/chanvese/cliio.o
-
-# target to build an object file
-libs/chanvese/cliio.c.o:
-	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/libs/chanvese/cliio.c.o
-.PHONY : libs/chanvese/cliio.c.o
-
-libs/chanvese/cliio.i: libs/chanvese/cliio.c.i
-.PHONY : libs/chanvese/cliio.i
-
-# target to preprocess a source file
-libs/chanvese/cliio.c.i:
-	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/libs/chanvese/cliio.c.i
-.PHONY : libs/chanvese/cliio.c.i
-
-libs/chanvese/cliio.s: libs/chanvese/cliio.c.s
-.PHONY : libs/chanvese/cliio.s
-
-# target to generate assembly for a file
-libs/chanvese/cliio.c.s:
-	$(MAKE) -f CMakeFiles/Chanvese.dir/build.make CMakeFiles/Chanvese.dir/libs/chanvese/cliio.c.s
-.PHONY : libs/chanvese/cliio.c.s
 
 libs/chanvese/contour.o: libs/chanvese/contour.c.o
 .PHONY : libs/chanvese/contour.o
@@ -284,12 +236,6 @@ help:
 	@echo "... libs/chanvese/chanvese.o"
 	@echo "... libs/chanvese/chanvese.i"
 	@echo "... libs/chanvese/chanvese.s"
-	@echo "... libs/chanvese/chanvesecli.o"
-	@echo "... libs/chanvese/chanvesecli.i"
-	@echo "... libs/chanvese/chanvesecli.s"
-	@echo "... libs/chanvese/cliio.o"
-	@echo "... libs/chanvese/cliio.i"
-	@echo "... libs/chanvese/cliio.s"
 	@echo "... libs/chanvese/contour.o"
 	@echo "... libs/chanvese/contour.i"
 	@echo "... libs/chanvese/contour.s"
