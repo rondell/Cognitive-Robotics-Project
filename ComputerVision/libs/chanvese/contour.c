@@ -4,7 +4,7 @@
 #include "chanvese/chanvese.h"
 #include "chanvese/chanvesecli.h"
 
-int ActiveContour (float *Contour, image *ImageInput,float *OutPut)
+int ActiveContour (float *Contour, image *ImageInput,float *OutPut , int init)
 {    
 	programparams Param;
 	image f = *ImageInput;        
@@ -17,7 +17,11 @@ int ActiveContour (float *Contour, image *ImageInput,float *OutPut)
 	if (!SetParam(&Param, Contour, &f))
 		goto Catch;
 	
-   
+    if (init==1){
+        
+        ChanVeseInitPhi(Param.Phi.Data, f.Width, f.Height, 0 );
+        
+    }
     
 
         
@@ -38,7 +42,7 @@ int ActiveContour (float *Contour, image *ImageInput,float *OutPut)
 		 
 		  /* Perform the segmentation */
    	 	if(!ChanVese(Param.Phi.Data, f.Data, 
-        	f.Width, f.Height, f.NumChannels, Param.Opt,cont))
+        	f.Width, f.Height, f.NumChannels, Param.Opt,init))
     	{
         	fprintf(stderr, "Error in ChanVese.");
         	goto Catch;
@@ -50,10 +54,13 @@ int ActiveContour (float *Contour, image *ImageInput,float *OutPut)
 		if( !WriteBinary(Param.Phi, OutPut))
         goto Catch;
 	 
+    
+    
+    
                 return 1;
 	Status = 0;
 Catch:
-     printf("fine??"); 
+     
     FreeImageObj(Param.Phi);
     FreeImageObj(f);
     ChanVeseFreeOpt(Param.Opt);

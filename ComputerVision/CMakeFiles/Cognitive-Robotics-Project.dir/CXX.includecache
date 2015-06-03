@@ -17,6 +17,8 @@ Camera.h
 /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/src/Camera.cpp
 Camera.h
 /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/src/Camera.h
+unistd.h
+-
 
 /usr/share/opencv-3.0.0-rc1/include/opencv/cxcore.h
 opencv2/core/core_c.h

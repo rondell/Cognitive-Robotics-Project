@@ -21,10 +21,14 @@ public:
 	int height;
 
 	Camera(int device, int width, int height);
-        void crop(void);
+        void crop(float *contour, float *output);
+        void OpenCamera(int device, int width, int height);
+        void init_active_con(float *contour,float *output);
 private:
 	Mat frame;
 	VideoCapture capture;
+        void build_array(Mat M,float *out_arr);
+        void build_Mat(Mat out,float *inp);
 };
 
 #endif

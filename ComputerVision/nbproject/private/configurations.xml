@@ -48,6 +48,8 @@
       <df name="src">
         <in>Camera.cpp</in>
       </df>
+      <df name="train">
+      </df>
       <in>main.cpp</in>
     </df>
   </logicalFolder>

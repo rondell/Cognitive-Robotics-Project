@@ -47,17 +47,20 @@ int WriteBinary(image Phi, float *Temp)
         return 0;*/
     
     for(i = 0; i < NumPixels; i++)
-         if (Phi.Data[i] > 0 || Phi.Data[i] < -1e-3 )
+    {
+         if (Phi.Data[i] >= 0  )
             {
                  Temp[i] = 255;
-                 Phi.Data[i]=Phi.Data[i]*0.0001;
-                 
-            }else 
-                {
-                Temp[i]=0;
-                Phi.Data[i]=Phi.Data[i]*0.0001;
+                 Phi.Data[i]=Phi.Data[i]*1;
+               
             }
-    
+        if (Phi.Data[i]<0)
+                {
+             
+                Temp[i]=0;
+                Phi.Data[i]=Phi.Data[i]*1;
+            }
+    }
   
     
     

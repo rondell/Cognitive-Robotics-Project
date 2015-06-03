@@ -136,51 +136,36 @@ int ChanVese(float *Phi, const float *f,
     float c1Scalar, c2Scalar, Mu, Nu, Lambda1, Lambda2, dt;
     float PhiLast, Delta, PhiX, PhiY, IDivU, IDivD, IDivL, IDivR;
     float Temp1, Temp2, Dist1, Dist2, PhiTol;
-    int Iter, i, j, Channel, MaxIter, Success = 2;
+    int  i, j, Channel,  Success = 2;
     int iu, id, il, ir;
     
+    int Iter, MaxIter;
+    
+/*
     if(!Phi || !f || Width <= 0 || Height <= 0 || NumChannels <= 0)
         return 0;
     
     if (!Opt)
         Opt = &DefaultChanVeseOpt;
+*/
     
     Mu = Opt->Mu;
     Nu = Opt->Nu;
     Lambda1 = Opt->Lambda1;
     Lambda2 = Opt->Lambda2;
     dt = Opt->dt;
-    MaxIter = Opt->MaxIter;
-    PlotFun = Opt->PlotFun;
-    PhiTol = Opt->Tol;
-    PhiDiffNorm = (PhiTol > 0) ? PhiTol*1000 : 1000;
     
-    
-    MaxIter = 1;
-    
-    if(NumChannels > 1)
-    {
-        if(!(c1 = (float*)Malloc(sizeof(float)*NumChannels)) 
-            || !(c2 = (float*)Malloc(sizeof(float)*NumChannels)))
-            return 0;
-    }
+    if (cont > 0 )
+        MaxIter= 10;
     else
-    {
-        c1 = &c1Scalar;
-        c2 = &c2Scalar;
-    }
-    
-    RegionAverages(c1, c2, Phi, f, Width, Height, NumChannels);
-    
-    
-    
+        MaxIter=1;
+        
    
-    
-    for(Iter = 1; Iter <= MaxIter; Iter++)
+    for (Iter = 0; Iter<MaxIter ; Iter++ )
     {
         PhiPtr = Phi;
         fPtr = f;
-        PhiDiffNorm = 0;
+        
         
         for(j = 0; j < Height; j++)
         {
@@ -242,21 +227,14 @@ int ChanVese(float *Phi, const float *f,
                             + PhiPtr[id]*IDivD + PhiPtr[iu]*IDivU)
                         - Nu - Lambda1*Dist1 + Lambda2*Dist2) ) /
                     (1 + Delta*Mu*(IDivR + IDivL + IDivD + IDivU));
-                PhiDiff = (PhiPtr[0] - PhiLast);
-                PhiDiffNorm += PhiDiff * PhiDiff;
+                
             }
         }
         
-        PhiDiffNorm = sqrt(PhiDiffNorm/NumEl);        
-        RegionAverages(c1, c2, Phi, f, Width, Height, NumChannels);
-        
-        if(Iter >= 500 && PhiDiffNorm <= PhiTol)
-            break;
-        
-       
-    }
+    }   
+    
 
-    Success = (Iter <= MaxIter) ? 1:2;
+    
 
    
         
@@ -281,15 +259,12 @@ void ChanVeseInitPhi(float *Phi, int Width, int Height,int it)
     
     
     
-    /*prima iterazione: non ho nessun dato*/
-    
+     
     
     for(j = 0; j < Height; j++)
         for(i = 0; i < Width; i++)
             *(Phi++) = (float)(sin(i*M_PI/5.0)*sin(j*M_PI/5.0));
-   
-    /*seconda iterazione in poi : ho un forma da seguire*/
-  
+     
     
     
     

@@ -9,9 +9,15 @@ using namespace std;
  */
 int main() {
     cout << "OpenCV version: " << CV_VERSION << endl;
+    int height=480;
+    int width=640;
     
-    Camera camera(0, 640, 480);
-    camera.crop();
+    float* contour=new float[height*width]();
+    float* output=new float[height*width]();
+    Camera camera(0, width, height);
+    camera.init_active_con(contour,output);
+    camera.OpenCamera(0,width,height);
+    camera.crop(contour,output);
     
     while (1);
 }
