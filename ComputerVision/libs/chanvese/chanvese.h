@@ -51,6 +51,8 @@ void ChanVesePrintOpt(const chanveseopt *Opt);
 
 int ChanVese(num *Phi, const num *f, 
     int Width, int Height, int NumChannels, const chanveseopt *Opt);
+int ChanVese_contour(num *Phi, const num *f, 
+    int Width, int Height, int NumChannels, const chanveseopt *Opt);
 
 void ChanVeseInitPhi(num *Phi, int Width, int Height);
 

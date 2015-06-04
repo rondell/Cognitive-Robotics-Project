@@ -101,7 +101,7 @@ void Camera::init_active_con(float *contour,float *output)
     //convert to grayscale
     cvtColor(test_image, test_image, COLOR_RGB2GRAY);
     imshow("gray", test_image);
-
+    int init=0;
     //use value between 0 and 1
     test_image.convertTo(test_image, CV_32FC1, 1/255.0);
     imshow("fp", test_image);
@@ -116,7 +116,7 @@ void Camera::init_active_con(float *contour,float *output)
     for (it = 0 ; it<25; it++)
     {
         
-          ActiveContour(&test_array[0], output, contour, width, height);
+          ActiveContour(&test_array[0], output, contour, width, height,init);
 
     }
     
@@ -151,7 +151,7 @@ void Camera::init_active_con(float *contour,float *output)
     for (it = 0 ; it<25; it++)
     {
    
-          ActiveContour(&test_array2[0], output, contour, width, height);
+          ActiveContour(&test_array2[0], output, contour, width, height,init);
 
     }
     
@@ -164,7 +164,7 @@ void Camera::init_active_con(float *contour,float *output)
     		
     
     while (waitKey(10) == -1);
-    
+    init=1;
     while(1) {
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
@@ -185,7 +185,7 @@ void Camera::init_active_con(float *contour,float *output)
 
 
 
-        ActiveContour(&array3[0], output, contour, width, height);  
+        ActiveContour(&array3[0], output, contour, width, height,init);  
                 
         Mat Out3=Mat(this->height,this->width,CV_32FC1); 
         memcpy(Out3.data,output,this->width*this->height*sizeof(float));  

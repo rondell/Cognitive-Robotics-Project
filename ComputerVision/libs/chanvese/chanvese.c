@@ -252,6 +252,157 @@ Done:
     return Success;    
 }
 
+int ChanVese_contour(num *Phi, const num *f, 
+    int Width, int Height, int NumChannels, const chanveseopt *Opt)
+{
+    int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
+        int, int, int, void*);
+    const long NumPixels = ((long)Width) * ((long)Height);
+    const long NumEl = NumPixels * NumChannels;
+    const num *fPtr, *fPtr2;
+    double PhiDiffNorm, PhiDiff;
+    num *PhiPtr, *c1 = 0, *c2 = 0;
+    num c1Scalar, c2Scalar, Mu, Nu, Lambda1, Lambda2, dt;
+    num PhiLast, Delta, PhiX, PhiY, IDivU, IDivD, IDivL, IDivR;
+    num Temp1, Temp2, Dist1, Dist2, PhiTol;
+    int Iter, i, j, Channel, MaxIter, Success = 2;
+    int iu, id, il, ir;
+    int cu,cd,cl,cr;
+    
+    if(!Phi || !f || Width <= 0 || Height <= 0 || NumChannels <= 0)
+        return 0;
+    
+    if(!Opt)
+        Opt = &DefaultChanVeseOpt;
+    
+    Mu = Opt->Mu;
+    Nu = Opt->Nu;
+    Lambda1 = Opt->Lambda1;
+    Lambda2 = Opt->Lambda2;
+    dt = Opt->dt;
+    MaxIter = Opt->MaxIter;
+    PlotFun = Opt->PlotFun;
+    PhiTol = Opt->Tol;
+    PhiDiffNorm = (PhiTol > 0) ? PhiTol*1000 : 1000;
+    
+    if(NumChannels > 1)
+    {
+        if(!(c1 = Malloc(sizeof(num)*NumChannels)) 
+            || !(c2 = Malloc(sizeof(num)*NumChannels)))
+            return 0;
+    }
+    else
+    {
+        c1 = &c1Scalar;
+        c2 = &c2Scalar;
+    }
+    
+    RegionAverages(c1, c2, Phi, f, Width, Height, NumChannels);
+    
+    if(PlotFun)
+        if(!PlotFun(0, 0, PhiDiffNorm, c1, c2, Phi,
+                Width, Height, NumChannels, Opt->PlotParam))
+            goto Done;
+    
+    for(Iter = 1; Iter <= MaxIter; Iter++)
+    {
+        PhiPtr = Phi;
+        fPtr = f;
+        PhiDiffNorm = 0;
+        
+        for(j = 0; j < Height; j++)
+        {
+            iu = (j == 0) ? 0 : -Width;
+            id = (j == Height - 1) ? 0 : Width;
+            
+            for(i = 0; i < Width; i++, PhiPtr++, fPtr++)
+            {
+                il = (i == 0) ? 0 : -1;
+                ir = (i == Width - 1) ? 0 : 1;
+                cl=PhiPtr[il]<0;
+                cr=PhiPtr[ir]<0;
+                cd=PhiPtr[id]<0;
+                cu=PhiPtr[iu]<0;
+                
+                if (PhiPtr[0]<0 || (Phi>=0 && ((cu && !cl && !cd && !cr)||(!cu && cl && !cd && !cr)||(!cu && !cl && cd && !cr)||(!cu && !cl && !cd && cr))))
+                {
+                    Delta = dt/(M_PI*(1 + PhiPtr[0]*PhiPtr[0]));
+                    PhiX = PhiPtr[ir] - PhiPtr[0];
+                    PhiY = (PhiPtr[id] - PhiPtr[iu])/2;
+                    IDivR = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                    PhiX = PhiPtr[0] - PhiPtr[il];
+                    IDivL = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                    PhiX = (PhiPtr[ir] - PhiPtr[il])/2;
+                    PhiY =  PhiPtr[id] - PhiPtr[0];
+                    IDivD = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                    PhiY = PhiPtr[0] - PhiPtr[iu];
+                    IDivU = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+
+                    if(NumChannels == 1)
+                    {
+                        Dist1 = fPtr[0] - c1Scalar;
+                        Dist2 = fPtr[0] - c2Scalar;
+                        Dist1 *= Dist1;
+                        Dist2 *= Dist2;
+                    }
+                    else    
+                    {
+                        Dist1 = Dist2 = 0.0;
+
+                        for(Channel = 0, fPtr2 = fPtr; 
+                            Channel < NumChannels; Channel++, fPtr2 += NumPixels)
+                        {
+                            Temp1 = fPtr2[0] - c1[Channel];
+                            Temp2 = fPtr2[0] - c2[Channel];
+                            Dist1 += Temp1*Temp1;
+                            Dist2 += Temp2*Temp2;
+                        }
+                    }
+
+                    /* Semi-implicit update of phi at the current point */
+                    PhiLast = PhiPtr[0];
+                    PhiPtr[0] = (PhiPtr[0] + Delta*(
+                            Mu*(PhiPtr[ir]*IDivR + PhiPtr[il]*IDivL
+                                + PhiPtr[id]*IDivD + PhiPtr[iu]*IDivU)
+                            - Nu - Lambda1*Dist1 + Lambda2*Dist2) ) /
+                        (1 + Delta*Mu*(IDivR + IDivL + IDivD + IDivU));
+                    PhiDiff = (PhiPtr[0] - PhiLast);
+                    PhiDiffNorm += PhiDiff * PhiDiff;
+                }
+            }
+        }
+        
+        PhiDiffNorm = sqrt(PhiDiffNorm/NumEl);        
+        RegionAverages(c1, c2, Phi, f, Width, Height, NumChannels);
+        
+        if(Iter >= 2 && PhiDiffNorm <= PhiTol)
+            break;
+        
+        if(PlotFun)
+            if(!PlotFun(0, Iter, PhiDiffNorm, c1, c2, Phi,
+                    Width, Height, NumChannels, Opt->PlotParam))
+                goto Done;
+    }
+
+    Success = (Iter <= MaxIter) ? 1:2;
+
+    if(PlotFun)
+        PlotFun(Success, (Iter <= MaxIter) ? Iter:MaxIter, 
+            PhiDiffNorm, c1, c2, Phi, 
+            Width, Height, NumChannels, Opt->PlotParam);
+    
+Done:        
+    if(NumChannels > 1)
+    {
+        Free(c2);
+        Free(c1);
+    }
+    
+    return Success;    
+}
+
+
+
 
 /** @brief Default initialization for Phi */
 void ChanVeseInitPhi(num *Phi, int Width, int Height)

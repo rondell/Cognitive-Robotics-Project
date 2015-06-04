@@ -6,7 +6,7 @@
 extern "C" {
 #endif
 
-int ActiveContour (float *src, float *dst, float *contour , int width, int height);
+int ActiveContour (float *src, float *dst, float *contour , int width, int height, int init);
 
 void InitContour(float *contour, int Width, int Height);
 

@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeGenericSystem.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeSystemSpecificInformation.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/Applications/CMake.app/Contents/share/cmake-3.2/Modules/CMakeUnixFindMake.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.2/Modules/Compiler/AppleClang-C.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.2/Modules/Compiler/AppleClang-CXX.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.2/Modules/Compiler/Clang.cmake"
@@ -29,10 +30,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.2.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.2.1/CMakeSystem.cmake"
   "CMakeLists.txt"
-  "/usr/local/share/OpenCV/OpenCVConfig-version.cmake"
-  "/usr/local/share/OpenCV/OpenCVConfig.cmake"
-  "/usr/local/share/OpenCV/OpenCVModules-release.cmake"
-  "/usr/local/share/OpenCV/OpenCVModules.cmake"
+  "/usr/share/opencv-3.0.0-rc1/OpenCVConfig-version.cmake"
+  "/usr/share/opencv-3.0.0-rc1/OpenCVConfig.cmake"
+  "/usr/share/opencv-3.0.0-rc1/OpenCVModules.cmake"
   )
 
 # The corresponding makefile is:
