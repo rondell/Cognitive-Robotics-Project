@@ -16,13 +16,13 @@ using namespace std;
 class Camera
 {
 public:
-	int device;
-	int width;
-	int height;
+	int device = 0;
+	int width = 640;
+	int height = 480;
 
 	Camera(int device, int width, int height);
         void crop(float *contour, float *output);
-        void OpenCamera(int device, int width, int height);
+        void OpenCamera();
         void init_active_con(float *contour,float *output);
 private:
 	Mat frame;

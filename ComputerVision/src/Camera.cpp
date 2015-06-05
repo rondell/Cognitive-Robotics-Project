@@ -7,9 +7,8 @@ Camera::Camera(int device, int width, int height) {
 	cout << "Camera " << this->device << " [" << this->width << "x" << this->height << "]" << endl;
 }
 
-void Camera::OpenCamera(int device, int width, int height)
+void Camera::OpenCamera()
 {
-              
 	cout << "Opening camera ... ";
 	capture.open(device);
 	capture.set(CAP_PROP_FRAME_WIDTH, width);

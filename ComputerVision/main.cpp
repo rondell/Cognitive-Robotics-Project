@@ -15,7 +15,7 @@ int main() {
     float* contour=new float[height*width]();
     float* output=new float[height*width]();
     Camera camera(0, width, height);
-    camera.OpenCamera(0,width,height);
+    camera.OpenCamera();
     camera.init_active_con(contour,output);
     //camera.crop(contour,output);
     
