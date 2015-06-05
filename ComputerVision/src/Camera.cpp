@@ -22,173 +22,74 @@ void Camera::OpenCamera()
 	}
 }
 
-
-void Camera::crop(float *contour, float *output) {
-        
-    bool done = false;
-    int x = 279, y = 190, dim = 50;
-    Rect box(x, y, dim, dim);
-    int dim_img=this->width*this->height;
-
-          
-    int tmp_out_view=0;
-
-    while(!done) {
-        // Read from camera
-        if (capture.read(frame) == NULL) {
-            cout << "[ERROR] frame not read" << endl;
-            return;
-        }
-//        imshow("Webcam", frame);
-
-        // Crop the image
-         if (tmp_out_view == 0)
-        {
-           //do nothing
-            tmp_out_view++;
-        }
-        Mat  croppedImage = frame;
-        //imshow("Cropped", croppedImage);
-        
-
-	// Convert to grayscale
-	Mat croppedGray;
-	cvtColor(croppedImage, croppedGray, COLOR_RGB2GRAY);
-        
-        // Convert to FP (between 0 and 1)
-	Mat croppedFp;
-        croppedGray.convertTo(croppedFp, CV_32FC1, 1/255.0);
-        imshow("croppedFp", croppedFp);
-        
-        // FROM MAT TO ARRAY
-        vector<float> array;
-        array.assign((float*)croppedFp.datastart, (float*)croppedFp.dataend);
-        
-        // FROM ARRAY TO IMAGE STRUCT
-        //image frame = {&array[0], this->width, this->height, 1};
-        
-        // ACTIVE CONTOUR
-        //ActiveContour(contour,&frame,output,0);
-        
-
-        //FROM ARRAY TO MAT 
-        Mat C=Mat(this->height,this->width,CV_32FC1); 
-//        memcpy(C.data,contour,dim_img*sizeof(float)); 
-//        imshow("Contour", C);
-        Mat O=Mat(this->height,this->width,CV_32FC1); 
-        memcpy(O.data,output,dim_img*sizeof(float)); 
-        imshow("Output", O);
-        
-       
-        
-        
-        
-    }
-}
-
-
-//initialization of the algorithm
 void Camera::Follow()
 {
     float* contour=new float[height*width]();
     float* output=new float[height*width]();
-    Mat test_image;
-    int it;
-    cout<<"initialization ..."<<endl;
-    //read the test image
-    test_image=imread("./train/test_image.jpg",1);
-    imshow("imread", test_image);
-    //convert to grayscale
-    cvtColor(test_image, test_image, COLOR_RGB2GRAY);
-    imshow("gray", test_image);
-    int init=0;
-    //use value between 0 and 1
-    test_image.convertTo(test_image, CV_32FC1, 1/255.0);
-    imshow("fp", test_image);
-    
-    //convert the image into an array
-    vector<float> test_array;
-    test_array.assign((float*)test_image.datastart, (float*)test_image.dataend);
 
-    //make the struct image
+    cout << "[START] Active Contour " << endl;
+    
+    // Initialize the reference frame
+    cout << "Initializing the reference frame ...";
+    Mat refFrame = imread("./train/test_image.jpg",1);
+    cvtColor(refFrame, refFrame, COLOR_RGB2GRAY);
+    vector<float> refArray = ToArray(refFrame);
     
     InitContour(contour, width, height);
-    for (it = 0 ; it<25; it++)
+    for (int i = 0 ; i<25; i++)
     {
-        
-          ActiveContour(&test_array[0], output, contour, width, height,init);
-
+          ActiveContour(&refArray[0], output, contour, width, height,0);
     }
     
-          Mat Out=Mat(this->height,this->width,CV_32FC1); 
-          memcpy(Out.data,output,this->width*this->height*sizeof(float));  
-          imshow("Output_1", Out);
+    imshow("Output", ToMat(output, height, width));
     
-    cout<<"initialization completed ..."<<endl;
+    cout << "[OK]" << endl;
     		
-    
     while (waitKey(10) == -1);
 
+    // Follow the 2nd reference frame
+    cout << "Follow the 2nd reference frame ...";
+    refFrame = imread("./train/test_image2.jpg",1);
+    cvtColor(refFrame, refFrame, COLOR_RGB2GRAY);
+    refArray = ToArray(refFrame);
     
-    cout<<"initialization ..."<<endl;
-    //read the test image
-    test_image=imread("./train/test_image2.jpg",1);
-    imshow("imread", test_image);
-    //convert to grayscale
-    cvtColor(test_image, test_image, COLOR_RGB2GRAY);
-    imshow("gray", test_image);
-
-    //use value between 0 and 1
-    test_image.convertTo(test_image, CV_32FC1, 1/255.0);
-    imshow("fp", test_image);
-    
-    //convert the image into an array
-    vector<float> test_array2;
-    test_array2.assign((float*)test_image.datastart, (float*)test_image.dataend);
-
-    //make the struct image
-    
-    for (it = 0 ; it<25; it++)
+    for (int i = 0 ; i<25; i++)
     {
-   
-          ActiveContour(&test_array2[0], output, contour, width, height,init);
-
+          ActiveContour(&refArray[0], output, contour, width, height,0);
     }
     
+    imshow("Output", ToMat(output, height, width));
     
-          Mat Out2=Mat(this->height,this->width,CV_32FC1); 
-          memcpy(Out2.data,output,this->width*this->height*sizeof(float));  
-          imshow("Output_2", Out2);
-    
-    cout<<"initialization completed ..."<<endl;
+    cout << "[OK]" << endl;
     		
-    
     while (waitKey(10) == -1);
-    init=1;
-    while(1) {
+    
+    // Follow the camera
+    cout << "Following the camera ...";
+    while(waitKey(10) == -1) {
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
             return;
         }  
         
-        //imshow("frame", frame);// Convert to grayscale
-	Mat gray;
-	cvtColor(frame, gray, COLOR_RGB2GRAY);
+	cvtColor(frame, frame, COLOR_RGB2GRAY);
         
-        // Convert to FP (between 0 and 1)
-	Mat imgFp;
-        gray.convertTo(imgFp, CV_32FC1, 1/255.0);
-        
-        // FROM MAT TO ARRAY
-        vector<float> array3;
-        array3.assign((float*)imgFp.datastart, (float*)imgFp.dataend);
-
-
-
-        ActiveContour(&array3[0], output, contour, width, height,init);  
-                
-        Mat Out3=Mat(this->height,this->width,CV_32FC1); 
-        memcpy(Out3.data,output,this->width*this->height*sizeof(float));  
-        imshow("Output3", Out3);
+        vector<float> array = ToArray(frame);
+        ActiveContour(&array[0], output, contour, width, height,1);  
+        imshow("Output", ToMat(output, height, width));
     }
+    return;
+}
+
+vector<float> Camera::ToArray(Mat src) {
+    src.convertTo(src, CV_32FC1, 1/255.0);
+    vector<float> array;
+    array.assign((float*)src.datastart, (float*)src.dataend);
+    return array;
+}
+
+Mat Camera::ToMat(float *src, int rows, int cols) {
+    Mat dst = Mat(rows,cols,CV_32FC1); 
+    memcpy(dst.data, src, rows * cols * sizeof(float));  
+    return dst;
 }

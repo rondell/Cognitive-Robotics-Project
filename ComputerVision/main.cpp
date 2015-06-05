@@ -16,6 +16,6 @@ int main() {
     camera.OpenCamera();
     camera.Follow();
     
-    while (1);
+    return 0;
 }
 
