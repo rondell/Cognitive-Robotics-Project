@@ -88,9 +88,10 @@ void Camera::crop(float *contour, float *output) {
 
 
 //initialization of the algorithm
-void Camera::init_active_con(float *contour,float *output)
+void Camera::Follow()
 {
-    
+    float* contour=new float[height*width]();
+    float* output=new float[height*width]();
     Mat test_image;
     int it;
     cout<<"initialization ..."<<endl;

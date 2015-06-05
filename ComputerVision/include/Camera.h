@@ -23,7 +23,7 @@ public:
 	Camera(int device, int width, int height);
         void crop(float *contour, float *output);
         void OpenCamera();
-        void init_active_con(float *contour,float *output);
+        void Follow();
 private:
 	Mat frame;
 	VideoCapture capture;
