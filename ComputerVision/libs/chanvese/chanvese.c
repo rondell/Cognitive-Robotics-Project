@@ -319,12 +319,13 @@ int ChanVese_contour(num *Phi, const num *f,
             {
                 il = (i == 0) ? 0 : -1;
                 ir = (i == Width - 1) ? 0 : 1;
-                cl=PhiPtr[il]<0;
-                cr=PhiPtr[ir]<0;
-                cd=PhiPtr[id]<0;
-                cu=PhiPtr[iu]<0;
                 
-                if (PhiPtr[0]<0 || (Phi>=0 && ((cu && !cl && !cd && !cr)||(!cu && cl && !cd && !cr)||(!cu && !cl && cd && !cr)||(!cu && !cl && !cd && cr))))
+                cl = PhiPtr[il] < 0;
+                cr = PhiPtr[ir] < 0;
+                cd = PhiPtr[id] < 0;
+                cu = PhiPtr[iu] < 0;
+                
+                if (PhiPtr[0]<0 || (Phi>=0 && ((cu + cl + cd + cr == 1))))
                 {
                     Delta = dt/(M_PI*(1 + PhiPtr[0]*PhiPtr[0]));
                     PhiX = PhiPtr[ir] - PhiPtr[0];

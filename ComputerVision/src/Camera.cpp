@@ -47,6 +47,7 @@ void Camera::Follow()
     		
     while (waitKey(10) == -1);
 
+    /*
     // Follow the 2nd reference frame
     cout << "Follow the 2nd reference frame ...";
     refFrame = imread("./train/test_image2.jpg",1);
@@ -62,7 +63,7 @@ void Camera::Follow()
     
     cout << "[OK]" << endl;
     		
-    while (waitKey(10) == -1);
+    while (waitKey(10) == -1);*/
     
     // Follow the camera
     cout << "Following the camera ...";
