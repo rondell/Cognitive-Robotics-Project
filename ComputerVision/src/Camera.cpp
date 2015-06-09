@@ -89,7 +89,7 @@ void Camera::Follow()
     cout << "Following the camera ...";
     cout << flush;
     Point p(-1,-1); Vec3b hsv; Mat mask, gray, HSV; Scalar lowerb, upperb;
-    int erosion_size = 2, dilation_size = 20;
+    int erosion_size = 2, dilation_size = 30;
     Mat erodeElement = getStructuringElement(MORPH_ELLIPSE, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
     Mat dilateElement = getStructuringElement(MORPH_ELLIPSE, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
     vector<float> frameArray, maskArray;
@@ -135,13 +135,7 @@ void Camera::Follow()
                 }
             }
             
-            // LOOP
-            inRange(HSV, lowerb, upperb, mask);        
-            // Erode to remove small object
-            erode(mask, mask, erodeElement);
-            // Dilatate to include nearest points
-            dilate(mask, mask, dilateElement);
-            imshow("mask", mask);
+
 
             frameArray = ToArray(gray);
             maskArray = ToArray(mask);
@@ -169,6 +163,10 @@ void Camera::Follow()
             for( int i = 0; i< contours.size(); i++ )
             {
                 if(boundRect[i].contains(p)) {
+                    mask = Mat(mask.size(), CV_8UC1, Scalar(0));
+                    drawContours( mask, contours, i, Scalar(255), FILLED); 
+                    dilate(mask, mask, dilateElement);
+
                     drawContours( frame, contours, i, Scalar(255,255,255), 1, 8, vector<Vec4i>(), 0, Point() );
                     rectangle( frame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,255,0), 2, 8, 0 );
                     p.x = boundRect[i].tl().x + boundRect[i].size().width/2;
@@ -176,6 +174,8 @@ void Camera::Follow()
                     break;
                 }
             }
+                        imshow("mask", mask);
+
             //imshow( "Contours", drawing );
 
         }
