@@ -28,6 +28,7 @@ private:
 	VideoCapture capture;
         vector<float> ToArray(Mat src);
         Mat ToMat(float *src, int rows, int cols);
+        static void onMouse( int event, int x, int y, int d, void *ptr );
 };
 
 #endif

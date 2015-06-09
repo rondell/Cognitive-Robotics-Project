@@ -111,14 +111,14 @@ static struct chanvesestruct DefaultChanVeseOpt =
  * change between successive iterations is less than Tol.  Set Tol=0 to force
  * the routine to run exactly MaxIter iterations.
  */
-int ChanVese(num *Phi, const num *f, 
+int ChanVese(num *Phi, const num *f, const num *mask,  
     int Width, int Height, int NumChannels, const chanveseopt *Opt)
 {
     int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
         int, int, int, void*);
     const long NumPixels = ((long)Width) * ((long)Height);
     const long NumEl = NumPixels * NumChannels;
-    const num *fPtr, *fPtr2;
+    const num *fPtr, *maskPtr, *fPtr2;
     double PhiDiffNorm, PhiDiff;
     num *PhiPtr, *c1 = 0, *c2 = 0;
     num c1Scalar, c2Scalar, Mu, Nu, Lambda1, Lambda2, dt;
@@ -166,6 +166,7 @@ int ChanVese(num *Phi, const num *f,
     {
         PhiPtr = Phi;
         fPtr = f;
+        maskPtr = mask;
         PhiDiffNorm = 0;
         
         for(j = 0; j < Height; j++)
@@ -173,53 +174,56 @@ int ChanVese(num *Phi, const num *f,
             iu = (j == 0) ? 0 : -Width;
             id = (j == Height - 1) ? 0 : Width;
             
-            for(i = 0; i < Width; i++, PhiPtr++, fPtr++)
+            for(i = 0; i < Width; i++, PhiPtr++, fPtr++, maskPtr++)
             {
                 il = (i == 0) ? 0 : -1;
                 ir = (i == Width - 1) ? 0 : 1;
                 
-                Delta = dt/(M_PI*(1 + PhiPtr[0]*PhiPtr[0]));
-                PhiX = PhiPtr[ir] - PhiPtr[0];
-                PhiY = (PhiPtr[id] - PhiPtr[iu])/2;
-                IDivR = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
-                PhiX = PhiPtr[0] - PhiPtr[il];
-                IDivL = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
-                PhiX = (PhiPtr[ir] - PhiPtr[il])/2;
-                PhiY =  PhiPtr[id] - PhiPtr[0];
-                IDivD = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
-                PhiY = PhiPtr[0] - PhiPtr[iu];
-                IDivU = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
-                
-                if(NumChannels == 1)
-                {
-                    Dist1 = fPtr[0] - c1Scalar;
-                    Dist2 = fPtr[0] - c2Scalar;
-                    Dist1 *= Dist1;
-                    Dist2 *= Dist2;
-                }
-                else    
-                {
-                    Dist1 = Dist2 = 0.0;
-                    
-                    for(Channel = 0, fPtr2 = fPtr; 
-                        Channel < NumChannels; Channel++, fPtr2 += NumPixels)
+                if(maskPtr[0] != 0) {
+                    Delta = dt/(M_PI*(1 + PhiPtr[0]*PhiPtr[0]));
+                    PhiX = PhiPtr[ir] - PhiPtr[0];
+                    PhiY = (PhiPtr[id] - PhiPtr[iu])/2;
+                    IDivR = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                    PhiX = PhiPtr[0] - PhiPtr[il];
+                    IDivL = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                    PhiX = (PhiPtr[ir] - PhiPtr[il])/2;
+                    PhiY =  PhiPtr[id] - PhiPtr[0];
+                    IDivD = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+                    PhiY = PhiPtr[0] - PhiPtr[iu];
+                    IDivU = (num)(1/sqrt(DIVIDE_EPS + PhiX*PhiX + PhiY*PhiY));
+
+                    if(NumChannels == 1)
                     {
-                        Temp1 = fPtr2[0] - c1[Channel];
-                        Temp2 = fPtr2[0] - c2[Channel];
-                        Dist1 += Temp1*Temp1;
-                        Dist2 += Temp2*Temp2;
+                        Dist1 = fPtr[0] - c1Scalar;
+                        Dist2 = fPtr[0] - c2Scalar;
+                        Dist1 *= Dist1;
+                        Dist2 *= Dist2;
                     }
-                }
-                
-                /* Semi-implicit update of phi at the current point */
-                PhiLast = PhiPtr[0];
-                PhiPtr[0] = (PhiPtr[0] + Delta*(
-                        Mu*(PhiPtr[ir]*IDivR + PhiPtr[il]*IDivL
-                            + PhiPtr[id]*IDivD + PhiPtr[iu]*IDivU)
-                        - Nu - Lambda1*Dist1 + Lambda2*Dist2) ) /
-                    (1 + Delta*Mu*(IDivR + IDivL + IDivD + IDivU));
-                PhiDiff = (PhiPtr[0] - PhiLast);
-                PhiDiffNorm += PhiDiff * PhiDiff;
+                    else    
+                    {
+                        Dist1 = Dist2 = 0.0;
+
+                        for(Channel = 0, fPtr2 = fPtr; 
+                            Channel < NumChannels; Channel++, fPtr2 += NumPixels)
+                        {
+                            Temp1 = fPtr2[0] - c1[Channel];
+                            Temp2 = fPtr2[0] - c2[Channel];
+                            Dist1 += Temp1*Temp1;
+                            Dist2 += Temp2*Temp2;
+                        }
+                    }
+
+                    /* Semi-implicit update of phi at the current point */
+                    PhiLast = PhiPtr[0];
+                    PhiPtr[0] = (PhiPtr[0] + Delta*(
+                            Mu*(PhiPtr[ir]*IDivR + PhiPtr[il]*IDivL
+                                + PhiPtr[id]*IDivD + PhiPtr[iu]*IDivU)
+                            - Nu - Lambda1*Dist1 + Lambda2*Dist2) ) /
+                        (1 + Delta*Mu*(IDivR + IDivL + IDivD + IDivU));
+                    PhiDiff = (PhiPtr[0] - PhiLast);
+                    PhiDiffNorm += PhiDiff * PhiDiff;
+                }else
+                    PhiPtr[0] = -1;
             }
         }
         
