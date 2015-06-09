@@ -88,17 +88,21 @@ void Camera::Follow()
     // Follow the camera
     cout << "Following the camera ...";
     cout << flush;
-    Point p(-1,-1); Vec3b hsv; Mat mask, gray;
-
+    Point p(-1,-1); Vec3b hsv; Mat mask, gray, HSV; Scalar lowerb, upperb;
+    int erosion_size = 2, dilation_size = 20;
+    Mat erodeElement = getStructuringElement(MORPH_ELLIPSE, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
+    Mat dilateElement = getStructuringElement(MORPH_ELLIPSE, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
+    vector<float> frameArray, maskArray;
+    
     while(waitKey(10) == -1) {
+
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
             return;
         }  
-        imshow("Frame", frame);
-
+        clock_t startTime = clock(); // compute the time
 	cvtColor(frame, gray, COLOR_RGB2GRAY);
-        cvtColor(frame, frame, COLOR_RGB2HSV);
+        cvtColor(frame, HSV, COLOR_RGB2HSV);
         
         setMouseCallback("Frame", onMouse, &p );
 
@@ -106,60 +110,77 @@ void Camera::Follow()
             // Init mask
             if(!haveMask) {
                 // Take hsv from mouse
-                hsv = frame.at<Vec3b>(p.y,p.x);
+                hsv = HSV.at<Vec3b>(p.y,p.x);
                 haveMask = true;
-                
+                cout << "HSV: " << hsv << endl;
+                lowerb = Scalar(hsv.val[0] - 100, hsv.val[1] - 100, hsv.val[2] - 100);
+                upperb = Scalar(hsv.val[0] + 100, hsv.val[1] + 100, hsv.val[2] + 100);
+                cout << "lowerb: " << lowerb << endl;
+                cout << "upperb: " << upperb << endl;
                 // Create the mask
-                inRange(frame, Scalar(hsv.val[0] - 50, hsv.val[1] - 50, hsv.val[2] - 50), Scalar(hsv.val[0] + 50, hsv.val[1] + 50, hsv.val[2] + 50), mask);        
+                inRange(HSV, lowerb , upperb, mask);        
                 
                 // Erode to remove small object
-                int erosion_size = 5;  
-                Mat element = getStructuringElement(MORPH_ELLIPSE, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
-                erode(mask, mask, element);
+                erode(mask, mask, erodeElement);
                 // Dilatate to include nearest points
-                erosion_size = 20;  
-                element = getStructuringElement(MORPH_ELLIPSE, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
-                dilate(mask, mask, element);
+                dilate(mask, mask, dilateElement);
 
                 // Init contour
-                if(0) {
-                    // With a circle on clicked point
-                    Mat initContour = Mat(height, width, CV_32FC1, Scalar(-255));
-                    circle(initContour, p, 20, Scalar(255),1);
-                    vector<float> initContourArray = ToArray(initContour);
-                    contour = &initContourArray[0];
-                }else{
-                    // Traditional chanvese
                     InitContour(contour, width, height);
-                }
                 
                 for (int i = 0 ; i<25; i++) {
-                    vector<float> array = ToArray(gray);
-                    vector<float> mask_array = ToArray(mask);
-                    ActiveContour(&array[0], output, contour, &mask_array[0], width, height,0);  
+                    frameArray = ToArray(gray);
+                    maskArray = ToArray(mask);
+                    ActiveContour(&frameArray[0], output, contour, &maskArray[0], width, height,0);  
                 }
             }
             
             // LOOP
-            inRange(frame, Scalar(hsv.val[0] - 50, hsv.val[1] - 50, hsv.val[2] - 50), Scalar(hsv.val[0] + 50, hsv.val[1] + 50, hsv.val[2] + 50), mask);        
-            imshow("inrange", mask);
-            
-            int erosion_size = 5;  
-            Mat element = getStructuringElement(MORPH_ELLIPSE, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
-            erode(mask, mask, element);
-            imshow("erode", mask);
-            
-            erosion_size = 20;  
-            element = getStructuringElement(MORPH_ELLIPSE, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
-            dilate(mask, mask, element);
-            imshow("dilate", mask);
-            
-            vector<float> array = ToArray(gray);
-            vector<float> mask_array = ToArray(mask);
-            ActiveContour(&array[0], output, contour, &mask_array[0], width, height,0);  
+            inRange(HSV, lowerb, upperb, mask);        
+            // Erode to remove small object
+            erode(mask, mask, erodeElement);
+            // Dilatate to include nearest points
+            dilate(mask, mask, dilateElement);
+            imshow("mask", mask);
+
+            frameArray = ToArray(gray);
+            maskArray = ToArray(mask);
+            ActiveContour(&frameArray[0], output, contour, &maskArray[0], width, height,0);  
             imshow("Output", ToMat(output, height, width));
             
+            
+            Mat OUT = ToMat(output, height, width);
+            OUT.convertTo(OUT, CV_8UC1);
+            vector<vector<Point> > contours;
+            vector<Vec4i> hierarchy;
+            findContours(OUT, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE, Point(0, 0));
+        
+            vector<Rect> boundRect( contours.size() );
+
+            for( int i = 0; i < contours.size(); i++ )
+            { 
+                boundRect[i] = boundingRect( Mat(contours[i]) );
+            }
+  
+            /// Draw polygonal contour + bonding rects + circles
+            Mat drawing = Mat::zeros( height, width, CV_8UC3 );
+            circle(frame, p, 20, Scalar(0,0,255));
+
+            for( int i = 0; i< contours.size(); i++ )
+            {
+                if(boundRect[i].contains(p)) {
+                    drawContours( frame, contours, i, Scalar(255,255,255), 1, 8, vector<Vec4i>(), 0, Point() );
+                    rectangle( frame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,255,0), 2, 8, 0 );
+                    p.x = boundRect[i].tl().x + boundRect[i].size().width/2;
+                    p.y = boundRect[i].tl().y + boundRect[i].size().height/2;
+                    break;
+                }
+            }
+            //imshow( "Contours", drawing );
+
         }
+        imshow("Frame", frame);
+        //cout << double( clock() - startTime ) / (double)CLOCKS_PER_SEC<< " seconds." << endl; 
     }
     return;
 }

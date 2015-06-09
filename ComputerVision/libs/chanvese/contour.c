@@ -35,6 +35,7 @@ int ActiveContour (float *src, float *dst, float *contour, float* mask, int widt
         //contour[i]=(contour[i]>=0) ? 1 : -1;
         contour[i] *= 0.001;
         
+        /*
         cl=i%width==0 ? i : i-1;
         cr=i%width== width-1 ? i : i+1;
         cd=i/width>height-2? i : i+width ;
@@ -43,7 +44,8 @@ int ActiveContour (float *src, float *dst, float *contour, float* mask, int widt
         cr=contour[cr]<0;
         cd=contour[cd]<0;
         cu=contour[cu]<0;
-        dst[i] = (contour[i] < 0 && cl+cr+cd+cu<4) ? 255 : 0;
+        dst[i] = (contour[i] < 0 && cl+cr+cd+cu<4) ? 255 : 0;*/
+        dst[i] = (contour[i] >= 0) ? 255 : 0;
     }
     return 1;
 }
