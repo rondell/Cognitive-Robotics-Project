@@ -291,3 +291,18 @@ Linking C executable cmTryCompileExec2936567295
 make[1]: Leaving directory `/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/CMakeTmp'
 
 
+Determining if the CXX compiler accepts the flag -Wl,--version-script,"/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/prosilica_camera/class_loader_hide_library_symbols__prosilica_nodelet.script" passed with the following output:
+Change Dir: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1536630656/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1536630656.dir/build.make CMakeFiles/cmTryCompileExec1536630656.dir/build
+make[1]: Entering directory `/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1536630656.dir/DummyCXXFile.cxx.o
+/usr/bin/c++    -Wl,--version-script,"/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/prosilica_camera/class_loader_hide_library_symbols__prosilica_nodelet.script"   -o CMakeFiles/cmTryCompileExec1536630656.dir/DummyCXXFile.cxx.o -c /usr/share/cmake-2.8/Modules/DummyCXXFile.cxx
+Linking CXX executable cmTryCompileExec1536630656
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1536630656.dir/link.txt --verbose=1
+/usr/bin/c++    -Wl,--version-script,"/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/prosilica_camera/class_loader_hide_library_symbols__prosilica_nodelet.script"    CMakeFiles/cmTryCompileExec1536630656.dir/DummyCXXFile.cxx.o  -o cmTryCompileExec1536630656 -rdynamic 
+make[1]: Leaving directory `/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/CMakeTmp'
+
+

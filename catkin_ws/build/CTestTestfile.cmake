@@ -5,3 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
+SUBDIRS(prosilica_gige_sdk)
+SUBDIRS(beginner_tut)
+SUBDIRS(prosilica_camera)

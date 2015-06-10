@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/prosilica.h
+stdexcept
+-
+string
+-
+sstream
+-
+boost/function.hpp
+-
+boost/thread.hpp
+-
+prosilica_gige_sdk/PvApi.h
+-
+
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/utilities/set_inhibition.cpp
+prosilica/prosilica.h
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/utilities/prosilica/prosilica.h
+cstdio
+-
+
+/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvApi.h
+

@@ -1,2 +1,2 @@
-
+beginner_tut:prosilica_camera:prosilica_gige_sdk
 -DCATKIN_DEVEL_PREFIX=/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install -G Unix Makefiles

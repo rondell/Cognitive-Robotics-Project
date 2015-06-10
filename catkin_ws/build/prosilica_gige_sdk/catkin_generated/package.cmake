@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "prosilica_gige_sdk")
+set(prosilica_gige_sdk_MAINTAINER "Austin Hendrix <namniart@gmail.com>")
+set(prosilica_gige_sdk_DEPRECATED "")
+set(prosilica_gige_sdk_VERSION "1.26.3")
+set(prosilica_gige_sdk_BUILD_DEPENDS )
+set(prosilica_gige_sdk_RUN_DEPENDS )
+set(prosilica_gige_sdk_BUILDTOOL_DEPENDS "catkin")
