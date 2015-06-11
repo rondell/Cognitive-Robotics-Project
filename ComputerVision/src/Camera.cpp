@@ -2,6 +2,10 @@
 #include<unistd.h>
 
 bool haveMask = false, clicked = false;
+bool drawing_box = false;
+Rect box;
+Point initP(-1,-1);
+int area;
 
 Camera::Camera(int device, int width, int height) {
 	this->device = device;
@@ -89,54 +93,49 @@ void Camera::Follow()
     cout << "Following the camera ...";
     cout << flush;
     Point p(-1,-1); Vec3b hsv; Mat mask, gray, HSV; Scalar lowerb, upperb;
-    int erosion_size = 2, dilation_size = 30;
-    Mat erodeElement = getStructuringElement(MORPH_ELLIPSE, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
-    Mat dilateElement = getStructuringElement(MORPH_ELLIPSE, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
+    int erosion_size = 2, dilation_size = 10;
+    Mat erodeElement = getStructuringElement(MORPH_RECT, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
+    Mat dilateElement = getStructuringElement(MORPH_RECT, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
     vector<float> frameArray, maskArray;
-    
+    Mat ROI = Mat::zeros( height, width, CV_8UC1 );
     while(waitKey(10) == -1) {
 
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
             return;
-        }  
+        }
+	
         clock_t startTime = clock(); // compute the time
-	cvtColor(frame, gray, COLOR_RGB2GRAY);
+	cvtColor(frame, gray, COLOR_RGB2GRAY);        
         cvtColor(frame, HSV, COLOR_RGB2HSV);
         
-        setMouseCallback("Frame", onMouse, &p );
+        setMouseCallback("Frame", onMouse);
 
+        if( drawing_box ) 
+            draw_box(&frame, box);
+        
         if(clicked) {
             // Init mask
             if(!haveMask) {
                 // Take hsv from mouse
+                p = initP;
                 hsv = HSV.at<Vec3b>(p.y,p.x);
                 haveMask = true;
                 cout << "HSV: " << hsv << endl;
-                lowerb = Scalar(hsv.val[0] - 100, hsv.val[1] - 100, hsv.val[2] - 100);
-                upperb = Scalar(hsv.val[0] + 100, hsv.val[1] + 100, hsv.val[2] + 100);
+                lowerb = Scalar(hsv.val[0] - 30, hsv.val[1] - 50, hsv.val[2] - 50);
+                upperb = Scalar(hsv.val[0] + 30, hsv.val[1] + 50, hsv.val[2] + 50);
                 cout << "lowerb: " << lowerb << endl;
-                cout << "upperb: " << upperb << endl;
-                // Create the mask
-                inRange(HSV, lowerb , upperb, mask);        
-                
-                // Erode to remove small object
-                erode(mask, mask, erodeElement);
-                // Dilatate to include nearest points
-                dilate(mask, mask, dilateElement);
-
-                // Init contour
-                    InitContour(contour, width, height);
-                
-                for (int i = 0 ; i<25; i++) {
-                    frameArray = ToArray(gray);
-                    maskArray = ToArray(mask);
-                    ActiveContour(&frameArray[0], output, contour, &maskArray[0], width, height,0);  
-                }
+                cout << "upperb: " << upperb << endl;  
+                ROI = Mat::zeros( height, width, CV_8UC1 );
+                rectangle( ROI, box.tl(), box.br(), Scalar(255), -1);
             }
             
-
-
+            // Create the mask
+            inRange(HSV, lowerb , upperb, mask);
+            dilate(mask, mask, dilateElement);
+            mask = mask.mul(ROI);
+            imshow("ed", mask);
+            
             frameArray = ToArray(gray);
             maskArray = ToArray(mask);
             ActiveContour(&frameArray[0], output, contour, &maskArray[0], width, height,0);  
@@ -158,25 +157,28 @@ void Camera::Follow()
   
             /// Draw polygonal contour + bonding rects + circles
             Mat drawing = Mat::zeros( height, width, CV_8UC3 );
-            circle(frame, p, 20, Scalar(0,0,255));
+            circle(frame, p, 5, Scalar(0,0,255), 5);
 
             for( int i = 0; i< contours.size(); i++ )
             {
                 if(boundRect[i].contains(p)) {
-                    mask = Mat(mask.size(), CV_8UC1, Scalar(0));
-                    drawContours( mask, contours, i, Scalar(255), FILLED); 
-                    dilate(mask, mask, dilateElement);
-
                     drawContours( frame, contours, i, Scalar(255,255,255), 1, 8, vector<Vec4i>(), 0, Point() );
                     rectangle( frame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,255,0), 2, 8, 0 );
                     p.x = boundRect[i].tl().x + boundRect[i].size().width/2;
                     p.y = boundRect[i].tl().y + boundRect[i].size().height/2;
+                    
+                    int v = (int)(sqrt((boundRect[i].size().width/boundRect[i].size().height)*area)/2);
+                    int h = (int)(v * boundRect[i].size().height/boundRect[i].size().width)/2;
+                    box = Rect(Point(p.x-h,p.y-v),Point(p.x+h,p.y+v));
+                    ROI = Mat::zeros( height, width, CV_8UC1 );
+                    rectangle( ROI, box.tl(), box.br(), Scalar(255), -1);
+                    
                     break;
                 }
             }
-                        imshow("mask", mask);
+            imshow("ROI", ROI);
 
-            //imshow( "Contours", drawing );
+            //imshow( "Contours", drawing );*/
 
         }
         imshow("Frame", frame);
@@ -197,15 +199,48 @@ Mat Camera::ToMat(float *src, int rows, int cols) {
     memcpy(dst.data, src, rows * cols * sizeof(float));  
     return dst;
 }
-
-void Camera::onMouse( int event, int x, int y, int d, void *ptr )
-{
+void Camera::draw_box( Mat* img, Rect rect ){
+	rectangle(*img, Point(box.x, box.y), Point(box.x+box.width,box.y+box.height), Scalar(255,0,0), 2, 8, 0  );
+}
+void Camera::onMouse( int event, int x, int y, int d, void *param )
+{   /*
     if  ( event == EVENT_LBUTTONDOWN )
-    {    
+    {
         Point*p = (Point*)ptr;
         p->x = x;
         p->y = y;
         clicked = true;
         haveMask = false;
-    }
+    }*/
+    switch( event ){
+		case EVENT_MOUSEMOVE: 
+			if( drawing_box ){
+				box.width = x-box.x;
+				box.height = y-box.y;
+			}
+			break;
+
+		case EVENT_LBUTTONDOWN:
+			drawing_box = true;
+			box = Rect( x, y, 0, 0 );
+			break;
+
+		case EVENT_LBUTTONUP:
+			drawing_box = false;
+                        clicked = true;
+			if( box.width < 0 ){
+				box.x += box.width;
+				box.width *= -1;
+			}
+			if( box.height < 0 ){
+				box.y += box.height;
+				box.height *= -1;
+			}
+                        initP.x = box.tl().x + box.size().width/2;
+                        initP.y = box.tl().y + box.size().height/2;
+                        area = box.area()*1.2;
+                        haveMask = false;
+			break;
+            
+	}
 }

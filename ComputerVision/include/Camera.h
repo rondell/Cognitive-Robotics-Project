@@ -29,6 +29,7 @@ private:
         vector<float> ToArray(Mat src);
         Mat ToMat(float *src, int rows, int cols);
         static void onMouse( int event, int x, int y, int d, void *ptr );
+        void draw_box( Mat* img, Rect rect );
 };
 
 #endif
