@@ -112,7 +112,7 @@ static struct chanvesestruct DefaultChanVeseOpt =
  * the routine to run exactly MaxIter iterations.
  */
 int ChanVese(num *Phi, const num *f, const num *mask,  
-    int Width, int Height, int NumChannels, const chanveseopt *Opt)
+    int Width, int Height, int NumChannels, const chanveseopt *Opt, int tlx, int tly, int brx, int bry)
 {
     int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
         int, int, int, void*);
@@ -169,12 +169,20 @@ int ChanVese(num *Phi, const num *f, const num *mask,
         maskPtr = mask;
         PhiDiffNorm = 0;
         
-        for(j = 0; j < Height; j++)
+        PhiPtr += Width*(tly-1);
+        fPtr += Width*(tly-1);
+        maskPtr += Width*(tly-1);
+        
+        for(j = tly; j < bry; j++)
         {
             iu = (j == 0) ? 0 : -Width;
             id = (j == Height - 1) ? 0 : Width;
             
-            for(i = 0; i < Width; i++, PhiPtr++, fPtr++, maskPtr++)
+            PhiPtr += (tlx-1);
+            fPtr += (tlx-1);
+            maskPtr += (tlx-1);
+            
+            for(i = tlx; i < brx; i++, PhiPtr++, fPtr++, maskPtr++)
             {
                 il = (i == 0) ? 0 : -1;
                 ir = (i == Width - 1) ? 0 : 1;
@@ -225,6 +233,10 @@ int ChanVese(num *Phi, const num *f, const num *mask,
                 }else
                     PhiPtr[0] = -1;
             }
+            
+            PhiPtr += (Width-brx);
+            fPtr += (Width-brx);            
+            maskPtr += (Width-brx);            
         }
         
         PhiDiffNorm = sqrt(PhiDiffNorm/NumEl);        
@@ -329,7 +341,7 @@ int ChanVese_contour(num *Phi, const num *f,
                 cd = PhiPtr[id] < 0;
                 cu = PhiPtr[iu] < 0;
                 
-                if (PhiPtr[0]<0 || (Phi>=0 && ((cu + cl + cd + cr == 1))))
+                if (PhiPtr[0]<0 || (Phi>=0 && ((cu + cl + cd + cr > 0))))
                 {
                     Delta = dt/(M_PI*(1 + PhiPtr[0]*PhiPtr[0]));
                     PhiX = PhiPtr[ir] - PhiPtr[0];
