@@ -50,7 +50,7 @@ void ChanVeseSetPlotFun(chanveseopt *Opt,
 void ChanVesePrintOpt(const chanveseopt *Opt);
 
 int ChanVese(num *Phi, const num *f, const num *mask, 
-    int Width, int Height, int NumChannels, const chanveseopt *Opt, int tlx, int tly, int brx, int bry);
+    int Width, int Height, int NumChannels, const chanveseopt *Opt);
 int ChanVese_contour(num *Phi, const num *f, 
     int Width, int Height, int NumChannels, const chanveseopt *Opt);
 

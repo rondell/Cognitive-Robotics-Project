@@ -3,8 +3,8 @@
 
 bool haveMask = false, clicked = false;
 bool drawing_box = false;
-Rect roi;
-Point initCenter(-1,-1);
+Rect box;
+Point initP(-1,-1);
 int area;
 
 Camera::Camera(int device, int width, int height) {
@@ -92,7 +92,7 @@ void Camera::Follow()
     // Follow the camera
     cout << "Following the camera ...";
     cout << flush;
-    Point center(-1,-1); Vec3b hsv; Mat mask, gray, HSV; Scalar lowerb, upperb;
+    Point p(-1,-1); Vec3b hsv; Mat mask, gray, HSV; Scalar lowerb, upperb;
     int erosion_size = 2, dilation_size = 10;
     Mat erodeElement = getStructuringElement(MORPH_RECT, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
     Mat dilateElement = getStructuringElement(MORPH_RECT, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
@@ -112,14 +112,14 @@ void Camera::Follow()
         setMouseCallback("Frame", onMouse);
 
         if( drawing_box ) 
-            draw_box(&frame, roi);
+            draw_box(&frame, box);
         
         if(clicked) {
             // Init mask
             if(!haveMask) {
                 // Take hsv from mouse
-                center = initCenter;
-                hsv = HSV.at<Vec3b>(center.y,center.x);
+                p = initP;
+                hsv = HSV.at<Vec3b>(p.y,p.x);
                 haveMask = true;
                 cout << "HSV: " << hsv << endl;
                 lowerb = Scalar(hsv.val[0] - 30, hsv.val[1] - 50, hsv.val[2] - 50);
@@ -127,7 +127,7 @@ void Camera::Follow()
                 cout << "lowerb: " << lowerb << endl;
                 cout << "upperb: " << upperb << endl;  
                 ROI = Mat::zeros( height, width, CV_8UC1 );
-                rectangle( ROI, roi.tl(), roi.br(), Scalar(255), -1);
+                rectangle( ROI, box.tl(), box.br(), Scalar(255), -1);
             }
             
             // Create the mask
@@ -157,43 +157,26 @@ void Camera::Follow()
   
             /// Draw polygonal contour + bonding rects + circles
             Mat drawing = Mat::zeros( height, width, CV_8UC3 );
-            circle(frame, center, 5, Scalar(0,0,255), 5);
+            circle(frame, p, 5, Scalar(0,0,255), 5);
 
             for( int i = 0; i< contours.size(); i++ )
             {
-                if(boundRect[i].contains(center)) {
+                if(boundRect[i].contains(p)) {
                     drawContours( frame, contours, i, Scalar(255,255,255), 1, 8, vector<Vec4i>(), 0, Point() );
                     rectangle( frame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,255,0), 2, 8, 0 );
+                    p.x = boundRect[i].tl().x + boundRect[i].size().width/2;
+                    p.y = boundRect[i].tl().y + boundRect[i].size().height/2;
                     
-                    // Center
-                    center.x = boundRect[i].tl().x + boundRect[i].size().width/2;
-                    center.y = boundRect[i].tl().y + boundRect[i].size().height/2;
-                    
-                    
-                    int x = boundRect[i].size().width;
-                    int y = boundRect[i].size().height;
-                    int v = (int)(sqrt((x/y)*area));
-                    int h = (int)(area/v);
-                    int deltax = (int)((h-y)/2);
-                    int deltay = (int)((v-x)/2);
-                    int tlx = boundRect[i].tl().x -deltax;
-                    int tly = boundRect[i].tl().y -deltay;
-                    int brx = boundRect[i].br().x +deltax;
-                    int bry = boundRect[i].br().y +deltay;
-                    
-                    tlx = (tlx < 0) ? 0 : tlx;
-                    brx = (brx > width) ? width : brx;
-                    tly = (tly < 0) ? 0 : tly;
-                    bry = (bry > height) ? height : bry;                   
-                    roi = Rect(Point(tlx,tly),Point(brx,bry));
-                    
+                    int v = (int)(sqrt((boundRect[i].size().width/boundRect[i].size().height)*area)/2);
+                    int h = (int)(v * boundRect[i].size().height/boundRect[i].size().width)/2;
+                    box = Rect(Point(p.x-h,p.y-v),Point(p.x+h,p.y+v));
                     ROI = Mat::zeros( height, width, CV_8UC1 );
-                    rectangle( ROI, roi.tl(), roi.br(), Scalar(255), -1);
-                    rectangle( frame, roi.tl(), roi.br(), Scalar(0,0,255), 2, 8, 0 );
-
+                    rectangle( ROI, box.tl(), box.br(), Scalar(255), -1);
+                    
                     break;
                 }
             }
+            imshow("ROI", ROI);
 
             //imshow( "Contours", drawing );*/
 
@@ -217,7 +200,7 @@ Mat Camera::ToMat(float *src, int rows, int cols) {
     return dst;
 }
 void Camera::draw_box( Mat* img, Rect rect ){
-	rectangle(*img, Point(roi.x, roi.y), Point(roi.x+roi.width,roi.y+roi.height), Scalar(255,0,0), 2, 8, 0  );
+	rectangle(*img, Point(box.x, box.y), Point(box.x+box.width,box.y+box.height), Scalar(255,0,0), 2, 8, 0  );
 }
 void Camera::onMouse( int event, int x, int y, int d, void *param )
 {   /*
@@ -232,30 +215,30 @@ void Camera::onMouse( int event, int x, int y, int d, void *param )
     switch( event ){
 		case EVENT_MOUSEMOVE: 
 			if( drawing_box ){
-				roi.width = x-roi.x;
-				roi.height = y-roi.y;
+				box.width = x-box.x;
+				box.height = y-box.y;
 			}
 			break;
 
 		case EVENT_LBUTTONDOWN:
 			drawing_box = true;
-			roi = Rect( x, y, 0, 0 );
+			box = Rect( x, y, 0, 0 );
 			break;
 
 		case EVENT_LBUTTONUP:
 			drawing_box = false;
                         clicked = true;
-			if( roi.width < 0 ){
-				roi.x += roi.width;
-				roi.width *= -1;
+			if( box.width < 0 ){
+				box.x += box.width;
+				box.width *= -1;
 			}
-			if( roi.height < 0 ){
-				roi.y += roi.height;
-				roi.height *= -1;
+			if( box.height < 0 ){
+				box.y += box.height;
+				box.height *= -1;
 			}
-                        initCenter.x = roi.tl().x + roi.size().width/2;
-                        initCenter.y = roi.tl().y + roi.size().height/2;
-                        area = roi.area()*1.2;
+                        initP.x = box.tl().x + box.size().width/2;
+                        initP.y = box.tl().y + box.size().height/2;
+                        area = box.area()*1.2;
                         haveMask = false;
 			break;
             
