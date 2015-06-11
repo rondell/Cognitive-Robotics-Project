@@ -47,7 +47,7 @@ void Camera::Follow()
     Mat dilateElement = getStructuringElement(MORPH_RECT, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
     vector<float> frameArray, maskArray;
     Mat ROI = Mat::zeros( height, width, CV_8UC1 );
-    while(waitKey(10) != -1) {
+    while(waitKey(10) == -1) {
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
             return;
@@ -82,12 +82,12 @@ void Camera::Follow()
             inRange(HSV, lowerb , upperb, mask);
             dilate(mask, mask, dilateElement);
             mask = mask.mul(ROI);
-            imshow("ed", mask);
+            //imshow("mask", mask);
             
             frameArray = ToArray(gray);
             maskArray = ToArray(mask);
             ActiveContour(&frameArray[0], output, contour, &maskArray[0], width, height,0);  
-            imshow("Output", ToMat(output, height, width));
+            //imshow("Output", ToMat(output, height, width));
             
             
             Mat OUT = ToMat(output, height, width);
@@ -128,13 +128,11 @@ void Camera::Follow()
                         int tly = boundRect[i].tl().y -deltay;
                         int brx = boundRect[i].br().x +deltax;
                         int bry = boundRect[i].br().y +deltay;
-                        cout << "4" << endl << flush;
                         tlx = (tlx < 0) ? 0 : tlx;
                         brx = (brx > width) ? width : brx;
                         tly = (tly < 0) ? 0 : tly;
                         bry = (bry > height) ? height : bry;                   
                         roi = Rect(Point(tlx,tly),Point(brx,bry));
-                        cout << "5" << endl << flush;
                         ROI = Mat::zeros( height, width, CV_8UC1 );
                         rectangle( ROI, roi.tl(), roi.br(), Scalar(255), -1);
                         rectangle( frame, roi.tl(), roi.br(), Scalar(0,0,255), 2, 8, 0 );
@@ -199,7 +197,7 @@ void Camera::onMouse( int event, int x, int y, int d, void *param )
 			}
                         initCenter.x = roi.tl().x + roi.size().width/2;
                         initCenter.y = roi.tl().y + roi.size().height/2;
-                        area = roi.area()*1.2;
+                        area = roi.area()*0.8;
                         haveMask = false;
 			break;
             
