@@ -41,33 +41,40 @@ void Camera::Follow()
     // Follow the camera
     cout << "Following the camera ...";
     cout << flush;
-    Point center(-1,-1); Vec3b hsv; Mat mask, gray, HSV; Scalar lowerb, upperb;
+    Point center(-1,-1); Vec3b hsv; Mat mask, gray, HSV, drawing; Scalar lowerb, upperb;
     int erosion_size = 2, dilation_size = 10;
     Mat erodeElement = getStructuringElement(MORPH_RECT, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
     Mat dilateElement = getStructuringElement(MORPH_RECT, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
-    vector<float> frameArray, maskArray;
+    vector<float> frameArray, maskArray, outputArray, cntArray;
     Mat ROI = Mat::zeros( height, width, CV_8UC1 );
+    Mat ACmask = Mat::zeros( height, width, CV_8UC1 );
+    Mat croppedFrame;Mat OUT; Mat CNT;
+    namedWindow( "Frame", WINDOW_AUTOSIZE );
+            setMouseCallback("Frame", onMouse);
+            int count = 0; double sum = 0; 
     while(waitKey(10) == -1) {
+        
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
             return;
         }
 	
         clock_t startTime = clock(); // compute the time
-	cvtColor(frame, gray, COLOR_RGB2GRAY);        
-        cvtColor(frame, HSV, COLOR_RGB2HSV);
         
-        setMouseCallback("Frame", onMouse);
 
         if( drawing_box ) 
             draw_box(&frame, roi);
         
         if(clicked) {
+            croppedFrame = frame(roi);
+            cvtColor(croppedFrame, gray, COLOR_RGB2GRAY);        
+            cvtColor(croppedFrame, HSV, COLOR_RGB2HSV);
             // Init mask
             if(!haveMask) {
                 // Take hsv from mouse
-                center = initCenter;
-                hsv = HSV.at<Vec3b>(center.y,center.x);
+                center.x = HSV.rows/2;
+                center.y = HSV.cols/2;
+                hsv = HSV.at<Vec3b>(center);
                 haveMask = true;
                 //cout << "HSV: " << hsv << endl;
                 lowerb = Scalar(hsv.val[0] - 30, hsv.val[1] - 50, hsv.val[2] - 50);
@@ -76,24 +83,31 @@ void Camera::Follow()
                 //cout << "upperb: " << upperb << endl;  
                 ROI = Mat::zeros( height, width, CV_8UC1 );
                 rectangle( ROI, roi.tl(), roi.br(), Scalar(255), -1);
+                //ACmask = Mat::zeros( height, width, CV_8UC1 );
+                //rectangle( ACmask, roi.tl(), roi.br(), Scalar(1), -1);
+                sum = 0; count = 0;
+            CNT = Mat::zeros(roi.height, roi.width, CV_8UC1 );
+            cntArray = ToArray(CNT);
             }
-            
             // Create the mask
             inRange(HSV, lowerb , upperb, mask);
             dilate(mask, mask, dilateElement);
-            mask = mask.mul(ROI);
-            //imshow("mask", mask);
             
+            //mask = mask.mul(ROI);
+            imshow("mask", mask);
+            
+            OUT = Mat::zeros(roi.height, roi.width, CV_8UC1 );
             frameArray = ToArray(gray);
             maskArray = ToArray(mask);
-            ActiveContour(&frameArray[0], output, contour, &maskArray[0], width, height,0);  
-            //imshow("Output", ToMat(output, height, width));
-            
-            
-            Mat OUT = ToMat(output, height, width);
+            outputArray = ToArray(OUT);
+            ActiveContour(&frameArray[0], &outputArray[0], &cntArray[0], &maskArray[0], roi.width, roi.height);  
+        
+            OUT = ToMat(&outputArray[0], roi.height, roi.width);
             OUT.convertTo(OUT, CV_8UC1);
             vector<vector<Point> > contours;
             vector<Vec4i> hierarchy;
+            //bitwise_and(OUT,ACmask,OUT);
+            imshow("Output", OUT);
             findContours(OUT, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE, Point(0, 0));
         
             vector<Rect> boundRect( contours.size() );
@@ -104,20 +118,20 @@ void Camera::Follow()
             }
   
             /// Draw polygonal contour + bonding rects + circles
-            Mat drawing = Mat::zeros( height, width, CV_8UC3 );
-            circle(frame, center, 5, Scalar(0,0,255), 5);
+            circle(croppedFrame, center, 5, Scalar(0,0,255), 5);
 
             for( int i = 0; i< contours.size(); i++ )
             {
                 if(boundRect[i].contains(center)) {
-
-                    drawContours( frame, contours, i, Scalar(255,255,255), 1, 8, vector<Vec4i>(), 0, Point() );
-                    rectangle( frame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,255,0), 2, 8, 0 );
+                    
+                    drawContours( croppedFrame, contours, i, Scalar(255,255,255), 1, 8, vector<Vec4i>(), 0, Point() );
+                    rectangle( croppedFrame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,255,0), 2, 8, 0 );
+                    //imshow("Drawing", drawing);
+                    /*
 
                     // Center
                     center.x = boundRect[i].tl().x + boundRect[i].size().width/2;
                     center.y = boundRect[i].tl().y + boundRect[i].size().height/2;
-                    
                     int x = boundRect[i].size().width;
                     int y = boundRect[i].size().height;
                         int v = (int)(sqrt((x/(y+EPS))*area));
@@ -135,14 +149,20 @@ void Camera::Follow()
                         roi = Rect(Point(tlx,tly),Point(brx,bry));
                         ROI = Mat::zeros( height, width, CV_8UC1 );
                         rectangle( ROI, roi.tl(), roi.br(), Scalar(255), -1);
-                        rectangle( frame, roi.tl(), roi.br(), Scalar(0,0,255), 2, 8, 0 );
+                        ACmask = Mat::zeros( height, width, CV_8UC1 );
+                        rectangle( ACmask, roi.tl(), roi.br(), Scalar(1), -1);
+                        rectangle( frame, roi.tl(), roi.br(), Scalar(0,0,255), 2, 8, 0 );*/
                     break;
                 }
             }
+            imshow("croppedFrame", croppedFrame);
         }
         imshow("Frame", frame);
-        //cout << double( clock() - startTime ) / (double)CLOCKS_PER_SEC<< " seconds." << endl; 
+        //cout << double( clock() - startTime ) / (double)CLOCKS_PER_SEC << endl; 
+        sum += double( clock() - startTime ) / (double)CLOCKS_PER_SEC;
+        count++;
     }
+    cout << sum / count << endl << flush;
     return;
 }
 
@@ -195,8 +215,8 @@ void Camera::onMouse( int event, int x, int y, int d, void *param )
 				roi.y += roi.height;
 				roi.height *= -1;
 			}
-                        initCenter.x = roi.tl().x + roi.size().width/2;
-                        initCenter.y = roi.tl().y + roi.size().height/2;
+                        //initCenter.x = roi.tl().x + roi.size().width/2;
+                        //initCenter.y = roi.tl().y + roi.size().height/2;
                         area = roi.area()*0.8;
                         haveMask = false;
 			break;
