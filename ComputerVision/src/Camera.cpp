@@ -87,7 +87,6 @@ void Camera::Follow()
                 //rectangle( ACmask, roi.tl(), roi.br(), Scalar(1), -1);
                 sum = 0; count = 0;
             CNT = Mat::zeros(roi.height, roi.width, CV_8UC1 );
-            cntArray = ToArray(CNT);
             }
             // Create the mask
             inRange(HSV, lowerb , upperb, mask);
@@ -100,10 +99,13 @@ void Camera::Follow()
             frameArray = ToArray(gray);
             maskArray = ToArray(mask);
             outputArray = ToArray(OUT);
-            ActiveContour(&frameArray[0], &outputArray[0], &cntArray[0], &maskArray[0], roi.width, roi.height);  
-        
-            OUT = ToMat(&outputArray[0], roi.height, roi.width);
-            OUT.convertTo(OUT, CV_8UC1);
+            cntArray = ToArray(CNT);
+            ActiveContour(&frameArray[0], &cntArray[0], &maskArray[0], roi.width, roi.height);  
+            CNT = ToMat(&cntArray[0], roi.height, roi.width);
+            inRange(CNT, Scalar(0) , Scalar(1), OUT);
+            CNT *= 0.001;
+            //OUT = ToMat(&outputArray[0], roi.height, roi.width);
+            //OUT.convertTo(OUT, CV_8UC1);
             vector<vector<Point> > contours;
             vector<Vec4i> hierarchy;
             //bitwise_and(OUT,ACmask,OUT);
@@ -215,8 +217,6 @@ void Camera::onMouse( int event, int x, int y, int d, void *param )
 				roi.y += roi.height;
 				roi.height *= -1;
 			}
-                        //initCenter.x = roi.tl().x + roi.size().width/2;
-                        //initCenter.y = roi.tl().y + roi.size().height/2;
                         area = roi.area()*0.8;
                         haveMask = false;
 			break;
