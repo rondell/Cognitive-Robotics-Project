@@ -3,10 +3,8 @@
 
 #define EPS 1e-50
 
-bool haveMask = false, clicked = false;
-bool drawing_box = false;
-Rect roi;
-Point initCenter(-1,-1);
+bool haveMask = false, haveRoi = false, drawing_box = false;
+Rect roi; Point centerFrame, centerROI;
 int area;
 
 Camera::Camera(int device, int width, int height) {
@@ -36,12 +34,14 @@ void Camera::Follow()
     float* contour=new float[height*width]();
     float* output=new float[height*width]();
 
+    centerFrame = Point(0,0);
+    centerROI = Point(0,0);
     cout << "[START] Active Contour " << endl;
     
     // Follow the camera
     cout << "Following the camera ...";
     cout << flush;
-    Point center(-1,-1); Vec3b hsv; Mat mask, gray, HSV, drawing; Scalar lowerb, upperb;
+    Vec3b hsv; Mat mask, gray, HSV, drawing; Scalar lowerb, upperb;
     int erosion_size = 2, dilation_size = 10;
     Mat erodeElement = getStructuringElement(MORPH_RECT, Size(2 * erosion_size + 1, 2 * erosion_size + 1), Point(erosion_size, erosion_size) );
     Mat dilateElement = getStructuringElement(MORPH_RECT, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
@@ -65,77 +65,103 @@ void Camera::Follow()
         if( drawing_box ) 
             draw_box(&frame, roi);
         
-        if(clicked) {
+        if(haveRoi) {
             croppedFrame = frame(roi);
-            cvtColor(croppedFrame, gray, COLOR_RGB2GRAY);        
+            cvtColor(croppedFrame, gray, COLOR_RGB2GRAY); 
             cvtColor(croppedFrame, HSV, COLOR_RGB2HSV);
-            // Init mask
             if(!haveMask) {
-                // Take hsv from mouse
-                center.x = HSV.rows/2;
-                center.y = HSV.cols/2;
-                hsv = HSV.at<Vec3b>(center);
-                haveMask = true;
-                //cout << "HSV: " << hsv << endl;
+
+                // Take the HSV value from the center of the ROI
+                hsv = HSV.at<Vec3b>(centerROI);
+
+                // Compute lower and upper bound of hsv
                 lowerb = Scalar(hsv.val[0] - 30, hsv.val[1] - 50, hsv.val[2] - 50);
                 upperb = Scalar(hsv.val[0] + 30, hsv.val[1] + 50, hsv.val[2] + 50);
-                //cout << "lowerb: " << lowerb << endl;
-                //cout << "upperb: " << upperb << endl;  
-                ROI = Mat::zeros( height, width, CV_8UC1 );
-                rectangle( ROI, roi.tl(), roi.br(), Scalar(255), -1);
-                //ACmask = Mat::zeros( height, width, CV_8UC1 );
-                //rectangle( ACmask, roi.tl(), roi.br(), Scalar(1), -1);
-                sum = 0; count = 0;
-            CNT = Mat::zeros(roi.height, roi.width, CV_8UC1 );
+
+                CNT = Mat::zeros(roi.height, roi.width, CV_8UC1 );
+                haveMask = true;
+                
+                sum = 0; count = 0; //benchmark
             }
-            // Create the mask
+                   
+          
+            // Create the HSV mask
             inRange(HSV, lowerb , upperb, mask);
-            dilate(mask, mask, dilateElement);
+            dilate(mask, mask, dilateElement);            
+            //imshow("mask", mask);
             
-            //mask = mask.mul(ROI);
-            imshow("mask", mask);
-            
+            // Reset the output
             OUT = Mat::zeros(roi.height, roi.width, CV_8UC1 );
+            
+            // Active Contour
             frameArray = ToArray(gray);
             maskArray = ToArray(mask);
             outputArray = ToArray(OUT);
             cntArray = ToArray(CNT);
-            ActiveContour(&frameArray[0], &cntArray[0], &maskArray[0], roi.width, roi.height);  
+            ActiveContour(&frameArray[0], &cntArray[0], &maskArray[0], roi.width, roi.height);
             CNT = ToMat(&cntArray[0], roi.height, roi.width);
             inRange(CNT, Scalar(0) , Scalar(1), OUT);
+            //imshow("Output", OUT);
             CNT *= 0.001;
-            //OUT = ToMat(&outputArray[0], roi.height, roi.width);
-            //OUT.convertTo(OUT, CV_8UC1);
+            
+            // Find contours
             vector<vector<Point> > contours;
             vector<Vec4i> hierarchy;
-            //bitwise_and(OUT,ACmask,OUT);
-            imshow("Output", OUT);
             findContours(OUT, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE, Point(0, 0));
-        
+            
+            // Find bounding box for each contour
             vector<Rect> boundRect( contours.size() );
-
             for( int i = 0; i < contours.size(); i++ )
             { 
                 boundRect[i] = boundingRect( Mat(contours[i]) );
             }
-  
-            /// Draw polygonal contour + bonding rects + circles
-            circle(croppedFrame, center, 5, Scalar(0,0,255), 5);
+
+            circle(croppedFrame, centerROI, 5, Scalar(0,0,255), 5); // GREEN = FRAME
+            circle(frame, centerFrame, 5, Scalar(0,255,0), 5);      // RED = ROI
 
             for( int i = 0; i< contours.size(); i++ )
             {
-                if(boundRect[i].contains(center)) {
-                    
+                if(boundRect[i].contains(centerROI)) {
                     drawContours( croppedFrame, contours, i, Scalar(255,255,255), 1, 8, vector<Vec4i>(), 0, Point() );
-                    rectangle( croppedFrame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,255,0), 2, 8, 0 );
-                    //imshow("Drawing", drawing);
-                    /*
+                    rectangle( croppedFrame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,0,255), 2, 8, 0 );
+                    rectangle( frame, roi.tl(), roi.br(), Scalar(0,255,0), 2, 8, 0 );
+                    
+                    // Compute the center of the  bounding box wrt ROI
+                    Point centerBound(boundRect[i].tl().x + boundRect[i].size().width/2, boundRect[i].tl().y + boundRect[i].size().height/2);
+                    cout << "Bounding center " << centerBound << endl;
+                    cout << "Frame center " << centerFrame << endl;
+                    cout << "Roi center " << centerROI << endl;
 
+                    // Compute the shifting of the new center wrt the ROI
+                    //Point shift(centerBound.x - centerROI.x, centerBound.y - centerROI.y);
+                    //cout << "Shift " << shift << endl;
+
+                    //int absX = abs(shift.x);
+                    //int absY = abs(shift.y);
+                    //if((absX > 4 && absX < 10)|| (absY > 4 && absY < 10)) {
+                        // Update the center
+                        centerROI = centerBound;
+                        
+                        
+                        //centerFrame = Point(centerFrame.x + shift.x, centerFrame.y + shift.y);
+                        centerFrame = Point(centerBound.x + roi.tl().x, centerBound.y + roi.tl().y);
+
+                        cout << "New frame center " << centerFrame << endl; 
+                        
+                        //int width = roi.width;
+                        //int height = roi.height;
+                        int x = boundRect[i].width;
+                        int y = boundRect[i].height;
+                        int width = (int)(sqrt((x/(y+EPS))*area));
+                        int height = (int)(area/width);
+                        roi = Rect(centerFrame.x-width/2,centerFrame.y-height/2,width,height);
+                    //}
+                    // Update the ROI
+
+                    /*
                     // Center
-                    center.x = boundRect[i].tl().x + boundRect[i].size().width/2;
-                    center.y = boundRect[i].tl().y + boundRect[i].size().height/2;
-                    int x = boundRect[i].size().width;
-                    int y = boundRect[i].size().height;
+                        int x = boundRect[i].width;
+                        int y = boundRect[i].height;
                         int v = (int)(sqrt((x/(y+EPS))*area));
                         int h = (int)(area/v);
                         int deltax = (int)((h-y)/2);
@@ -157,7 +183,7 @@ void Camera::Follow()
                     break;
                 }
             }
-            imshow("croppedFrame", croppedFrame);
+            //imshow("croppedFrame", croppedFrame);
         }
         imshow("Frame", frame);
         //cout << double( clock() - startTime ) / (double)CLOCKS_PER_SEC << endl; 
@@ -184,31 +210,23 @@ void Camera::draw_box( Mat* img, Rect rect ){
 	rectangle(*img, Point(roi.x, roi.y), Point(roi.x+roi.width,roi.y+roi.height), Scalar(255,0,0), 2, 8, 0  );
 }
 void Camera::onMouse( int event, int x, int y, int d, void *param )
-{   /*
-    if  ( event == EVENT_LBUTTONDOWN )
-    {
-        Point*p = (Point*)ptr;
-        p->x = x;
-        p->y = y;
-        clicked = true;
-        haveMask = false;
-    }*/
+{
     switch( event ){
-		case EVENT_MOUSEMOVE: 
-			if( drawing_box ){
+
+		case EVENT_LBUTTONDOWN:
+			drawing_box = true;             // LEFT BUTTON DOWN = START DRAWING
+			roi = Rect( x, y, 0, 0 );
+			break;
+                        
+		case EVENT_MOUSEMOVE:   
+			if( drawing_box ){              // MOUSE MOVE + LEFT BUTTON DOWN = DRAWING
 				roi.width = x-roi.x;
 				roi.height = y-roi.y;
 			}
 			break;
 
-		case EVENT_LBUTTONDOWN:
-			drawing_box = true;
-			roi = Rect( x, y, 0, 0 );
-			break;
-
-		case EVENT_LBUTTONUP:
-			drawing_box = false;
-                        clicked = true;
+		case EVENT_LBUTTONUP:               
+			drawing_box = false;            // LEFT BUTTON UP = STOP DROWING
 			if( roi.width < 0 ){
 				roi.x += roi.width;
 				roi.width *= -1;
@@ -217,8 +235,19 @@ void Camera::onMouse( int event, int x, int y, int d, void *param )
 				roi.y += roi.height;
 				roi.height *= -1;
 			}
+                        // Max area
                         area = roi.area()*0.8;
-                        haveMask = false;
+                        
+                        // Center of ROI wrt FRAME
+                        centerFrame.x = roi.tl().x + roi.size().width/2;
+                        centerFrame.y = roi.tl().y + roi.size().height/2;
+                        
+                        // Center of ROI wrt ROI
+                        centerROI.x = roi.size().width/2;
+                        centerROI.y = roi.size().height/2;
+                        
+                        haveRoi = true;
+                        haveMask = false;               // MUST REINITIALIZE MASK
 			break;
             
 	}
