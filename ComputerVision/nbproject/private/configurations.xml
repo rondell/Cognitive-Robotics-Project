@@ -12,20 +12,16 @@
           </df>
         </df>
         <df name="Chanvese.dir">
-          <df name="lib">
-          </df>
           <df name="libs">
             <df name="chanvese">
             </df>
           </df>
         </df>
         <df name="Cognitive-Robotics-Project.dir">
-          <df name="lib">
-          </df>
-          <df name="libs">
-          </df>
           <df name="src">
           </df>
+        </df>
+        <df name="Progress">
         </df>
         <in>feature_tests.c</in>
         <in>feature_tests.cxx</in>

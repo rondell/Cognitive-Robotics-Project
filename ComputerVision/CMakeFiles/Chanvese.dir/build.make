@@ -35,10 +35,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision
+CMAKE_SOURCE_DIR = /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision
+CMAKE_BINARY_DIR = /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Chanvese.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/Chanvese.dir/flags.make
 
 CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o: CMakeFiles/Chanvese.dir/flags.make
 CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o: libs/chanvese/chanvese.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o   -c /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o   -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c
 
 CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c > CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c > CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.i
 
 CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c -o CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c -o CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.s
 
 CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o.requires:
 .PHONY : CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o.requires
@@ -74,17 +74,17 @@ CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o.provides.build: CMakeFiles/Ch
 
 CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o: CMakeFiles/Chanvese.dir/flags.make
 CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o: libs/chanvese/contour.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o   -c /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o   -c /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c
 
 CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c > CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c > CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.i
 
 CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c -o CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c -o CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.s
 
 CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o.requires:
 .PHONY : CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o.requires
@@ -124,6 +124,6 @@ CMakeFiles/Chanvese.dir/clean:
 .PHONY : CMakeFiles/Chanvese.dir/clean
 
 CMakeFiles/Chanvese.dir/depend:
-	cd /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/Chanvese.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/CMakeFiles/Chanvese.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Chanvese.dir/depend
 
