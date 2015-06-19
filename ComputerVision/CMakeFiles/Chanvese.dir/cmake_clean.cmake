@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Chanvese.dir/lib/Chanvese.c.o"
-  "CMakeFiles/Chanvese.dir/lib/Contour.c.o"
+  "CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o"
+  "CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o"
   "libChanvese.pdb"
   "libChanvese.a"
 )
