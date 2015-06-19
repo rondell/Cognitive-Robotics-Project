@@ -6,9 +6,6 @@
 #ifndef _CHANVESE_H_
 #define _CHANVESE_H_
 
-#ifdef __cplusplus 
-extern "C" {
-#endif
 typedef float num;
 /** @brief Options handling for ChanVese */
 typedef struct chanvesestruct
@@ -61,9 +58,5 @@ void ChanVeseInitPhi(num *Phi, int Width, int Height);
 
 void RegionAverages(num *c1, num *c2, const num *Phi, const num *f,
     int Width, int Height, int NumChannels);
-
-#ifdef __cplusplus 
-}
-#endif
 
 #endif /* _CHANVESE_H_ */
