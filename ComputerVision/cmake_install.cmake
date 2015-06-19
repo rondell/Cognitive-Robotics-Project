@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision
+# Install script for directory: /Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
