@@ -6,23 +6,23 @@ find_package( OpenCV )
 
 set(INCLUDE_DIR include)
 set(SRC_DIR src)
-set(LIB_DIR lib)
-set(CHANVESE_LIB Chanvese)
+set(LIB_DIR libs)
 
-include_directories( ${OpenCV_INCLUDE_DIRS} ${LIB_DIR} ${INCLUDE_DIR})
+set(Chanvese_LIBS Chanvese)
+
+include_directories( ${OpenCV_INCLUDE_DIRS} ${INCLUDE_DIR} ${LIB_DIR})
 
 set(SOURCE_FILES 
 	main.cpp
 	${SRC_DIR}/Camera.cpp
-	${INCLUDE_DIR}/Camera.h
-)
-
-add_library (Chanvese 
-	${LIB_DIR}/Chanvese.h
-	${LIB_DIR}/Chanvese.c
-	${LIB_DIR}/Contour.h
-	${LIB_DIR}/Contour.c)
+	${INCLUDE_DIR}/Camera.h)
 
 add_executable( Cognitive-Robotics-Project ${SOURCE_FILES})
 
-target_link_libraries( Cognitive-Robotics-Project ${CHANVESE_LIB} ${OpenCV_LIBS} )
+add_library (Chanvese 
+	${LIB_DIR}/chanvese/chanvese.c
+	${LIB_DIR}/chanvese/chanvese.h
+	${LIB_DIR}/chanvese/contour.c
+	${LIB_DIR}/chanvese/contour.h)
+
+target_link_libraries( Cognitive-Robotics-Project ${OpenCV_LIBS} ${Chanvese_LIBS} )

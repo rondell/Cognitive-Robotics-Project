@@ -8,7 +8,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
-#include "Contour.h"
+#include "chanvese/contour.h"
 
 using namespace cv;
 using namespace std;
@@ -16,9 +16,9 @@ using namespace std;
 class Camera
 {
 public:
-	int device;
-	int width;
-	int height;
+	int device = 0;
+	int width = 640;
+	int height = 480;
 
 	Camera(int device, int width, int height);
         void OpenCamera();

@@ -56,7 +56,7 @@ int ChanVeseSimplePlot(int State, int Iter, num Delta,
 
 /** @brief Default options struct */
 static struct chanvesestruct DefaultChanVeseOpt =
-        {(num)1e-3, 1, (num)0.25, 0, 1, 1, (num)0.5, 
+        {(num)1e-3, 500, (num)0.25, 0, 1, 1, (num)0.5, 
         ChanVeseSimplePlot, NULL};
         
 
