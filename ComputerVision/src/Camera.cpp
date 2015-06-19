@@ -4,7 +4,7 @@
 #define EPS 1e-50
 
 bool haveMask = false, haveRoi = false, drawing_box = false;
-Rect roi; Point centerFrame, centerROI;
+Rect roi; Point centerFrame, centerBound;
 int area;
 
 Camera::Camera(int device, int width, int height) {
@@ -35,7 +35,7 @@ void Camera::Follow()
     float* output=new float[height*width]();
 
     centerFrame = Point(0,0);
-    centerROI = Point(0,0);
+    centerBound = Point(0,0);
     cout << "[START] Active Contour " << endl;
     
     // Follow the camera
@@ -68,13 +68,16 @@ void Camera::Follow()
             draw_box(&frame, roi);
         
         if(haveRoi) {
+            while(waitKey(10) == -1);
             croppedFrame = frame(roi);
+
             cvtColor(croppedFrame, gray, COLOR_RGB2GRAY); 
             cvtColor(croppedFrame, HSV, COLOR_RGB2HSV);
+            
             if(!haveMask) {
 
                 // Take the HSV value from the center of the ROI
-                hsv = HSV.at<Vec3b>(centerROI);
+                hsv = HSV.at<Vec3b>(centerBound);
 
                 // Compute lower and upper bound of hsv
                 lowerb = Scalar(hsv.val[0] - 30, hsv.val[1] - 50, hsv.val[2] - 50);
@@ -89,7 +92,7 @@ void Camera::Follow()
             // Create the HSV mask
             inRange(HSV, lowerb , upperb, mask);
             dilate(mask, mask, dilateElement);            
-            //imshow("mask", mask);
+            imshow("mask", mask);
             
             // Reset the output
             OUT = Mat::zeros(roi.height, roi.width, CV_8UC1 );
@@ -101,16 +104,21 @@ void Camera::Follow()
             maskArray = ToArray(mask);
             outputArray = ToArray(OUT);
             cntArray = ToArray(smallCNT);
+            if(count == 0) {
+                InitContour(&cntArray[0], roi.width, roi.height);
+            }
             ActiveContour(&frameArray[0], &cntArray[0], &maskArray[0], roi.width, roi.height);
             smallCNT = ToMat(&cntArray[0], roi.height, roi.width);
-            inRange(smallCNT, Scalar(0) , Scalar(1), OUT);
-            smallCNT *= 0.001;
+            inRange(smallCNT, Scalar(-255) , Scalar(0), OUT);
+            smallCNT *= 0.01;
             smallCNT.copyTo(bigCNT(roi));
 
             
+            imshow("OUT", OUT);
             // Find contours
             vector<vector<Point> > contours;
             vector<Vec4i> hierarchy;
+            
             findContours(OUT, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE, Point(0, 0));
 
             // Find bounding box for each contour
@@ -119,21 +127,32 @@ void Camera::Follow()
             { 
                 boundRect[i] = boundingRect( Mat(contours[i]) );
             }
-
             for( int i = 0; i< contours.size(); i++ )
             {
-                if(boundRect[i].contains(centerROI)) {
-                    rectangle( croppedFrame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,0,255), 2, 8, 0 );
+                if(boundRect[i].contains(centerBound)) { 
+                    rectangle( croppedFrame, boundRect[i].tl(), boundRect[i].br(), Scalar(0,0,255), 2, 8, 0 );  //RED = BOUNDING
                     drawContours( croppedFrame, contours, i, Scalar(255,255,255), 1, 8, vector<Vec4i>(), 0, Point() );
                     
                     // Compute the center of the  bounding box wrt ROI
-                    Point centerBound(boundRect[i].tl().x + boundRect[i].size().width/2, boundRect[i].tl().y + boundRect[i].size().height/2);
-                    centerROI = centerBound;
-                    centerFrame = Point(centerBound.x + roi.tl().x, centerBound.y + roi.tl().y);
+                    centerBound = Point(boundRect[i].tl().x + boundRect[i].size().width/2, boundRect[i].tl().y + boundRect[i].size().height/2);
+                        int widthBound = boundRect[i].width;
+                        int heightBound = boundRect[i].height;
+                                centerFrame = Point(centerBound.x + roi.tl().x, centerBound.y + roi.tl().y);
 
-                    cout << endl << "centerBound " << centerBound << endl;
-                    cout << "centerFrame " << centerFrame << endl;
-                    cout << "centerROI " << centerROI << endl;
+                        int w = (int)(sqrt((widthBound/(heightBound+EPS))*area));
+                        int h = (int)(area/(w+EPS));
+     
+                        int tlx = centerFrame.x-w/2;
+                        int tly = centerFrame.y-h/2;
+                        int brx = centerFrame.x+w/2;
+                        int bry = centerFrame.y+h/2;
+   
+                        tlx = (tlx < 0) ? 0 : tlx;
+                        brx = (brx > width) ? width : brx;
+                        tly = (tly < 0) ? 0 : tly;
+                        bry = (bry > height) ? height : bry;  
+
+                        roi = Rect(Point(tlx,tly),Point(brx,bry));
 
                     // Compute the shifting of the new center wrt the ROI
                     //Point shift(centerBound.x - centerROI.x, centerBound.y - centerROI.y);
@@ -150,22 +169,7 @@ void Camera::Follow()
                         
                         //int width = roi.width;
                         //int height = roi.height;
-                        int x = boundRect[i].width;
-                        int y = boundRect[i].height;
-                        int w = (int)(sqrt((x/(y+EPS))*area));
-                        int h = (int)(area/w);
                         
-                        int tlx = centerFrame.x-w/2;
-                        int tly = centerFrame.y-h/2;
-                        int brx = centerFrame.x+w/2;
-                        int bry = centerFrame.y+h/2;
-                        
-                        tlx = (tlx < 0) ? 0 : tlx;
-                        brx = (brx > width) ? width : brx;
-                        tly = (tly < 0) ? 0 : tly;
-                        bry = (bry > height) ? height : bry;  
-                        
-                        roi = Rect(Point(tlx,tly),Point(brx,bry));
                         //roi = Rect((int)(centerFrame.x-width/2),(int)(centerFrame.y-height/2),width,height);
                     //}
                     // Update the ROI
@@ -196,12 +200,16 @@ void Camera::Follow()
                     break;
                 }
             }
+
             //imshow("croppedFrame", croppedFrame);
         }
 
-            circle(croppedFrame, centerROI, 5, Scalar(0,0,255), 5); // GREEN = FRAME
-            circle(frame, centerFrame, 5, Scalar(0,255,0), 5);      // RED = ROI
-            rectangle( frame, roi.tl(), roi.br(), Scalar(0,255,0), 2, 8, 0 );
+            circle(croppedFrame, centerBound, 5, Scalar(0,0,255), 3); // RED = centerBound                                    
+
+            circle(frame, centerFrame, 10, Scalar(0,255,0), 3);      // GREEN = centerFrame
+
+            rectangle( frame, roi.tl(), roi.br(), Scalar(0,255,0), 2, 8, 0 ); // GREEN = ROI
+
         imshow("Frame", frame);
         //cout << double( clock() - startTime ) / (double)CLOCKS_PER_SEC << endl; 
         sum += double( clock() - startTime ) / (double)CLOCKS_PER_SEC;
@@ -260,8 +268,8 @@ void Camera::onMouse( int event, int x, int y, int d, void *param )
                         centerFrame.y = roi.tl().y + roi.size().height/2;
                         
                         // Center of ROI wrt ROI
-                        centerROI.x = roi.size().width/2;
-                        centerROI.y = roi.size().height/2;
+                        centerBound.x = roi.size().width/2;
+                        centerBound.y = roi.size().height/2;
                         
                         haveRoi = true;
                         haveMask = false;               // MUST REINITIALIZE MASK
