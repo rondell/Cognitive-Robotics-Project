@@ -112,7 +112,7 @@ static struct chanvesestruct DefaultChanVeseOpt =
  * the routine to run exactly MaxIter iterations.
  */
 int ChanVese(num *Phi, const num *f, const num *mask,  
-    int Width, int Height, int NumChannels, const chanveseopt *Opt)
+    int Width, int Height, int NumChannels, const chanveseopt *Opt, int exitPt)
 {
     int (*PlotFun)(int, int, num, const num*, const num*, const num*, 
         int, int, int, void*);
@@ -225,6 +225,7 @@ int ChanVese(num *Phi, const num *f, const num *mask,
                 }else
                     PhiPtr[0] = -1;
             }
+            //if (exitPt<j) break;
         }
         
         PhiDiffNorm = sqrt(PhiDiffNorm/NumEl);        

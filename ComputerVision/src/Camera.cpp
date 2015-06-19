@@ -35,7 +35,8 @@ void Camera::Follow()
 {
     float* contour=new float[height*width]();
     float* output=new float[height*width]();
-
+    vector<float> temp = ToArray(Mat::zeros(height, width, CV_8UC1 ));
+    output = &temp[0];
     cout << "[START] Active Contour " << endl;
     
     // Follow the camera
@@ -47,7 +48,9 @@ void Camera::Follow()
     Mat dilateElement = getStructuringElement(MORPH_RECT, Size(2 * dilation_size + 1, 2 * dilation_size + 1), Point(dilation_size, dilation_size) );
     vector<float> frameArray, maskArray;
     Mat ROI = Mat::zeros( height, width, CV_8UC1 );
-    while(waitKey(10) != -1) {
+                int count = 0; double sum = 0; 
+
+    while(waitKey(1) == -1) {
         if (capture.read(frame) == NULL) {
             cout << "[ERROR] frame not read" << endl;
             return;
@@ -76,18 +79,21 @@ void Camera::Follow()
                 //cout << "upperb: " << upperb << endl;  
                 ROI = Mat::zeros( height, width, CV_8UC1 );
                 rectangle( ROI, roi.tl(), roi.br(), Scalar(255), -1);
+                
+                                sum = 0; count = 0; //benchmark
+
             }
             
             // Create the mask
             inRange(HSV, lowerb , upperb, mask);
             dilate(mask, mask, dilateElement);
             mask = mask.mul(ROI);
-            imshow("ed", mask);
+            //imshow("ed", mask);
             
             frameArray = ToArray(gray);
             maskArray = ToArray(mask);
-            ActiveContour(&frameArray[0], output, contour, &maskArray[0], width, height,0);  
-            imshow("Output", ToMat(output, height, width));
+            ActiveContour(&frameArray[0], output, contour, &maskArray[0], width, height,roi.br().y);  
+            //imshow("Output", ToMat(output, height, width));
             
             
             Mat OUT = ToMat(output, height, width);
@@ -128,13 +134,11 @@ void Camera::Follow()
                         int tly = boundRect[i].tl().y -deltay;
                         int brx = boundRect[i].br().x +deltax;
                         int bry = boundRect[i].br().y +deltay;
-                        cout << "4" << endl << flush;
                         tlx = (tlx < 0) ? 0 : tlx;
                         brx = (brx > width) ? width : brx;
                         tly = (tly < 0) ? 0 : tly;
                         bry = (bry > height) ? height : bry;                   
                         roi = Rect(Point(tlx,tly),Point(brx,bry));
-                        cout << "5" << endl << flush;
                         ROI = Mat::zeros( height, width, CV_8UC1 );
                         rectangle( ROI, roi.tl(), roi.br(), Scalar(255), -1);
                         rectangle( frame, roi.tl(), roi.br(), Scalar(0,0,255), 2, 8, 0 );
@@ -143,8 +147,10 @@ void Camera::Follow()
             }
         }
         imshow("Frame", frame);
-        //cout << double( clock() - startTime ) / (double)CLOCKS_PER_SEC<< " seconds." << endl; 
+        sum += double( clock() - startTime ) / (double)CLOCKS_PER_SEC;
+        count++;
     }
+    cout << sum / count << endl << flush;
     return;
 }
 
