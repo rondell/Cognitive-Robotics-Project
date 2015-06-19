@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.c
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/Chanvese.c
 math.h
 -
 stdlib.h
@@ -16,17 +16,15 @@ stdio.h
 string.h
 -
 chanvese.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.h
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese.h
 
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese.h
-
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/contour.c
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/Contour.c
 stdio.h
 -
 string.h
 -
-chanvese/chanvese.h
-/Users/Fgaretti/Cognitive-Robotics-Project/ComputerVision/libs/chanvese/chanvese/chanvese.h
+chanvese.h
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese.h
 
-libs/chanvese/chanvese.h
+/Users/emanuelededonatis/git/Cognitive-Robotics-Project/ComputerVision/lib/chanvese.h
 
