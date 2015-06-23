@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/prosilica.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/prosilica.h
 stdexcept
 -
 string
@@ -20,13 +20,13 @@ boost/thread.hpp
 prosilica_gige_sdk/PvApi.h
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/utilities/read_memory.cpp
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/utilities/read_memory.cpp
 prosilica/prosilica.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/utilities/prosilica/prosilica.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/utilities/prosilica/prosilica.h
 cstdio
 -
 cassert
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvApi.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvApi.h
 

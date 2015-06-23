@@ -16,9 +16,9 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include"
   "/opt/ros/indigo/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

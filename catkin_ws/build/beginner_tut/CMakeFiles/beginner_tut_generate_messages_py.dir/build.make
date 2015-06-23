@@ -35,52 +35,52 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build
+CMAKE_BINARY_DIR = /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build
 
 # Utility rule file for beginner_tut_generate_messages_py.
 
 # Include the progress variables for this target.
 include beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/progress.make
 
-beginner_tut/CMakeFiles/beginner_tut_generate_messages_py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py
-beginner_tut/CMakeFiles/beginner_tut_generate_messages_py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py
-beginner_tut/CMakeFiles/beginner_tut_generate_messages_py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py
-beginner_tut/CMakeFiles/beginner_tut_generate_messages_py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py
+beginner_tut/CMakeFiles/beginner_tut_generate_messages_py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py
+beginner_tut/CMakeFiles/beginner_tut_generate_messages_py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py
+beginner_tut/CMakeFiles/beginner_tut_generate_messages_py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py
+beginner_tut/CMakeFiles/beginner_tut_generate_messages_py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/msg/Num.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/msg/Num.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG beginner_tut/Num"
-	cd /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/msg/Num.msg -Ibeginner_tut:/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p beginner_tut -o /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/msg/Num.msg -Ibeginner_tut:/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p beginner_tut -o /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/srv/AddTwoInts.srv
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/srv/AddTwoInts.srv
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python code from SRV beginner_tut/AddTwoInts"
-	cd /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/srv/AddTwoInts.srv -Ibeginner_tut:/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p beginner_tut -o /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/srv/AddTwoInts.srv -Ibeginner_tut:/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p beginner_tut -o /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python msg __init__.py for beginner_tut"
-	cd /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg --initpy
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg --initpy
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_4)
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python srv __init__.py for beginner_tut"
-	cd /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv --initpy
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv --initpy
 
 beginner_tut_generate_messages_py: beginner_tut/CMakeFiles/beginner_tut_generate_messages_py
-beginner_tut_generate_messages_py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py
-beginner_tut_generate_messages_py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py
-beginner_tut_generate_messages_py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py
-beginner_tut_generate_messages_py: /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py
+beginner_tut_generate_messages_py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/_Num.py
+beginner_tut_generate_messages_py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/_AddTwoInts.py
+beginner_tut_generate_messages_py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/msg/__init__.py
+beginner_tut_generate_messages_py: /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tut/srv/__init__.py
 beginner_tut_generate_messages_py: beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/build.make
 .PHONY : beginner_tut_generate_messages_py
 
@@ -89,10 +89,10 @@ beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/build: beginner_tu
 .PHONY : beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/build
 
 beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/clean:
-	cd /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && $(CMAKE_COMMAND) -P CMakeFiles/beginner_tut_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && $(CMAKE_COMMAND) -P CMakeFiles/beginner_tut_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/clean
 
 beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/depend:
-	cd /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : beginner_tut/CMakeFiles/beginner_tut_generate_messages_py.dir/depend
 

@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/set_ip.dir/src/utilities/set_ip.cpp.o"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/prosilica_camera/set_ip.pdb"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/prosilica_camera/set_ip"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/prosilica_camera/set_ip.pdb"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/prosilica_camera/set_ip"
 )
 
 # Per-language clean rules from dependency scanning.

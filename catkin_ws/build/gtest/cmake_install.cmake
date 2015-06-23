@@ -2,7 +2,7 @@
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/AddTwoInts.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/AddTwoInts.h
 ros/service_traits.h
 -
 beginner_tut/AddTwoIntsRequest.h
@@ -14,7 +14,7 @@ beginner_tut/AddTwoIntsRequest.h
 beginner_tut/AddTwoIntsResponse.h
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/AddTwoIntsRequest.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/AddTwoIntsRequest.h
 string
 -
 vector
@@ -30,7 +30,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/AddTwoIntsResponse.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/AddTwoIntsResponse.h
 string
 -
 vector
@@ -46,11 +46,11 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/adder_server.cpp
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/adder_server.cpp
 ros/ros.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/ros/ros.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/ros/ros.h
 beginner_tut/AddTwoInts.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/beginner_tut/AddTwoInts.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/beginner_tut/AddTwoInts.h
 
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h

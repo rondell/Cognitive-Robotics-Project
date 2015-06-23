@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build
+CMAKE_BINARY_DIR = /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build
 
 # Utility rule file for beginner_tut_generate_messages.
 
@@ -56,10 +56,10 @@ beginner_tut/CMakeFiles/beginner_tut_generate_messages.dir/build: beginner_tut_g
 .PHONY : beginner_tut/CMakeFiles/beginner_tut_generate_messages.dir/build
 
 beginner_tut/CMakeFiles/beginner_tut_generate_messages.dir/clean:
-	cd /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && $(CMAKE_COMMAND) -P CMakeFiles/beginner_tut_generate_messages.dir/cmake_clean.cmake
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut && $(CMAKE_COMMAND) -P CMakeFiles/beginner_tut_generate_messages.dir/cmake_clean.cmake
 .PHONY : beginner_tut/CMakeFiles/beginner_tut_generate_messages.dir/clean
 
 beginner_tut/CMakeFiles/beginner_tut_generate_messages.dir/depend:
-	cd /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut/CMakeFiles/beginner_tut_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut/CMakeFiles/beginner_tut_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : beginner_tut/CMakeFiles/beginner_tut_generate_messages.dir/depend
 

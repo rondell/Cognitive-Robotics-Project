@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/SubscribeAndPublish.dir/src/SubscribeAndPublish.cpp.o  -o /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/webcam_test/SubscribeAndPublish -rdynamic 

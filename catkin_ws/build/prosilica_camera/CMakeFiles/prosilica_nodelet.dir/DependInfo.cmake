@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/nodes/prosilica_nodelet.cpp" "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/prosilica_camera/CMakeFiles/prosilica_nodelet.dir/src/nodes/prosilica_nodelet.cpp.o"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/nodes/prosilica_nodelet.cpp" "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/prosilica_camera/CMakeFiles/prosilica_nodelet.dir/src/nodes/prosilica_nodelet.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,15 +17,15 @@ SET(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/prosilica_camera/CMakeFiles/prosilica.dir/DependInfo.cmake"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/prosilica_gige_sdk/CMakeFiles/PvAPI.dir/DependInfo.cmake"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/prosilica_camera/CMakeFiles/prosilica.dir/DependInfo.cmake"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/prosilica_gige_sdk/CMakeFiles/PvAPI.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include"
   "/opt/ros/indigo/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

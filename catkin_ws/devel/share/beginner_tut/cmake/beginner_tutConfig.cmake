@@ -67,14 +67,14 @@ set(beginner_tut_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(beginner_tut_SOURCE_PREFIX /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut)
-  set(beginner_tut_DEVEL_PREFIX /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel)
+  set(beginner_tut_SOURCE_PREFIX /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut)
+  set(beginner_tut_DEVEL_PREFIX /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel)
   set(beginner_tut_INSTALL_PREFIX "")
   set(beginner_tut_PREFIX ${beginner_tut_DEVEL_PREFIX})
 else()
   set(beginner_tut_SOURCE_PREFIX "")
   set(beginner_tut_DEVEL_PREFIX "")
-  set(beginner_tut_INSTALL_PREFIX /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install)
+  set(beginner_tut_INSTALL_PREFIX /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install)
   set(beginner_tut_PREFIX ${beginner_tut_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(beginner_tut_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include" STREQUAL "")
+if(NOT "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include" STREQUAL "")
   set(beginner_tut_INCLUDE_DIRS "")
-  set(_include_dirs "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include")
+  set(_include_dirs "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include
         message(FATAL_ERROR "Project 'beginner_tut' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'osboxes <osboxes@todo.todo>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'beginner_tut' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/${idir}'.  Ask the maintainer 'osboxes <osboxes@todo.todo>' to fix it.")
+      message(FATAL_ERROR "Project 'beginner_tut' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/${idir}'.  Ask the maintainer 'osboxes <osboxes@todo.todo>' to fix it.")
     endif()
     _list_append_unique(beginner_tut_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib;/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

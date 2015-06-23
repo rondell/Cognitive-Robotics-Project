@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include/prosilica_camera/ProsilicaCameraConfig.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include/prosilica_camera/ProsilicaCameraConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -24,7 +24,7 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/prosilica.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/prosilica.h
 stdexcept
 -
 string
@@ -38,11 +38,11 @@ boost/thread.hpp
 prosilica_gige_sdk/PvApi.h
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/rolling_sum.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/rolling_sum.h
 boost/circular_buffer.hpp
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/nodes/prosilica_nodelet.cpp
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/nodes/prosilica_nodelet.cpp
 string
 -
 ros/ros.h
@@ -80,13 +80,13 @@ boost/thread.hpp
 prosilica_camera/ProsilicaCameraConfig.h
 -
 prosilica/prosilica.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/nodes/prosilica/prosilica.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/nodes/prosilica/prosilica.h
 prosilica/rolling_sum.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/nodes/prosilica/rolling_sum.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/nodes/prosilica/rolling_sum.h
 pluginlib/class_list_macros.h
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvApi.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvApi.h
 
 /opt/ros/indigo/include/XmlRpc.h
 string

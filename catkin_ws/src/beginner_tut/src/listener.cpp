@@ -1,15 +1,20 @@
 #include <boost/bind.hpp>
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
-#include "callBack.h"
+#include "sensor_msgs/Image.h"
+
 
 
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
  */
-void chatterCallback(const std_msgs::Int32::ConstPtr& msg)
+void chatterCallback(const sensor_msgs::Image::ConstPtr& msg)
 {
-  ROS_INFO("I heard: [%d]", msg->data/2);
+  int i=0;
+  for(i=0; i<msg->data.size(); i++)
+{
+     printf("%d:\t%d\n", i, msg->data[i]);
+}
   //ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
 
@@ -52,7 +57,7 @@ int main(int argc, char **argv)
    * is the number of messages that will be buffered up before beginning to throw
    * away the oldest ones.
    */
-  ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
+  ros::Subscriber sub = n.subscribe("usb_cam/image_raw", 1000, chatterCallback);
 
   /**
    * ros::spin() will enter a loop, pumping callbacks.  With this version, all

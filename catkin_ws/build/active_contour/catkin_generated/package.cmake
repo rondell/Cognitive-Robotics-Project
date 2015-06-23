@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "active_contour")
+set(active_contour_MAINTAINER "osboxes <osboxes@todo.todo>")
+set(active_contour_DEPRECATED "")
+set(active_contour_VERSION "0.0.0")
+set(active_contour_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(active_contour_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(active_contour_BUILDTOOL_DEPENDS "catkin")

@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/beginner_tut_generate_messages_cpp"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/Num.h"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/AddTwoInts.h"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/Num.h"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include/beginner_tut/AddTwoInts.h"
 )
 
 # Per-language clean rules from dependency scanning.

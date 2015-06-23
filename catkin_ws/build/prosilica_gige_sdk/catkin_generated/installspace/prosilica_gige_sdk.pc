@@ -1,8 +1,8 @@
-prefix=/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install
+prefix=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install
 
 Name: prosilica_gige_sdk
 Description: Description of prosilica_gige_sdk
 Version: 1.26.3
-Cflags: -I/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install/include
-Libs: -L/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install/lib -lPvAPI
+Cflags: -I/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install/include
+Libs: -L/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install/lib -lPvAPI
 Requires: 

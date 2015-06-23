@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/talker.cpp
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/talker.cpp
 ros/ros.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/ros/ros.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/ros/ros.h
 std_msgs/String.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/std_msgs/String.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/std_msgs/String.h
 std_msgs/Int32.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/std_msgs/Int32.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/std_msgs/Int32.h
 sstream
 -
 

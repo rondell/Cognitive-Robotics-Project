@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build
+CMAKE_BINARY_DIR = /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -120,9 +120,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -252,6 +252,136 @@ _catkin_empty_exported_target: cmake_check_build_system
 _catkin_empty_exported_target/fast:
 	$(MAKE) -f prosilica_gige_sdk/CMakeFiles/_catkin_empty_exported_target.dir/build.make prosilica_gige_sdk/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
+
+#=============================================================================
+# Target rules for targets named prova
+
+# Build rule for target.
+prova: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prova
+.PHONY : prova
+
+# fast build rule for target.
+prova/fast:
+	$(MAKE) -f active_contour/CMakeFiles/prova.dir/build.make active_contour/CMakeFiles/prova.dir/build
+.PHONY : prova/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_cpp
+
+# Build rule for target.
+roscpp_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	$(MAKE) -f active_contour/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make active_contour/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_lisp
+
+# Build rule for target.
+roscpp_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	$(MAKE) -f active_contour/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make active_contour/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_py
+
+# Build rule for target.
+roscpp_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	$(MAKE) -f active_contour/CMakeFiles/roscpp_generate_messages_py.dir/build.make active_contour/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_cpp
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f active_contour/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make active_contour/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_lisp
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_lisp
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f active_contour/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make active_contour/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_py
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_py
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	$(MAKE) -f active_contour/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make active_contour/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_cpp
+
+# Build rule for target.
+std_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f active_contour/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make active_contour/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_lisp
+
+# Build rule for target.
+std_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f active_contour/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make active_contour/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_py
+
+# Build rule for target.
+std_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_py
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	$(MAKE) -f active_contour/CMakeFiles/std_msgs_generate_messages_py.dir/build.make active_contour/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named _beginner_tut_generate_messages_check_deps_AddTwoInts
@@ -408,123 +538,6 @@ listener: cmake_check_build_system
 listener/fast:
 	$(MAKE) -f beginner_tut/CMakeFiles/listener.dir/build.make beginner_tut/CMakeFiles/listener.dir/build
 .PHONY : listener/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_cpp
-
-# Build rule for target.
-roscpp_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make beginner_tut/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_lisp
-
-# Build rule for target.
-roscpp_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make beginner_tut/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_py
-
-# Build rule for target.
-roscpp_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/roscpp_generate_messages_py.dir/build.make beginner_tut/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_cpp
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make beginner_tut/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_lisp
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_lisp
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make beginner_tut/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_py
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_py
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make beginner_tut/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named std_msgs_generate_messages_cpp
-
-# Build rule for target.
-std_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make beginner_tut/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named std_msgs_generate_messages_lisp
-
-# Build rule for target.
-std_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make beginner_tut/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named std_msgs_generate_messages_py
-
-# Build rule for target.
-std_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_py
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	$(MAKE) -f beginner_tut/CMakeFiles/std_msgs_generate_messages_py.dir/build.make beginner_tut/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named talker
@@ -981,6 +994,58 @@ write_memory/fast:
 	$(MAKE) -f prosilica_camera/CMakeFiles/write_memory.dir/build.make prosilica_camera/CMakeFiles/write_memory.dir/build
 .PHONY : write_memory/fast
 
+#=============================================================================
+# Target rules for targets named usb_cam
+
+# Build rule for target.
+usb_cam: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam
+.PHONY : usb_cam
+
+# fast build rule for target.
+usb_cam/fast:
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
+.PHONY : usb_cam/fast
+
+#=============================================================================
+# Target rules for targets named usb_cam_node
+
+# Build rule for target.
+usb_cam_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam_node
+.PHONY : usb_cam_node
+
+# fast build rule for target.
+usb_cam_node/fast:
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
+.PHONY : usb_cam_node/fast
+
+#=============================================================================
+# Target rules for targets named SubscribeAndPublish
+
+# Build rule for target.
+SubscribeAndPublish: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SubscribeAndPublish
+.PHONY : SubscribeAndPublish
+
+# fast build rule for target.
+SubscribeAndPublish/fast:
+	$(MAKE) -f webcam_test/CMakeFiles/SubscribeAndPublish.dir/build.make webcam_test/CMakeFiles/SubscribeAndPublish.dir/build
+.PHONY : SubscribeAndPublish/fast
+
+#=============================================================================
+# Target rules for targets named forward
+
+# Build rule for target.
+forward: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 forward
+.PHONY : forward
+
+# fast build rule for target.
+forward/fast:
+	$(MAKE) -f webcam_test/CMakeFiles/forward.dir/build.make webcam_test/CMakeFiles/forward.dir/build
+.PHONY : forward/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1002,6 +1067,16 @@ help:
 	@echo "... gtest_main"
 	@echo "... PvAPI"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... prova"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... std_msgs_generate_messages_py"
 	@echo "... _beginner_tut_generate_messages_check_deps_AddTwoInts"
 	@echo "... _beginner_tut_generate_messages_check_deps_Num"
 	@echo "... add_two_ints_client"
@@ -1014,15 +1089,6 @@ help:
 	@echo "... beginner_tut_genlisp"
 	@echo "... beginner_tut_genpy"
 	@echo "... listener"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_py"
 	@echo "... talker"
 	@echo "... bond_generate_messages_cpp"
 	@echo "... bond_generate_messages_lisp"
@@ -1058,6 +1124,10 @@ help:
 	@echo "... set_inhibition"
 	@echo "... set_ip"
 	@echo "... write_memory"
+	@echo "... usb_cam"
+	@echo "... usb_cam_node"
+	@echo "... SubscribeAndPublish"
+	@echo "... forward"
 .PHONY : help
 
 

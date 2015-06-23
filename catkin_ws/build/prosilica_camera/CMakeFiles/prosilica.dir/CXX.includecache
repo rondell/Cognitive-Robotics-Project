@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/prosilica.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/include/prosilica/prosilica.h
 stdexcept
 -
 string
@@ -20,9 +20,9 @@ boost/thread.hpp
 prosilica_gige_sdk/PvApi.h
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/libprosilica/prosilica.cpp
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/libprosilica/prosilica.cpp
 prosilica/prosilica.h
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/libprosilica/prosilica/prosilica.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_camera/src/libprosilica/prosilica/prosilica.h
 prosilica_gige_sdk/PvRegIo.h
 -
 cassert
@@ -38,9 +38,9 @@ arpa/inet.h
 ros/console.h
 -
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvApi.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvApi.h
 
-/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvRegIo.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include/prosilica_gige_sdk/PvRegIo.h
 prosilica_gige_sdk/PvApi.h
 -
 

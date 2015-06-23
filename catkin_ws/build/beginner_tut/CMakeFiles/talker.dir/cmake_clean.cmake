@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/talker.dir/src/talker.cpp.o"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/beginner_tut/talker.pdb"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/beginner_tut/talker"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/beginner_tut/talker.pdb"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/beginner_tut/talker"
 )
 
 # Per-language clean rules from dependency scanning.

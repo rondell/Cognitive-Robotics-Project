@@ -1,8 +1,8 @@
-prefix=/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install
+prefix=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install
 
 Name: prosilica_camera
 Description: Description of prosilica_camera
 Version: 1.9.4
-Cflags: -I/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install/include
-Libs: -L/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install/lib 
+Cflags: -I/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install/include
+Libs: -L/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install/lib 
 Requires: 

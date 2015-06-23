@@ -1,0 +1,8 @@
+prefix=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install
+
+Name: active_contour
+Description: Description of active_contour
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install/lib 
+Requires: 

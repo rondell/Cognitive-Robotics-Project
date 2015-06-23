@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/webcam_show.dir/src/webcam_show.cpp.o  -o /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/webcam_test/webcam_show -rdynamic 

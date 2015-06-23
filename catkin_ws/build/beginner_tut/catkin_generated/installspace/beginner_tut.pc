@@ -1,8 +1,8 @@
-prefix=/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install
+prefix=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install
 
 Name: beginner_tut
 Description: Description of beginner_tut
 Version: 0.0.0
-Cflags: -I/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install/include
-Libs: -L/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install/lib 
+Cflags: -I/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install/include
+Libs: -L/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install/lib 
 Requires: 

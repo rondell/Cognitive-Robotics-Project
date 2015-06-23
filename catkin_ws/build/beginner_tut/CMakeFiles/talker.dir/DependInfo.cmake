@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/talker.cpp" "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut/CMakeFiles/talker.dir/src/talker.cpp.o"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/src/talker.cpp" "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut/CMakeFiles/talker.dir/src/talker.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,9 +21,9 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include"
   "/opt/ros/indigo/include"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/beginner_tut/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

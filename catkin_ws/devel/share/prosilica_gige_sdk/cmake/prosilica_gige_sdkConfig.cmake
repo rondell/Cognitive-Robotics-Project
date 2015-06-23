@@ -67,14 +67,14 @@ set(prosilica_gige_sdk_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(prosilica_gige_sdk_SOURCE_PREFIX /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk)
-  set(prosilica_gige_sdk_DEVEL_PREFIX /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel)
+  set(prosilica_gige_sdk_SOURCE_PREFIX /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk)
+  set(prosilica_gige_sdk_DEVEL_PREFIX /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel)
   set(prosilica_gige_sdk_INSTALL_PREFIX "")
   set(prosilica_gige_sdk_PREFIX ${prosilica_gige_sdk_DEVEL_PREFIX})
 else()
   set(prosilica_gige_sdk_SOURCE_PREFIX "")
   set(prosilica_gige_sdk_DEVEL_PREFIX "")
-  set(prosilica_gige_sdk_INSTALL_PREFIX /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/install)
+  set(prosilica_gige_sdk_INSTALL_PREFIX /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install)
   set(prosilica_gige_sdk_PREFIX ${prosilica_gige_sdk_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(prosilica_gige_sdk_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include" STREQUAL "")
+if(NOT "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include" STREQUAL "")
   set(prosilica_gige_sdk_INCLUDE_DIRS "")
-  set(_include_dirs "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include")
+  set(_include_dirs "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica
         message(FATAL_ERROR "Project 'prosilica_gige_sdk' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Austin Hendrix <namniart@gmail.com>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'prosilica_gige_sdk' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/${idir}'.  Ask the maintainer 'Austin Hendrix <namniart@gmail.com>' to fix it.")
+      message(FATAL_ERROR "Project 'prosilica_gige_sdk' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/prosilica_gige_sdk/${idir}'.  Ask the maintainer 'Austin Hendrix <namniart@gmail.com>' to fix it.")
     endif()
     _list_append_unique(prosilica_gige_sdk_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib;/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

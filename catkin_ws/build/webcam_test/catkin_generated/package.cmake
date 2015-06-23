@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "webcam_test")
+set(webcam_test_MAINTAINER "osboxes <osboxes@todo.todo>")
+set(webcam_test_DEPRECATED "")
+set(webcam_test_VERSION "0.0.0")
+set(webcam_test_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(webcam_test_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(webcam_test_BUILDTOOL_DEPENDS "catkin")

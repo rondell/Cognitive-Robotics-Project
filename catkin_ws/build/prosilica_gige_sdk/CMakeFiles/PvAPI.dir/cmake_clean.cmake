@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/libPvAPI.pdb"
-  "/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/devel/lib/libPvAPI.so"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/libPvAPI.pdb"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/libPvAPI.so"
 )
 
 # Per-language clean rules from dependency scanning.
