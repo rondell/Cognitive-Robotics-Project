@@ -20,8 +20,8 @@ int ActiveContour (float *src, float *dst, float *contour, float* mask, int widt
     RegionAverages(c1, c2, contour, src, width, height, 1);
     
     //printf("\nRegion averages\n");
-    
-    for(int i=0; i<width*height; i++) {
+    int i=0;
+    for(; i<width*height; i++) {
         //contour[i]=(contour[i]>=0) ? 1 : -1;
         contour[i] *= 0.001;
         
