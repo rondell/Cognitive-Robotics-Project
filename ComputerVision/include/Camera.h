@@ -16,9 +16,9 @@ using namespace std;
 class Camera
 {
 public:
-	int device = 0;
-	int width = 640;
-	int height = 480;
+	int device;
+	int width;
+	int height;
 
 	Camera(int device, int width, int height);
         void OpenCamera();
