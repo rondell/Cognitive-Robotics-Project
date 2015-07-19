@@ -20,8 +20,8 @@ void Camera::OpenCamera()
 {
     cout << "Opening camera ... ";
     capture.open(device);
-    capture.set(CV_CAP_PROP_FRAME_WIDTH, width);
-    capture.set(CV_CAP_PROP_FRAME_HEIGHT, height);
+    capture.set(CAP_PROP_FRAME_WIDTH, width);
+    capture.set(CAP_PROP_FRAME_HEIGHT, height);
     
     if (capture.isOpened() == false) {
         cout << "[ERROR] camera already used" << endl;
