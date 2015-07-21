@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "get_polygon")
+set(get_polygon_MAINTAINER "osboxes <osboxes@todo.todo>")
+set(get_polygon_DEPRECATED "")
+set(get_polygon_VERSION "0.0.0")
+set(get_polygon_BUILD_DEPENDS "geometry_msgs" "roscpp")
+set(get_polygon_RUN_DEPENDS "geometry_msgs" "roscpp")
+set(get_polygon_BUILDTOOL_DEPENDS "catkin")

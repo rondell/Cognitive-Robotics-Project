@@ -1,0 +1,8 @@
+prefix=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install
+
+Name: get_polygon
+Description: Description of get_polygon
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install/lib 
+Requires: 

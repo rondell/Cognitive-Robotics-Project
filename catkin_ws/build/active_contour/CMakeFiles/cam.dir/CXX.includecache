@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/include/active_contour/Camera.h
+iostream
+-
+vector
+-
+opencv2/core/core.hpp
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/include/active_contour/opencv2/core/core.hpp
+opencv2/imgproc/imgproc.hpp
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/include/active_contour/opencv2/imgproc/imgproc.hpp
+opencv2/highgui/highgui.hpp
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/include/active_contour/opencv2/highgui/highgui.hpp
+chanvese/contour.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/include/active_contour/chanvese/contour.h
+
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/libs/chanvese/contour.h
+
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/src/Camera.cpp
+active_contour/Camera.h
+/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/src/active_contour/Camera.h
+unistd.h
+-
+

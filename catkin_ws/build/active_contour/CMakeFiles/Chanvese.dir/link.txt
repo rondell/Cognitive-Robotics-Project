@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC    -shared -Wl,-soname,libChanvese.so -o /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/libChanvese.so CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o 
