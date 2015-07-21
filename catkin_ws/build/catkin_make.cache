@@ -1,2 +1,2 @@
-active_contour:beginner_tut:prosilica_camera:prosilica_gige_sdk:usb_cam:webcam_test
+active_contour:beginner_tut:get_polygon:prosilica_camera:prosilica_gige_sdk:usb_cam
 -DCATKIN_DEVEL_PREFIX=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/install -G Unix Makefiles

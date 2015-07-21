@@ -128,9 +128,9 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/prosilica_gige_sdk/cmake_install.cmake")
   INCLUDE("/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/active_contour/cmake_install.cmake")
   INCLUDE("/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/beginner_tut/cmake_install.cmake")
+  INCLUDE("/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/get_polygon/cmake_install.cmake")
   INCLUDE("/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/prosilica_camera/cmake_install.cmake")
   INCLUDE("/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/usb_cam/cmake_install.cmake")
-  INCLUDE("/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/webcam_test/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

@@ -150,18 +150,186 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-active_contour/CMakeFiles/prova.dir/rule:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/prova.dir/rule
-.PHONY : active_contour/CMakeFiles/prova.dir/rule
+active_contour/CMakeFiles/Chanvese.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/Chanvese.dir/rule
+.PHONY : active_contour/CMakeFiles/Chanvese.dir/rule
 
 # Convenience name for target.
-prova: active_contour/CMakeFiles/prova.dir/rule
-.PHONY : prova
+Chanvese: active_contour/CMakeFiles/Chanvese.dir/rule
+.PHONY : Chanvese
 
 # fast build rule for target.
-prova/fast:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/prova.dir/build.make active_contour/CMakeFiles/prova.dir/build
-.PHONY : prova/fast
+Chanvese/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/Chanvese.dir/build.make active_contour/CMakeFiles/Chanvese.dir/build
+.PHONY : Chanvese/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/_active_contour_generate_messages_check_deps_snake.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/_active_contour_generate_messages_check_deps_snake.dir/rule
+.PHONY : active_contour/CMakeFiles/_active_contour_generate_messages_check_deps_snake.dir/rule
+
+# Convenience name for target.
+_active_contour_generate_messages_check_deps_snake: active_contour/CMakeFiles/_active_contour_generate_messages_check_deps_snake.dir/rule
+.PHONY : _active_contour_generate_messages_check_deps_snake
+
+# fast build rule for target.
+_active_contour_generate_messages_check_deps_snake/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/_active_contour_generate_messages_check_deps_snake.dir/build.make active_contour/CMakeFiles/_active_contour_generate_messages_check_deps_snake.dir/build
+.PHONY : _active_contour_generate_messages_check_deps_snake/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/active_contour_gencpp.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/active_contour_gencpp.dir/rule
+.PHONY : active_contour/CMakeFiles/active_contour_gencpp.dir/rule
+
+# Convenience name for target.
+active_contour_gencpp: active_contour/CMakeFiles/active_contour_gencpp.dir/rule
+.PHONY : active_contour_gencpp
+
+# fast build rule for target.
+active_contour_gencpp/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/active_contour_gencpp.dir/build.make active_contour/CMakeFiles/active_contour_gencpp.dir/build
+.PHONY : active_contour_gencpp/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/active_contour_generate_messages.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/active_contour_generate_messages.dir/rule
+.PHONY : active_contour/CMakeFiles/active_contour_generate_messages.dir/rule
+
+# Convenience name for target.
+active_contour_generate_messages: active_contour/CMakeFiles/active_contour_generate_messages.dir/rule
+.PHONY : active_contour_generate_messages
+
+# fast build rule for target.
+active_contour_generate_messages/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/active_contour_generate_messages.dir/build.make active_contour/CMakeFiles/active_contour_generate_messages.dir/build
+.PHONY : active_contour_generate_messages/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/active_contour_generate_messages_cpp.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/active_contour_generate_messages_cpp.dir/rule
+.PHONY : active_contour/CMakeFiles/active_contour_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+active_contour_generate_messages_cpp: active_contour/CMakeFiles/active_contour_generate_messages_cpp.dir/rule
+.PHONY : active_contour_generate_messages_cpp
+
+# fast build rule for target.
+active_contour_generate_messages_cpp/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/active_contour_generate_messages_cpp.dir/build.make active_contour/CMakeFiles/active_contour_generate_messages_cpp.dir/build
+.PHONY : active_contour_generate_messages_cpp/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/active_contour_generate_messages_lisp.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/active_contour_generate_messages_lisp.dir/rule
+.PHONY : active_contour/CMakeFiles/active_contour_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+active_contour_generate_messages_lisp: active_contour/CMakeFiles/active_contour_generate_messages_lisp.dir/rule
+.PHONY : active_contour_generate_messages_lisp
+
+# fast build rule for target.
+active_contour_generate_messages_lisp/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/active_contour_generate_messages_lisp.dir/build.make active_contour/CMakeFiles/active_contour_generate_messages_lisp.dir/build
+.PHONY : active_contour_generate_messages_lisp/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/active_contour_generate_messages_py.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/active_contour_generate_messages_py.dir/rule
+.PHONY : active_contour/CMakeFiles/active_contour_generate_messages_py.dir/rule
+
+# Convenience name for target.
+active_contour_generate_messages_py: active_contour/CMakeFiles/active_contour_generate_messages_py.dir/rule
+.PHONY : active_contour_generate_messages_py
+
+# fast build rule for target.
+active_contour_generate_messages_py/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/active_contour_generate_messages_py.dir/build.make active_contour/CMakeFiles/active_contour_generate_messages_py.dir/build
+.PHONY : active_contour_generate_messages_py/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/active_contour_genlisp.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/active_contour_genlisp.dir/rule
+.PHONY : active_contour/CMakeFiles/active_contour_genlisp.dir/rule
+
+# Convenience name for target.
+active_contour_genlisp: active_contour/CMakeFiles/active_contour_genlisp.dir/rule
+.PHONY : active_contour_genlisp
+
+# fast build rule for target.
+active_contour_genlisp/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/active_contour_genlisp.dir/build.make active_contour/CMakeFiles/active_contour_genlisp.dir/build
+.PHONY : active_contour_genlisp/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/active_contour_genpy.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/active_contour_genpy.dir/rule
+.PHONY : active_contour/CMakeFiles/active_contour_genpy.dir/rule
+
+# Convenience name for target.
+active_contour_genpy: active_contour/CMakeFiles/active_contour_genpy.dir/rule
+.PHONY : active_contour_genpy
+
+# fast build rule for target.
+active_contour_genpy/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/active_contour_genpy.dir/build.make active_contour/CMakeFiles/active_contour_genpy.dir/build
+.PHONY : active_contour_genpy/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : active_contour/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: active_contour/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make active_contour/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : active_contour/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: active_contour/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make active_contour/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : active_contour/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: active_contour/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make active_contour/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+active_contour/CMakeFiles/main.dir/rule:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 active_contour/CMakeFiles/main.dir/rule
+.PHONY : active_contour/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: active_contour/CMakeFiles/main.dir/rule
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/main.dir/build.make active_contour/CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 # Convenience name for target.
 active_contour/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
@@ -289,29 +457,77 @@ std_msgs_generate_messages_py/fast:
 	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/std_msgs_generate_messages_py.dir/build.make active_contour/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
-src/prova.o: src/prova.cpp.o
-.PHONY : src/prova.o
+libs/chanvese/chanvese.o: libs/chanvese/chanvese.c.o
+.PHONY : libs/chanvese/chanvese.o
 
 # target to build an object file
-src/prova.cpp.o:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/prova.dir/build.make active_contour/CMakeFiles/prova.dir/src/prova.cpp.o
-.PHONY : src/prova.cpp.o
+libs/chanvese/chanvese.c.o:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/Chanvese.dir/build.make active_contour/CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.o
+.PHONY : libs/chanvese/chanvese.c.o
 
-src/prova.i: src/prova.cpp.i
-.PHONY : src/prova.i
+libs/chanvese/chanvese.i: libs/chanvese/chanvese.c.i
+.PHONY : libs/chanvese/chanvese.i
 
 # target to preprocess a source file
-src/prova.cpp.i:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/prova.dir/build.make active_contour/CMakeFiles/prova.dir/src/prova.cpp.i
-.PHONY : src/prova.cpp.i
+libs/chanvese/chanvese.c.i:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/Chanvese.dir/build.make active_contour/CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.i
+.PHONY : libs/chanvese/chanvese.c.i
 
-src/prova.s: src/prova.cpp.s
-.PHONY : src/prova.s
+libs/chanvese/chanvese.s: libs/chanvese/chanvese.c.s
+.PHONY : libs/chanvese/chanvese.s
 
 # target to generate assembly for a file
-src/prova.cpp.s:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/prova.dir/build.make active_contour/CMakeFiles/prova.dir/src/prova.cpp.s
-.PHONY : src/prova.cpp.s
+libs/chanvese/chanvese.c.s:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/Chanvese.dir/build.make active_contour/CMakeFiles/Chanvese.dir/libs/chanvese/chanvese.c.s
+.PHONY : libs/chanvese/chanvese.c.s
+
+libs/chanvese/contour.o: libs/chanvese/contour.c.o
+.PHONY : libs/chanvese/contour.o
+
+# target to build an object file
+libs/chanvese/contour.c.o:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/Chanvese.dir/build.make active_contour/CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.o
+.PHONY : libs/chanvese/contour.c.o
+
+libs/chanvese/contour.i: libs/chanvese/contour.c.i
+.PHONY : libs/chanvese/contour.i
+
+# target to preprocess a source file
+libs/chanvese/contour.c.i:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/Chanvese.dir/build.make active_contour/CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.i
+.PHONY : libs/chanvese/contour.c.i
+
+libs/chanvese/contour.s: libs/chanvese/contour.c.s
+.PHONY : libs/chanvese/contour.s
+
+# target to generate assembly for a file
+libs/chanvese/contour.c.s:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/Chanvese.dir/build.make active_contour/CMakeFiles/Chanvese.dir/libs/chanvese/contour.c.s
+.PHONY : libs/chanvese/contour.c.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/main.dir/build.make active_contour/CMakeFiles/main.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/main.dir/build.make active_contour/CMakeFiles/main.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f active_contour/CMakeFiles/main.dir/build.make active_contour/CMakeFiles/main.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -319,12 +535,24 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... Chanvese"
+	@echo "... _active_contour_generate_messages_check_deps_snake"
+	@echo "... active_contour_gencpp"
+	@echo "... active_contour_generate_messages"
+	@echo "... active_contour_generate_messages_cpp"
+	@echo "... active_contour_generate_messages_lisp"
+	@echo "... active_contour_generate_messages_py"
+	@echo "... active_contour_genlisp"
+	@echo "... active_contour_genpy"
 	@echo "... edit_cache"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
-	@echo "... prova"
+	@echo "... main"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
@@ -336,9 +564,15 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... test"
-	@echo "... src/prova.o"
-	@echo "... src/prova.i"
-	@echo "... src/prova.s"
+	@echo "... libs/chanvese/chanvese.o"
+	@echo "... libs/chanvese/chanvese.i"
+	@echo "... libs/chanvese/chanvese.s"
+	@echo "... libs/chanvese/contour.o"
+	@echo "... libs/chanvese/contour.i"
+	@echo "... libs/chanvese/contour.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

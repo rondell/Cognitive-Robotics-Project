@@ -16,8 +16,11 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/include"
+  "/usr/local/share/OpenCV"
   "/opt/ros/indigo/include"
   "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/include"
+  "/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/active_contour/libs"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

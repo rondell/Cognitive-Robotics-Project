@@ -10,3 +10,4 @@
 export LD_LIBRARY_PATH="/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/x86_64-linux-gnu:/opt/ros/indigo/lib/x86_64-linux-gnu:/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib:/opt/ros/indigo/lib"
 export PKG_CONFIG_PATH="/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig"
 export PWD="/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build"
+export ROS_PACKAGE_PATH="/home/osboxes/Desktop/Cognitive-Robotics-Project/catkin_ws/src:/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks"

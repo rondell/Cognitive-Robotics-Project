@@ -332,48 +332,6 @@ dynamic_reconfigure_generate_messages_py/fast:
 .PHONY : dynamic_reconfigure_generate_messages_py/fast
 
 # Convenience name for target.
-prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make prosilica_camera/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 prosilica_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule:
 	cd /home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 prosilica_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
 .PHONY : prosilica_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
@@ -813,9 +771,6 @@ help:
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
 	@echo "... dynamic_reconfigure_generate_messages_py"
 	@echo "... edit_cache"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"

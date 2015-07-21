@@ -206,6 +206,9 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Dependencies for target
+Chanvese_LIB_DEPENDS:STATIC=
+
 //Path to a program.
 DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
 
@@ -238,6 +241,23 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
+
+//Path where debug 3rdparty OpenCV dependencies are located
+OpenCV_3RDPARTY_LIB_DIR_DBG:PATH=/usr/local/share/OpenCV/3rdparty/lib
+
+//Path where release 3rdparty OpenCV dependencies are located
+OpenCV_3RDPARTY_LIB_DIR_OPT:PATH=/usr/local/share/OpenCV/3rdparty/lib
+
+OpenCV_CONFIG_PATH:FILEPATH=/usr/local/share/OpenCV
+
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/usr/local/share/OpenCV
+
+//Path where debug OpenCV libraries are located
+OpenCV_LIB_DIR_DBG:PATH=
+
+//Path where release OpenCV libraries are located
+OpenCV_LIB_DIR_OPT:PATH=
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
@@ -345,6 +365,12 @@ genpy_DIR:PATH=/opt/ros/indigo/share/genpy/cmake
 geometry_msgs_DIR:PATH=/opt/ros/indigo/share/geometry_msgs/cmake
 
 //Value Computed by CMake
+get_polygon_BINARY_DIR:STATIC=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/get_polygon
+
+//Value Computed by CMake
+get_polygon_SOURCE_DIR:STATIC=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/src/get_polygon
+
+//Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/osboxes/Desktop/CR_project/Cognitive-Robotics-Project/catkin_ws/build/gtest
 
 //Dependencies for the target
@@ -373,7 +399,7 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 image_transport_DIR:PATH=/opt/ros/indigo/share/image_transport/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/indigo/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/indigo/lib/libcamera_info_manager.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/indigo/share/message_filters/cmake
@@ -389,6 +415,9 @@ nodelet_DIR:PATH=/opt/ros/indigo/share/nodelet/cmake
 
 //The directory containing a CMake configuration file for nodelet_topic_tools.
 nodelet_topic_tools_DIR:PATH=/opt/ros/indigo/share/nodelet_topic_tools/cmake
+
+//The directory containing a CMake configuration file for opencv2.
+opencv2_DIR:PATH=opencv2_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
@@ -667,6 +696,16 @@ GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //Result of TRY_COMPILE
 LD_ACCEPTS_VERSION_SCRIPT:INTERNAL=TRUE
+//ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_DBG
+OpenCV_3RDPARTY_LIB_DIR_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_OPT
+OpenCV_3RDPARTY_LIB_DIR_OPT-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_CONFIG_PATH
+OpenCV_CONFIG_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_LIB_DIR_DBG
+OpenCV_LIB_DIR_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_LIB_DIR_OPT
+OpenCV_LIB_DIR_OPT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
